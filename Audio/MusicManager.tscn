@@ -1,0 +1,65 @@
+[gd_scene load_steps=5 format=3 uid="uid://bbm6q2q5wmopm"]
+
+[ext_resource type="PackedScene" uid="uid://dqbleu2qq81sc" path="res://UI/HelperNodes/switch_scene.tscn" id="1_g1f7a"]
+[ext_resource type="Script" uid="uid://bn5uaegt07r2y" path="res://Audio/MusicOpen.cs" id="1_olc47"]
+[ext_resource type="PackedScene" uid="uid://dxef5qfpfa4bs" path="res://UI/setting.tscn" id="2_m0y0c"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_olc47"]
+content_margin_left = 50.0
+content_margin_top = 10.0
+content_margin_right = 50.0
+content_margin_bottom = 50.0
+bg_color = Color(0.549162, 0.601691, 0.707034, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[node name="Node" type="Node"]
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelC" type="PanelContainer" parent="CenterContainer"]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_olc47")
+
+[node name="VboxC" type="VBoxContainer" parent="CenterContainer/PanelC"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Label" type="Label" parent="CenterContainer/PanelC/VboxC"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "Settings"
+horizontal_alignment = 1
+
+[node name="CreateButton" type="Button" parent="CenterContainer/PanelC/VboxC"]
+layout_mode = 2
+text = "Upload Audio"
+
+[node name="FileDialog" type="FileDialog" parent="CenterContainer/PanelC/VboxC/CreateButton" node_paths=PackedStringArray("fileDialog", "convertButton")]
+filters = PackedStringArray("*.mp3")
+script = ExtResource("1_olc47")
+fileDialog = NodePath(".")
+convertButton = NodePath("..")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="CenterContainer/PanelC/VboxC/CreateButton/FileDialog"]
+autoplay = true
+
+[node name="BackButton" type="Button" parent="CenterContainer/PanelC/VboxC"]
+layout_mode = 2
+text = "Back"
+
+[node name="SwitchScene" parent="CenterContainer/PanelC/VboxC/BackButton" node_paths=PackedStringArray("SceneSwitchButton") instance=ExtResource("1_g1f7a")]
+SceneSwitchButton = NodePath("..")
+TargetScene = ExtResource("2_m0y0c")
+
+[connection signal="file_selected" from="CenterContainer/PanelC/VboxC/CreateButton/FileDialog" to="CenterContainer/PanelC/VboxC/CreateButton/FileDialog" method="_on_file_selected"]

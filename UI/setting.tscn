@@ -1,0 +1,58 @@
+[gd_scene load_steps=5 format=3 uid="uid://dxef5qfpfa4bs"]
+
+[ext_resource type="PackedScene" uid="uid://dqbleu2qq81sc" path="res://UI/HelperNodes/switch_scene.tscn" id="1_74irf"]
+[ext_resource type="PackedScene" uid="uid://bbm6q2q5wmopm" path="res://Audio/MusicManager.tscn" id="2_8534u"]
+[ext_resource type="PackedScene" uid="uid://b42knc122vxg3" path="res://UI/MainMenu.tscn" id="3_74irf"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ymdbj"]
+content_margin_left = 50.0
+content_margin_top = 10.0
+content_margin_right = 50.0
+content_margin_bottom = 50.0
+bg_color = Color(0.549162, 0.601691, 0.707034, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[node name="Setting" type="Node"]
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelC" type="PanelContainer" parent="CenterContainer"]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ymdbj")
+
+[node name="VboxC" type="VBoxContainer" parent="CenterContainer/PanelC"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Label" type="Label" parent="CenterContainer/PanelC/VboxC"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "Settings"
+horizontal_alignment = 1
+
+[node name="CreateButton" type="Button" parent="CenterContainer/PanelC/VboxC"]
+layout_mode = 2
+text = "Audio"
+
+[node name="SwitchScene" parent="CenterContainer/PanelC/VboxC/CreateButton" node_paths=PackedStringArray("SceneSwitchButton") instance=ExtResource("1_74irf")]
+SceneSwitchButton = NodePath("..")
+TargetScene = ExtResource("2_8534u")
+
+[node name="BackButton" type="Button" parent="CenterContainer/PanelC/VboxC"]
+layout_mode = 2
+text = "Back"
+
+[node name="SwitchScene" parent="CenterContainer/PanelC/VboxC/BackButton" node_paths=PackedStringArray("SceneSwitchButton") instance=ExtResource("1_74irf")]
+SceneSwitchButton = NodePath("..")
+TargetScene = ExtResource("3_74irf")

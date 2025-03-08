@@ -15,6 +15,10 @@ run/main_scene="uid://b42knc122vxg3"
 config/features=PackedStringArray("4.4", "C#")
 config/icon="res://icon.svg"
 
+[autoload]
+
+MusicManager="*res://Audio/MusicManager.tscn"
+
 [dotnet]
 
 project/assembly_name="Bouncr"

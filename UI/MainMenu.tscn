@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://b42knc122vxg3"]
+[gd_scene load_steps=6 format=3 uid="uid://b42knc122vxg3"]
 
 [ext_resource type="PackedScene" uid="uid://dqbleu2qq81sc" path="res://UI/HelperNodes/switch_scene.tscn" id="1_8aown"]
 [ext_resource type="Script" uid="uid://dun8ypwrg8fj4" path="res://UI/UI_Scripts/ButtonManager.cs" id="1_uahxu"]
 [ext_resource type="PackedScene" uid="uid://ken6of6mjj0f" path="res://UI/ClassButtons.tscn" id="2_b37jj"]
+[ext_resource type="PackedScene" uid="uid://dxef5qfpfa4bs" path="res://UI/setting.tscn" id="3_t6syg"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f0jmi"]
 content_margin_left = 50.0
@@ -53,17 +54,24 @@ layout_mode = 2
 text = "Load"
 
 [node name="SwitchScene" parent="PanelC/VboxC/LoadButton" node_paths=PackedStringArray("SceneSwitchButton") instance=ExtResource("1_8aown")]
-SceneSwitchButton = NodePath("..")
+SceneSwitchButton = NodePath("../../SettingButton")
+TargetScene = ExtResource("3_t6syg")
+
+[node name="SettingButton" type="Button" parent="PanelC/VboxC"]
+layout_mode = 2
+text = "Setting"
+
+[node name="SwitchScene" parent="PanelC/VboxC/SettingButton" node_paths=PackedStringArray("SceneSwitchButton") instance=ExtResource("1_8aown")]
+SceneSwitchButton = NodePath("../../LoadButton")
 TargetScene = ExtResource("2_b37jj")
 
 [node name="QuitButton" type="Button" parent="PanelC/VboxC"]
 layout_mode = 2
 text = "Quit"
 
-[node name="ButtonManager" type="Node" parent="PanelC"]
+[node name="ButtonManager" type="Node" parent="PanelC/VboxC/QuitButton"]
 script = ExtResource("1_uahxu")
 CreateScene = ExtResource("2_b37jj")
 LoadScene = ExtResource("2_b37jj")
 
-[connection signal="pressed" from="PanelC/VboxC/LoadButton" to="PanelC/ButtonManager" method="_on_load_button_pressed"]
-[connection signal="pressed" from="PanelC/VboxC/QuitButton" to="PanelC/ButtonManager" method="_on_quit_button_pressed"]
+[connection signal="pressed" from="PanelC/VboxC/QuitButton" to="PanelC/VboxC/QuitButton/ButtonManager" method="_on_quit_button_pressed"]

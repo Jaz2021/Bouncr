@@ -7,10 +7,24 @@ using System.Reflection.Metadata;
 // using Godot.Collections;
 
 public partial class DNDclasses : Node {
+    public string name;
+    public string source;
+    public int numHitDie;
+    public int hitDieType;
+    public List<string> skillProficiencies;
+    public string spellcastingAbility;
+    public string preparedSpells;
+    public List<int> cantripProgression;
+    public List<string> armorProficiencies;
+    public List<string> toolProficiencies;
+    public List<string> weaponProficiencies;
+    public List<string> skillChoices;
+    public int numSkillChoices;
+    public List<List<int>> spellProgression;
+    public Dictionary<int, List<string>> classFeaturesByLevel;
     public DNDclasses(string name, string source, int numHitDie, int hitDieType, List<string> skillProficiencies, string spellcastingAbility, string preparedSpells, List<int> cantripProgression, List<string> armorProficiencies, List<string> toolProficiencies, List<string> weaponProficiencies, List<string> skillChoices, int numSkillChoices, List<List<int>> spellProgression, Dictionary<int, List<string>> classFeaturesByLevel){
-        if(spellProgression != null){
-            GD.Print("Has spell progression");
-        }
+        this.name = name;
+
     }
     private static void ReadDndClass(ref List<DNDclasses> classes, string filepath){
         var baseJson = JsonUtils.ParseJsonFile("user://data/class/" + filepath);

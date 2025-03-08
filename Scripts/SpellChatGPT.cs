@@ -22,10 +22,34 @@ public partial class Spell : Node {
             _ => School.None
         };
     }
+    public string name;
+    public int level;
+    public School school;
+    public string castTime;
+    public string rangeType;
+    public int rangeAmount;
+    public string rangeUnit;
+    public List<string> components;
+    public string duration;
+    public string description;
+    public string higherLevelDescription;
+    public List<string> availableClasses;
 
     public Spell(string name, int level, School school, string castTime, string rangeType, int rangeAmount, string rangeUnit, List<string> components, string duration, string description, string higherLevelDescription, List<string> availableClasses ) {
         // Constructor logic
         // GD.Print("Created spell with name: " + name);
+        this.name = name;
+        this.level = level;
+        this.school = school;
+        this.castTime = castTime;
+        this.rangeAmount = rangeAmount;
+        this.rangeType = rangeType;
+        this.rangeUnit = rangeUnit;
+        this.components = components;
+        this.duration = duration;
+        this.description = description;
+        this.higherLevelDescription = higherLevelDescription;
+        this.availableClasses = availableClasses;
 
     }
     private static void ReadSpellBook(ref List<Spell> spells, string fileLocation) {

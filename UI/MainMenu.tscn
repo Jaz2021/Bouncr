@@ -1,0 +1,69 @@
+[gd_scene load_steps=5 format=3 uid="uid://b42knc122vxg3"]
+
+[ext_resource type="PackedScene" uid="uid://dqbleu2qq81sc" path="res://UI/HelperNodes/switch_scene.tscn" id="1_8aown"]
+[ext_resource type="Script" uid="uid://dun8ypwrg8fj4" path="res://UI/UI_Scripts/ButtonManager.cs" id="1_uahxu"]
+[ext_resource type="PackedScene" uid="uid://ken6of6mjj0f" path="res://UI/ClassButtons.tscn" id="2_b37jj"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f0jmi"]
+content_margin_left = 50.0
+content_margin_top = 10.0
+content_margin_right = 50.0
+content_margin_bottom = 50.0
+bg_color = Color(0.549162, 0.601691, 0.707034, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[node name="MainMenu" type="CenterContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="PanelC" type="PanelContainer" parent="."]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_f0jmi")
+
+[node name="VboxC" type="VBoxContainer" parent="PanelC"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Label" type="Label" parent="PanelC/VboxC"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "Bouncr"
+horizontal_alignment = 1
+
+[node name="CreateButton" type="Button" parent="PanelC/VboxC"]
+layout_mode = 2
+text = "Create"
+
+[node name="SwitchScene" parent="PanelC/VboxC/CreateButton" node_paths=PackedStringArray("SceneSwitchButton") instance=ExtResource("1_8aown")]
+SceneSwitchButton = NodePath("..")
+TargetScene = ExtResource("2_b37jj")
+
+[node name="LoadButton" type="Button" parent="PanelC/VboxC"]
+layout_mode = 2
+text = "Load"
+
+[node name="SwitchScene" parent="PanelC/VboxC/LoadButton" node_paths=PackedStringArray("SceneSwitchButton") instance=ExtResource("1_8aown")]
+SceneSwitchButton = NodePath("..")
+TargetScene = ExtResource("2_b37jj")
+
+[node name="QuitButton" type="Button" parent="PanelC/VboxC"]
+layout_mode = 2
+text = "Quit"
+
+[node name="ButtonManager" type="Node" parent="PanelC"]
+script = ExtResource("1_uahxu")
+CreateScene = ExtResource("2_b37jj")
+LoadScene = ExtResource("2_b37jj")
+
+[connection signal="pressed" from="PanelC/VboxC/LoadButton" to="PanelC/ButtonManager" method="_on_load_button_pressed"]
+[connection signal="pressed" from="PanelC/VboxC/QuitButton" to="PanelC/ButtonManager" method="_on_quit_button_pressed"]

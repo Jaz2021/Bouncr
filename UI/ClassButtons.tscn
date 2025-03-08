@@ -1,9 +1,19 @@
-[gd_scene load_steps=2 format=3 uid="uid://ken6of6mjj0f"]
+[gd_scene load_steps=6 format=3 uid="uid://ken6of6mjj0f"]
+
+[ext_resource type="Script" uid="uid://cyexhi5ykcw3s" path="res://UI/UI_Scripts_gd/Button_Manager.gd" id="1_ds00d"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ds00d"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kjwba"]
-bg_color = Color(0.208831, 0.66078, 0.781862, 1)
+bg_color = Color(0.310153, 0.698549, 0.329954, 1)
 
-[node name="CenterContainer" type="CenterContainer"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_20d1c"]
+bg_color = Color(0.826609, 0.521583, 0.128485, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qfwp6"]
+bg_color = Color(0.976675, 0.321446, 0.566361, 1)
+
+[node name="CenterContainer" type="CenterContainer" groups=["panels"]]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -21,15 +31,15 @@ theme_override_constants/separation = 0
 custom_minimum_size = Vector2(120, 0)
 layout_mode = 2
 
-[node name="Button" type="Button" parent="PanelContainer/HBoxContainer/VBoxContainer"]
+[node name="Race" type="Button" parent="PanelContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 text = "Button"
 
-[node name="Button2" type="Button" parent="PanelContainer/HBoxContainer/VBoxContainer"]
+[node name="Class" type="Button" parent="PanelContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 text = "Button"
 
-[node name="Button3" type="Button" parent="PanelContainer/HBoxContainer/VBoxContainer"]
+[node name="Sub-Class" type="Button" parent="PanelContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 text = "Button"
 
@@ -49,7 +59,41 @@ text = "Button"
 custom_minimum_size = Vector2(0, 157.47)
 layout_mode = 2
 
-[node name="Panel" type="Panel" parent="PanelContainer/HBoxContainer"]
+[node name="Main" type="Panel" parent="PanelContainer/HBoxContainer"]
+custom_minimum_size = Vector2(180, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ds00d")
+
+[node name="Race_Panel" type="Panel" parent="PanelContainer/HBoxContainer"]
 custom_minimum_size = Vector2(180, 0)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_kjwba")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/HBoxContainer/Race_Panel"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/HBoxContainer/Race_Panel/HBoxContainer"]
+layout_mode = 2
+
+[node name="CheckBox" type="CheckBox" parent="PanelContainer/HBoxContainer/Race_Panel/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Tiefling"
+
+[node name="Class_Panel" type="Panel" parent="PanelContainer/HBoxContainer"]
+visible = false
+custom_minimum_size = Vector2(180, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_20d1c")
+
+[node name="Sub-Class_Panel" type="Panel" parent="PanelContainer/HBoxContainer"]
+visible = false
+custom_minimum_size = Vector2(180, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_qfwp6")
+
+[node name="PanelManager" type="Node" parent="."]
+script = ExtResource("1_ds00d")
+
+[connection signal="pressed" from="PanelContainer/HBoxContainer/VBoxContainer/Class" to="PanelManager" method="_on_button_2_pressed"]

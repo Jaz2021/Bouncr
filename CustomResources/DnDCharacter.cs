@@ -6,7 +6,7 @@ using System.Collections.Generic;
 // public enum RaceType { Human, Elf, Dwarf, Halfling, Orc, Tiefling, Dragonborn, Gnome, Other }
 // public enum ClassType { Fighter, Wizard, Rogue, Cleric, Barbarian, Bard, Druid, Monk, Paladin, Ranger, Sorcerer, Warlock, Other } 
 public enum Alignment { LawfulGood, NeutralGood, ChaoticGood, LawfulNeutral, TrueNeutral, ChaoticNeutral, LawfulEvil, NeutralEvil, ChaoticEvil }   
-public enum Dice {d2, d4, d6, d8, d10, d12, d20}   
+public enum Dice {d2 = 2, d4 = 4, d6 = 6, d8 = 8, d10= 10, d12= 12, d20= 20}   
 
 [GlobalClass]
 public partial class DnDCharacter : Resource
@@ -16,6 +16,8 @@ public partial class DnDCharacter : Resource
 
     [Export] public int Level = 1;
     [Export] public string Class = "Fighter";//new Class();
+    [Export] public string Subclass = "";
+
     [Export] public string Background = "Noble";
     [Export] public string PlayerName = "John Doe";
 
@@ -25,12 +27,12 @@ public partial class DnDCharacter : Resource
 
     // Ability Scores with group export for better organization in the inspector
     [ExportGroup("Ability Scores")]
-    [Export] public int Strength = 10;
-    [Export] public int Dexterity = 10;
-    [Export] public int Constitution = 10;
-    [Export] public int Intelligence = 10;
-    [Export] public int Wisdom = 10;
-    [Export] public int Charisma = 10;
+    [Export] public int Strength = 8;
+    [Export] public int Dexterity = 8;
+    [Export] public int Constitution = 8;
+    [Export] public int Intelligence = 8;
+    [Export] public int Wisdom = 8;
+    [Export] public int Charisma = 8;
 
     // Computed ability modifiers
     public int StrengthModifier => (Strength - 10) / 2;
@@ -157,6 +159,31 @@ public partial class DnDCharacter : Resource
         if (skill.IsProficient)
             baseBonus += ProficiencyBonus;
         return baseBonus;
+    }
+    public DnDCharacter(DNDclasses c, Races race, Subclasses subclass, List<Spell> spells){
+        Intelligence += race.raceInt;
+        Dexterity += race.raceDex;
+        Constitution += race.raceCon;
+        Charisma += race.raceCha;
+        Wisdom += race.raceWis;
+        Strength += race.raceStr;
+        Class = c.name;
+        Race = race.name;
+        Subclass = subclass.name;
+        Spells = new();
+        HitPointMaximum = ConstitutionModifier + (c.hitDieType / 2) + 1;
+        CurrentHitPoints = HitPointMaximum;
+        TemporaryHitPoints = 0;
+        ArmorClass = 10 + DexterityModifier;
+        Speed = race.walk;
+        HitDice = (Dice)c.hitDieType;
+        HitDiceTotal = c.numHitDie;
+        ProficiencyBonus = 2;
+        
+        foreach(var spell in spells){
+            Spells.Add(spell.name);
+        }
+        
     }
 }
 

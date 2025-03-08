@@ -1,11 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://b42knc122vxg3"]
+[gd_scene load_steps=7 format=3 uid="uid://b42knc122vxg3"]
 
 [ext_resource type="PackedScene" uid="uid://dqbleu2qq81sc" path="res://UI/HelperNodes/switch_scene.tscn" id="1_8aown"]
 [ext_resource type="Script" uid="uid://dun8ypwrg8fj4" path="res://UI/UI_Scripts/ButtonManager.cs" id="1_uahxu"]
 [ext_resource type="PackedScene" uid="uid://bocdib1f8yi0k" path="res://UI/ClassButtons.tscn" id="2_b37jj"]
 [ext_resource type="Script" uid="uid://becowoc5ckcet" path="res://Scripts/MapLayoutMaker.cs" id="3_t6syg"]
+[ext_resource type="Script" uid="uid://bnwtryeop4s5" path="res://UI/UI_Scripts/SwapScenes.cs" id="4_otjfi"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f0jmi"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t4ff4"]
 content_margin_left = 50.0
 content_margin_top = 10.0
 content_margin_right = 50.0
@@ -27,7 +28,7 @@ metadata/_edit_use_anchors_ = true
 [node name="PanelC" type="PanelContainer" parent="."]
 custom_minimum_size = Vector2(120, 0)
 layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_f0jmi")
+theme_override_styles/panel = SubResource("StyleBoxFlat_t4ff4")
 
 [node name="VboxC" type="VBoxContainer" parent="PanelC"]
 custom_minimum_size = Vector2(150, 0)
@@ -47,7 +48,7 @@ text = "Create"
 
 [node name="SwitchScene" parent="PanelC/VboxC/CreateButton" node_paths=PackedStringArray("SceneSwitchButton") instance=ExtResource("1_8aown")]
 SceneSwitchButton = NodePath("..")
-TargetScene = ExtResource("2_b37jj")
+TargetScene = "res://UI/ClassButtons.tscn"
 
 [node name="LoadButton" type="Button" parent="PanelC/VboxC"]
 layout_mode = 2
@@ -55,14 +56,15 @@ text = "Load"
 
 [node name="SwitchScene" parent="PanelC/VboxC/LoadButton" node_paths=PackedStringArray("SceneSwitchButton") instance=ExtResource("1_8aown")]
 SceneSwitchButton = NodePath("..")
-TargetScene = ExtResource("2_b37jj")
+TargetScene = "res://UI/ClassButtons.tscn"
 
 [node name="ConvertButton" type="Button" parent="PanelC/VboxC"]
 layout_mode = 2
 text = "Download as Map
 "
 
-[node name="FileDialog" type="FileDialog" parent="PanelC/VboxC/ConvertButton" node_paths=PackedStringArray("fileDialog", "convertButton", "imageDisplay", "successLabel")]
+[node name="FileDialog" type="FileDialog" parent="PanelC/VboxC/ConvertButton" node_paths=PackedStringArray("fileDialog", "convertButton")]
+auto_translate_mode = 1
 title = "Open a File"
 ok_button_text = "Open"
 file_mode = 0
@@ -72,37 +74,15 @@ show_hidden_files = true
 script = ExtResource("3_t6syg")
 fileDialog = NodePath(".")
 convertButton = NodePath("..")
-imageDisplay = NodePath("../ScrollContainer/ImageDisplay")
-successLabel = NodePath("../DownloadSuccess")
 
-[node name="DownloadSuccess" type="Label" parent="PanelC/VboxC/ConvertButton"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = -1.76
-anchor_top = -11.032
-anchor_right = 2.627
-anchor_bottom = -9.935
-offset_left = 3.05176e-05
-offset_top = -0.00796509
-offset_right = -0.0500183
-offset_bottom = -0.0149536
-horizontal_alignment = 1
-
-[node name="ScrollContainer" type="ScrollContainer" parent="PanelC/VboxC/ConvertButton"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = -3.34
-anchor_top = -11.226
-anchor_right = 4.347
-anchor_bottom = 9.742
-offset_left = 3.05176e-05
-offset_top = 0.00601196
-offset_right = -0.0500488
-offset_bottom = -0.00201416
-
-[node name="ImageDisplay" type="TextureRect" parent="PanelC/VboxC/ConvertButton/ScrollContainer"]
+[node name="Button" type="Button" parent="PanelC/VboxC"]
 layout_mode = 2
-stretch_mode = 3
+text = "Settings"
+
+[node name="SwitchScene" type="Node" parent="PanelC/VboxC/Button" node_paths=PackedStringArray("SceneSwitchButton")]
+script = ExtResource("4_otjfi")
+SceneSwitchButton = NodePath("..")
+TargetScene = "res://UI/Settings.tscn"
 
 [node name="QuitButton" type="Button" parent="PanelC/VboxC"]
 layout_mode = 2

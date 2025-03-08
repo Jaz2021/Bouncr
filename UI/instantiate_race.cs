@@ -46,6 +46,17 @@ public partial class instantiate_race : VBoxContainer
                     checkbox.ButtonPressed = false; // Uncheck others
                 }
             }
+            foreach(var race in Global.instance.races){
+                if(race.name == selectedCheckbox.Name){
+                    GD.Print("Set character race!");
+                    global_data.instance.r = race;
+                } else {
+                    // GD.Print(selectedCheckbox.Name);
+                    // GD.Print(race.name);
+                }
+            }
+        } else {
+            global_data.instance.r = null;
         }
     }
 

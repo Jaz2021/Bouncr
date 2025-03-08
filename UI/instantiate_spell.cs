@@ -49,7 +49,7 @@ public partial class instantiate_spell : VBoxContainer
                     CheckBox checkbox = new CheckBox
                     {
                         Name = key.name,  // Unique name
-                        Text = key.name  // Display text
+                        Text = key.name + " (" + key.level + ")"  // Display text
                     };
 
                     // Connect the "pressed" signal

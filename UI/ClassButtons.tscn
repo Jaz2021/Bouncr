@@ -42,14 +42,16 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
+custom_minimum_size = Vector2(400, 400)
 layout_mode = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer"]
+custom_minimum_size = Vector2(400, 400)
 layout_mode = 2
 theme_override_constants/separation = 0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/HBoxContainer"]
-custom_minimum_size = Vector2(120, 0)
+custom_minimum_size = Vector2(120, 400)
 layout_mode = 2
 
 [node name="Race" type="Button" parent="PanelContainer/HBoxContainer/VBoxContainer"]
@@ -74,7 +76,7 @@ layout_mode = 2
 text = "Cantrips"
 
 [node name="Panel" type="Panel" parent="PanelContainer/HBoxContainer/VBoxContainer"]
-custom_minimum_size = Vector2(0, 157.47)
+custom_minimum_size = Vector2(0, 225)
 layout_mode = 2
 
 [node name="Main" type="Panel" parent="PanelContainer/HBoxContainer"]
@@ -84,13 +86,13 @@ layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_ds00d")
 
 [node name="Race_Panel" type="Panel" parent="PanelContainer/HBoxContainer"]
-custom_minimum_size = Vector2(180, 0)
+custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_kjwba")
 script = ExtResource("1_a5k5p")
 
 [node name="ScrollContainer" type="ScrollContainer" parent="PanelContainer/HBoxContainer/Race_Panel"]
-custom_minimum_size = Vector2(180, 350)
+custom_minimum_size = Vector2(300, 350)
 layout_mode = 2
 anchor_top = 0.0027248
 anchor_right = 1.0
@@ -106,13 +108,13 @@ script = ExtResource("2_48rjk")
 
 [node name="Class_Panel" type="Panel" parent="PanelContainer/HBoxContainer"]
 visible = false
-custom_minimum_size = Vector2(180, 0)
+custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_20d1c")
 script = ExtResource("2_wy7x5")
 
 [node name="ScrollContainer" type="ScrollContainer" parent="PanelContainer/HBoxContainer/Class_Panel"]
-custom_minimum_size = Vector2(180, 350)
+custom_minimum_size = Vector2(300, 350)
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -126,12 +128,12 @@ script = ExtResource("3_wy7x5")
 
 [node name="Sub-Class_Panel" type="Panel" parent="PanelContainer/HBoxContainer"]
 visible = false
-custom_minimum_size = Vector2(180, 0)
+custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_qfwp6")
 
 [node name="ScrollContainer" type="ScrollContainer" parent="PanelContainer/HBoxContainer/Sub-Class_Panel"]
-custom_minimum_size = Vector2(180, 350)
+custom_minimum_size = Vector2(300, 350)
 layout_mode = 1
 anchors_preset = -1
 anchor_top = 0.00817439
@@ -148,13 +150,13 @@ script = ExtResource("5_dh5d5")
 
 [node name="Spell_Panel" type="Panel" parent="PanelContainer/HBoxContainer"]
 visible = false
-custom_minimum_size = Vector2(180, 0)
+custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_d55b6")
 script = ExtResource("5_d55b6")
 
 [node name="ScrollContainer" type="ScrollContainer" parent="PanelContainer/HBoxContainer/Spell_Panel"]
-custom_minimum_size = Vector2(180, 350)
+custom_minimum_size = Vector2(300, 350)
 layout_mode = 2
 anchor_top = 0.00817439
 anchor_right = 1.0
@@ -170,13 +172,13 @@ script = ExtResource("6_xxqrw")
 
 [node name="Cantrip_Panel" type="Panel" parent="PanelContainer/HBoxContainer"]
 visible = false
-custom_minimum_size = Vector2(180, 0)
+custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_yg0j1")
 script = ExtResource("7_yg0j1")
 
 [node name="ScrollContainer" type="ScrollContainer" parent="PanelContainer/HBoxContainer/Cantrip_Panel"]
-custom_minimum_size = Vector2(180, 350)
+custom_minimum_size = Vector2(300, 350)
 layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 0.953678

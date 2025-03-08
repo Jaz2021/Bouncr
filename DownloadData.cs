@@ -40,7 +40,7 @@ public partial class DownloadData : Control
     }
 	public async void Download(string repo, Action parsedata){
 		GD.Print("Testing");
-		await ToSignal(GetTree().CreateTimer(1), "timeout");
+		// await ToSignal(GetTree().CreateTimer(1), "timeout");
 		parseData = parsedata;
         htmlReq = new HttpRequest();
         AddChild(htmlReq);

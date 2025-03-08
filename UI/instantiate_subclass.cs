@@ -3,53 +3,32 @@ using System;
 using System.Collections.Generic;
 using System.Text.Json;
 
-public partial class instantiate_spell : VBoxContainer
+public partial class instantiate_subclass : VBoxContainer
 {
-    public static instantiate_spell instance;
+    public static instantiate_subclass instance;
     public override void _Ready()
     {
-        // List<string> classKeys = GetClassKeys();
-        if (Global.instance == null)
-        {
-            Global.instance = new();
-            // Global.instance.classes = DNDclasses.GenerateClasses();
-            // Global.instance.races = Races.generateRaceList();
-            Global.instance.spells = Spell.GenerateSpells();
-        }
-        if (instance == null){
-            instance = this; 
+        if(instance == null){
+            instance = this;
         } else {
             QueueFree();
         }
-        List<Spell> classKeys = Global.instance.spells;
-
-        var user_class = global_data.instance.classes;
-        updateSubClasses();
-
-
     }
-    public void updateSubClasses()
-    {
-        GD.Print("Updating spells");
+    public void updateSubclasses(){
+        List<DNDclasses> classKeys =  Global.instance.classes ;
+;
         foreach(var child in GetChildren()){
             child.QueueFree();
         }
-        foreach (Spell key in Global.instance.spells)
+        
+        foreach (DNDclasses key in classKeys)
         {
-            GD.Print(key.availableClasses.Count);
-            // GD.Print(key.availableClasses);
-            if(key.availableClasses == null){
-                continue;
-            }
-            if(key.availableClasses.Contains(global_data.instance.SelectedClass)){
-                if(key.level == 0){
-                    continue;
-                }
-                // GD.Print(key.name);  // Print each class name
+            if(key.name == global_data.instance.SelectedClass){
+                foreach(Subclasses subclass in key.subclasses){
                     CheckBox checkbox = new CheckBox
                     {
-                        Name = key.name,  // Unique name
-                        Text = key.name  // Display text
+                        Name = subclass.name ,  // Unique name
+                        Text = subclass.name   // Display text
                     };
 
                     // Connect the "pressed" signal
@@ -57,18 +36,18 @@ public partial class instantiate_spell : VBoxContainer
 
                     // Add to the VBoxContainer
                     AddChild(checkbox);
-            } else {
-                // GD.Print(global_data.instance.classes);
+                }
             }
-
-
+            GD.Print(key.name);  // Print each class name
+            
         }
     }
-
     private void OnCheckboxToggled(CheckBox selectedCheckbox, bool pressed)
     {
+        GD.Print("Pressed class button");
         if (pressed)
         {
+            // global_data.instance.SelectedClass = selectedCheckbox.Name;
             foreach (Node child in GetChildren())
             {
                 if (child is CheckBox checkbox && checkbox != selectedCheckbox)
@@ -77,6 +56,7 @@ public partial class instantiate_spell : VBoxContainer
                 }
             }
         }
+        // instantiate_spell.instance.updateSubClasses();
     }
 
     private List<string> GetClassKeys()

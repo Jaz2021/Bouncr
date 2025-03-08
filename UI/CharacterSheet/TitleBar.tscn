@@ -159,7 +159,7 @@ Speed = 30
 HitPointMaximum = 10
 CurrentHitPoints = 10
 TemporaryHitPoints = 10
-HitDiceTotal = 0
+HitDiceTotal = 1
 HitDice = 2
 DeathSaveSuccess = 0
 DeathSaveFailier = 0
@@ -168,10 +168,11 @@ Spells = null
 metadata/_custom_type_script = "uid://bi2skhq8bfs34"
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o1iua"]
-border_width_left = 5
-border_width_top = 5
-border_width_right = 5
-border_width_bottom = 5
+content_margin_left = 5.0
+content_margin_top = 5.0
+content_margin_right = 5.0
+content_margin_bottom = 5.0
+bg_color = Color(0.811765, 0.811765, 0.811765, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bdf4v"]
 border_width_left = 5

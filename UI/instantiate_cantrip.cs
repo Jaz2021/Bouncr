@@ -3,9 +3,9 @@ using System;
 using System.Collections.Generic;
 using System.Text.Json;
 
-public partial class instantiate_spell : VBoxContainer
+public partial class instantiate_cantrip : VBoxContainer
 {
-    public static instantiate_spell instance;
+    public static instantiate_cantrip instance;
     public override void _Ready()
     {
         // List<string> classKeys = GetClassKeys();
@@ -42,7 +42,7 @@ public partial class instantiate_spell : VBoxContainer
                 continue;
             }
             if(key.availableClasses.Contains(global_data.instance.SelectedClass)){
-                if(key.level == 0){
+                if(key.level != 0){
                     continue;
                 }
                 // GD.Print(key.name);  // Print each class name
@@ -104,5 +104,6 @@ public partial class instantiate_spell : VBoxContainer
         }
     }
 }
+
 
 

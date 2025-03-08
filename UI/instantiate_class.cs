@@ -10,8 +10,8 @@ public partial class instantiate_class : VBoxContainer
         // List<string> classKeys = GetClassKeys();
         if(Global.instance == null){
             Global.instance = new();
-            Global.instance.classes = DNDclasses.GenerateClasses();
-            Global.instance.races = Races.generateRaceList();
+            // Global.instance.classes = DNDclasses.GenerateClasses();
+            // Global.instance.races = Races.generateRaceList();
             Global.instance.spells = Spell.GenerateSpells();
         }
         List<DNDclasses> classKeys =  Global.instance.classes ;
@@ -23,8 +23,8 @@ public partial class instantiate_class : VBoxContainer
             GD.Print(key.name);  // Print each class name
             CheckBox checkbox = new CheckBox
             {
-                Name = key.name + "(" + key.source + ")",  // Unique name
-                Text = key.name + "(" + key.source + ")"  // Display text
+                Name = key.name ,  // Unique name
+                Text = key.name   // Display text
             };
 
             // Connect the "pressed" signal
@@ -37,8 +37,10 @@ public partial class instantiate_class : VBoxContainer
 
     private void OnCheckboxToggled(CheckBox selectedCheckbox, bool pressed)
     {
+        GD.Print("Pressed class button");
         if (pressed)
         {
+            global_data.instance.SelectedClass = selectedCheckbox.Name;
             foreach (Node child in GetChildren())
             {
                 if (child is CheckBox checkbox && checkbox != selectedCheckbox)
@@ -47,6 +49,8 @@ public partial class instantiate_class : VBoxContainer
                 }
             }
         }
+        instantiate_spell.instance.updateSubClasses();
+        instantiate_subclass.instance.updateSubclasses();
     }
 
     private List<string> GetClassKeys()

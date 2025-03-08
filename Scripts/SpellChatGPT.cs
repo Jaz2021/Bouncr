@@ -126,20 +126,50 @@ public partial class Spell : Node {
             //     higherLevelDescription = string.Join("\n", JsonSerializer.Deserialize<List<string>>(higherEntries[0]["entries"].ToString()));
             // }
             // GD.Print(name);
-            List<string> availableClasses = null;
+            List<string> availableClasses = new();
 
             var spellClassesjson = JsonUtils.ParseJsonFile("user://data/spells/sources.json");
-            if(spellClassesjson.ContainsKey(spelldata["source"].ToString())){
-                var spellBook = JsonSerializer.Deserialize<Dictionary<string, object>>(spellClassesjson[spelldata["source"].ToString()].ToString());
+            GD.Print(spelldata["source"].ToString());
+            foreach(var source in spellClassesjson){
+                // GD.Print(source.Value.ToString());
+                var spellData = JsonSerializer.Deserialize<Dictionary<string, object>>(source.Value.ToString());
+                foreach(var spell in spellData) {
+                    if(spell.Key == name){
+                        // GD.Print(spell.Value);
+                        var classData = JsonSerializer.Deserialize<Dictionary<string, List<Dictionary<string, string>>>>(spell.Value.ToString());
+                        List<Dictionary<string, string>> classesList;
+                        if(classData.ContainsKey("class")){
+                            classesList = classData["class"];
 
-                if(spellbookData.ContainsKey("class")){
-                    availableClasses = new();
-                    var spellClassData = JsonSerializer.Deserialize<List<Dictionary<string,object>>>(spellBook["class"].ToString());
-                    foreach(var classJson in spellClassData){
-                        availableClasses.Add(classJson["name"].ToString());
+                        } else {
+                            // This would be to handle subclass availability
+                            continue;
+                        }
+                        foreach(var c in classesList){
+                            availableClasses.Add(c["name"]);
+                            // GD.Print(c["name"]);
+                        }
+                        // var classes = JsonSerializer.Deserialize<Dictionary<string, object>>(spell.Value.ToString());
+                        // foreach(var c in classes){
+                        //     availableClasses.Add(c["name"].ToString());
+                        //     GD.Print(c["name"].ToString());
+                        // }
                     }
                 }
             }
+            // if(spellClassesjson.ContainsKey(spelldata["source"].ToString())){
+            //     var spellBook = JsonSerializer.Deserialize<Dictionary<string, object>>(spellClassesjson[spelldata["source"].ToString()].ToString());
+
+            //     if(spellbookData.ContainsKey("class")){
+            //         availableClasses = new();
+            //         var spellClassData = JsonSerializer.Deserialize<List<Dictionary<string,object>>>(spellBook["class"].ToString());
+            //         foreach(var classJson in spellClassData){
+                        
+            //             availableClasses.Add(classJson["name"].ToString());
+            //             GD.Print(classJson["name"].ToString());
+            //         }
+            //     }
+            // }
             
             
             spells.Add(new Spell(name, level, school, castTime, rangeType, rangeAmount, rangeUnit, components, duration, "", "", availableClasses));

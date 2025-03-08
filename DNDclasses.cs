@@ -2,63 +2,113 @@ using System;
 using System.Collections.Generic;
 using Godot;
 using System.Text.Json;
+using System.Xml;
+using System.Reflection.Metadata;
 // using Godot.Collections;
 
 public partial class DNDclasses : Node {
-    public DNDclasses(){
-        // A quick example of parsing some json
-        var bard = JsonUtils.ParseJsonFile("user://data/class/class-bard.json");
-        // GD.Print(bard["class"].ToString());
-        var bardData = JsonSerializer.Deserialize<List<Dictionary<string, object>>>(bard["class"].ToString());
-
-        // var bardDataInner = JsonSerializer.Deserialize<Dictionary<String, object>
+    public DNDclasses(string name, string source, int numHitDie, int hitDieType, List<string> skillProficiencies, string spellcastingAbility, string preparedSpells, List<int> cantripProgression, List<string> armorProficiencies, List<string> toolProficiencies, List<string> weaponProficiencies, List<string> skillChoices, int numSkillChoices){
         
-        GD.Print(bardData[0].ToString());
-        string name = bardData[0]["name"].ToString();
-        string primaryAbility = bardData[0]["spellcastingAbility"].ToString();
+    }
+    private static void ReadDndClass(ref List<DNDclasses> classes, string filepath){
+        var baseJson = JsonUtils.ParseJsonFile("user://data/class/" + filepath);
+        // GD.Print(baseJson["class"].ToString());
+        var classData = JsonSerializer.Deserialize<List<Dictionary<string, object>>>(baseJson["class"].ToString());
 
-        var hdJson = JsonSerializer.Serialize(bardData[0]["hd"]);
-        Dictionary<string, object> hd = JsonSerializer.Deserialize<Dictionary<string, object>>(hdJson);
-        string HitPointDie = hd["number"].ToString();
-
-        var proficiencyJson = JsonSerializer.Serialize(bardData[0]["proficiency"]);
-        var proficiencies = JsonSerializer.Deserialize<List<string>>(proficiencyJson);
-
-          
-        var startingProficiencies = JsonSerializer.Deserialize<Dictionary<string, object>>(JsonSerializer.Serialize(bardData[0]["startingProficiencies"]));
-        var skills = JsonSerializer.Deserialize<List<Dictionary<string,int >>>(JsonSerializer.Serialize(startingProficiencies["skills"]));
-
-        string proficiencySkills = skills[0]["any"].ToString();
-
-        
-        var weapons = JsonSerializer.Deserialize<List<string>>(JsonSerializer.Serialize(startingProficiencies["weapons"]));
-        string weapon = weapons[0].ToString();
-        
-        List<string> cleanweapons = new List<string>();
-        
-        foreach (var item in weapons)
-        {
-            if (item[0] != '{'){
-                cleanweapons.Add(item);
+        // var classData = JsonSerializer.Deserialize<List<string>>(baseJson["class"].ToString());
+        foreach(var classDataInstance in classData){
+            // var classDataInstance = JsonSerializer.Deserialize<Dictionary<string, string>>(classDataInstance.ToString());
+            var name = classDataInstance["name"].ToString();
+            // GD.Print(name);
+            var source = classDataInstance["source"].ToString();
+            if (!classDataInstance.ContainsKey("hd")){
+                // Skip any classes that don't have a hitdie these aren't playable
+                continue;
             }
+            var hitdieDict = JsonSerializer.Deserialize<Dictionary<string, object>>(classDataInstance["hd"].ToString());
+            var numHitDie = 0;
+            if(hitdieDict.ContainsKey("num")){
+                numHitDie = hitdieDict["num"].ToString().ToInt();
+            } else {
+                numHitDie = hitdieDict["number"].ToString().ToInt();
+            }
+            // var numHitDie = hitdieDict["num"];
+            int hitdieType = hitdieDict["faces"].ToString().ToInt();
+            List<string> skillProficiencies = JsonSerializer.Deserialize<List<string>>(classDataInstance["proficiency"].ToString());
+            string spellcastingAbility = "";
+            if(classDataInstance.ContainsKey("spellcastingAbility")){
+                spellcastingAbility = classDataInstance["spellcastingAbility"].ToString();
+                // GD.Print(spellcastingAbility);
+            }
+            string preparedSpells = "";
+
+            if(classDataInstance.ContainsKey("preparedSpells")){
+                preparedSpells = classDataInstance["preparedSpells"].ToString();
+            }
+            List<int> cantripProgression = null;
+            if (classDataInstance.ContainsKey("cantripProgression")){
+                cantripProgression = JsonSerializer.Deserialize<List<int>>(classDataInstance["cantripProgression"].ToString());
+            }
+            var startingProficienciesDict = JsonSerializer.Deserialize<Dictionary<string, object>>(classDataInstance["startingProficiencies"].ToString());
+            List<string> armorProficiencies = null;
+            if(startingProficienciesDict.ContainsKey("armor")){
+                armorProficiencies = new();
+                var armorProficienciesRaw = JsonSerializer.Deserialize<List<object>>(startingProficienciesDict["armor"].ToString());
+                foreach(var armor in armorProficienciesRaw){
+                    if(armor.ToString().Contains('{')){
+                        var deserializedArmor = JsonSerializer.Deserialize<Dictionary<string, object>>(armor.ToString());
+                        armorProficiencies.Add(deserializedArmor["proficiency"].ToString());
+                    } else {
+                        armorProficiencies.Add(armor.ToString());
+                    }
+                }
+            }
+            List<string> weaponProficiencies = null;
+            if(startingProficienciesDict.ContainsKey("weapons")){
+                weaponProficiencies = new();
+                var weaponproficienciesRaw = JsonSerializer.Deserialize<List<object>>(startingProficienciesDict["weapons"].ToString());
+                foreach(var weapon in weaponproficienciesRaw){
+                    if(weapon.ToString().Contains('{') && weapon.ToString().Contains(',')){
+                        GD.Print(weapon);
+                        var deserializedWapons = JsonSerializer.Deserialize<Dictionary<string, object>>(weapon.ToString());
+                        weaponProficiencies.Add(deserializedWapons["proficiency"].ToString());
+                    } else {
+                        weaponProficiencies.Add(weapon.ToString());
+                    }
+                }
+            }
+            List<string> toolProficiencies = null;
+            if(startingProficienciesDict.ContainsKey("tools")){
+                toolProficiencies = JsonSerializer.Deserialize<List<string>>(startingProficienciesDict["tools"].ToString());
+            }
+            List<string> skillChoices = null;
+            int numSkillChoices = 0;
+            if(startingProficienciesDict.ContainsKey("skills")){
+                var skillDict = JsonSerializer.Deserialize<List<Dictionary<string, object>>>(startingProficienciesDict["skills"].ToString())[0];
+                if(skillDict.ContainsKey("choose")){
+                    var skillChoose = JsonSerializer.Deserialize<Dictionary<string, object>>(skillDict["choose"].ToString());
+                    skillChoices = JsonSerializer.Deserialize<List<string>>(skillChoose["from"].ToString());
+                    numSkillChoices = skillChoose["count"].ToString().ToInt();
+                } else {
+                    skillChoices = new();
+
+                    numSkillChoices = skillDict["any"].ToString().ToInt();
+                    skillChoices.Add("Any");
+
+                }
+            }
+            classes.Add(new(name, source, numHitDie, hitdieType, skillProficiencies, spellcastingAbility, preparedSpells, cantripProgression, armorProficiencies, toolProficiencies, weaponProficiencies, skillChoices, numSkillChoices));
         }
-
-        
-
-
-
-       
-        GD.Print("Primary Ability: " + primaryAbility + "\n\n" +
-            "Hit Point Die: D" + HitPointDie + "per " + name + " level" + "\n" +
-            "Hit points at level 1: " + HitPointDie + " + Con. modifier \n" +
-            "Hit Points per additional Bard Level: D" + HitPointDie + "+ your Con. modifier\n" +
-            "Saving Throw Proficiencies: " + proficiencies[0] + ", "+ proficiencies[1] +
-            "\n\n" + "Skill proficiencies: Choose "+ proficiencySkills +
-            "Weapon Proficiencies: " + weapon[0]);
-
-       
-        GD.Print(proficiencySkills);
-        
-
+    }
+    public static List<DNDclasses> GenerateClasses(){
+        List<DNDclasses> output = new();
+        var classIndex = JsonUtils.ParseJsonFile("user://data/class/index.json");
+        // ReadDndClass(ref output, "class-bard.json");
+        foreach (var c in classIndex) {
+            GD.Print("Class: " + c.Key);
+            ReadDndClass(ref output, c.Value.ToString());
+        }
+        GD.Print("Created Classes list");
+        return output;
     }
 }

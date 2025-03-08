@@ -43,6 +43,7 @@ public partial class DownloadData : Node
 		directories.Add(url+repo+ender);
 		outputLabel.Text = currentStep;
 		// findDirectories();
+		DNDclasses.GenerateClasses();
 	}
 
 	private List<string> directories = new List<string>();

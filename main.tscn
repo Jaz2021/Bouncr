@@ -1,9 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://rvxu80e1mktj"]
+[gd_scene load_steps=2 format=3 uid="uid://dmhx8uupqq2lo"]
 
-[ext_resource type="Script" uid="uid://dqww4elfwn6w7" path="res://Node2d.cs" id="1_ig7tw"]
+[ext_resource type="Script" uid="uid://pwbvr48m4i1u" path="res://DownloadData.cs" id="1_ig7tw"]
 
 [node name="Node2D" type="Node2D"]
-
-[node name="Node2D" type="Node2D" parent="."]
-position = Vector2(137, 96)
 script = ExtResource("1_ig7tw")
+labelPath = NodePath("Label")
+
+[node name="Label" type="Label" parent="."]
+offset_right = 441.0
+offset_bottom = 151.0

@@ -7,9 +7,9 @@ public partial class StoreFileLocation : HttpRequest
 {
 	public string location;
 	// Called when the node enters the scene tree for the first time.
-	private downloadJson dad;
+	private DownloadData dad;
 
-	public StoreFileLocation(downloadJson father){
+	public StoreFileLocation(DownloadData father){
 		// GD.Print("I came into being");
 		dad = father;
 		// Store the controller class

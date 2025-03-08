@@ -5,11 +5,11 @@ using System.Text.RegularExpressions;
 using System.Collections.Generic;
 using System.IO.Enumeration;
 
-public partial class downloadJson : Node
+public partial class DownloadData : Node
 {
 
 	[Export]
-	private string repo = "5etools-mirror-1/5etools-mirror-1.github.io";
+	private string repo = "5etools-mirror-3/5etools-src";
 	private static string url = "https://api.github.com/repos/";
     private static string ender = "/contents/data";
 	public static List<Action> jsonReady;
@@ -22,9 +22,10 @@ public partial class downloadJson : Node
 	// Regex r = new Regex(@"^(.+)\/[^\/]+\.json$");
 	// string directory = r.Match(m).Groups[1].Value; //Combine to get the directory out of a json file name
 	HttpRequest htmlReq;
-	[Export] private NodePath labelPath;
+
 	[Export] private NodePath loadingBarPath;
 	private ColorRect loadingBar;
+	[Export]
 	private Label outputLabel;
 	private const int Requesters = 25;
 	StoreFileLocation[] jsonReqs = new StoreFileLocation[Requesters]; // Running 10 downloaders in parallel, the amount can be configured
@@ -57,7 +58,7 @@ public partial class downloadJson : Node
        		htmlReq.Request(directories[currentIndex - 1]);
 		} else{
 			GD.Print("Done finding");
-			downloadJsons();
+			DownloadJsons();
 		}
 		
 	}
@@ -86,7 +87,7 @@ public partial class downloadJson : Node
 
 	}
 	private int completedJsons = Requesters;
-	private void downloadJsons(){
+	private void DownloadJsons(){
 		if(completedJsons != Requesters){
 			outputLabel.Text = "Downloading json files: " + (currentIndex + completedJsons) + "/" + jsons.Count;
 			loadingBar.AnchorRight = 0.2f + MathF.Round(((float)currentIndex + completedJsons) / jsons.Count * 0.6f, 3);
@@ -125,7 +126,7 @@ public partial class downloadJson : Node
 	public void addToDict(string location, string json){
 		jsonDict.Add(location, json);
 		completedJsons += 1;
-		downloadJsons();
+		DownloadJsons();
 	}
 	private bool finishedRan = false;
 	private async void finished(){

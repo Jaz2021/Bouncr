@@ -3,44 +3,51 @@ using System;
 using System.Collections.Generic;
 using System.Text.Json;
 
-public partial class instantiate_class : VBoxContainer
+public partial class instantiate_subclass : VBoxContainer
 {
+    public static instantiate_subclass instance;
     public override void _Ready()
     {
-        // List<string> classKeys = GetClassKeys();
-        if(Global.instance == null){
-            Global.instance = new();
-            // Global.instance.classes = DNDclasses.GenerateClasses();
-            // Global.instance.races = Races.generateRaceList();
-            Global.instance.spells = Spell.GenerateSpells();
+        if(instance == null){
+            instance = this;
+        } else {
+            QueueFree();
         }
+    }
+    public void updateSubclasses(){
         List<DNDclasses> classKeys =  Global.instance.classes ;
 ;
-        
+        foreach(var child in GetChildren()){
+            child.QueueFree();
+        }
         
         foreach (DNDclasses key in classKeys)
         {
+            if(key.name == global_data.instance.SelectedClass){
+                foreach(Subclasses subclass in key.subclasses){
+                    CheckBox checkbox = new CheckBox
+                    {
+                        Name = subclass.name ,  // Unique name
+                        Text = subclass.name   // Display text
+                    };
+
+                    // Connect the "pressed" signal
+                    checkbox.Toggled += (pressed) => OnCheckboxToggled(checkbox, pressed);
+
+                    // Add to the VBoxContainer
+                    AddChild(checkbox);
+                }
+            }
             GD.Print(key.name);  // Print each class name
-            CheckBox checkbox = new CheckBox
-            {
-                Name = key.name ,  // Unique name
-                Text = key.name   // Display text
-            };
-
-            // Connect the "pressed" signal
-            checkbox.Toggled += (pressed) => OnCheckboxToggled(checkbox, pressed);
-
-            // Add to the VBoxContainer
-            AddChild(checkbox);
+            
         }
     }
-
     private void OnCheckboxToggled(CheckBox selectedCheckbox, bool pressed)
     {
         GD.Print("Pressed class button");
         if (pressed)
         {
-            global_data.instance.SelectedClass = selectedCheckbox.Name;
+            // global_data.instance.SelectedClass = selectedCheckbox.Name;
             foreach (Node child in GetChildren())
             {
                 if (child is CheckBox checkbox && checkbox != selectedCheckbox)
@@ -49,8 +56,7 @@ public partial class instantiate_class : VBoxContainer
                 }
             }
         }
-        instantiate_spell.instance.updateSubClasses();
-        instantiate_subclass.instance.updateSubclasses();
+        // instantiate_spell.instance.updateSubClasses();
     }
 
     private List<string> GetClassKeys()

@@ -1,27 +1,66 @@
-[gd_scene load_steps=2 format=3 uid="uid://dmhx8uupqq2lo"]
+[gd_scene load_steps=3 format=3 uid="uid://dmhx8uupqq2lo"]
 
-[ext_resource type="Script" uid="uid://pwbvr48m4i1u" path="res://DownloadData.cs" id="1_ig7tw"]
+[ext_resource type="Script" uid="uid://deapn6eyhdc7a" path="res://Main.cs" id="1_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://dtkiorbsj1yus" path="res://Scenes/Downloader.tscn" id="2_h2yge"]
 
-[node name="Node2D" type="Node2D" node_paths=PackedStringArray("loadingBar", "outputLabel")]
-script = ExtResource("1_ig7tw")
-loadingBar = NodePath("Control/ColorRect")
-outputLabel = NodePath("Label")
+[node name="Node2D" type="Node2D" node_paths=PackedStringArray("repoEditor", "currentMenu")]
+script = ExtResource("1_0xm2m")
+repoEditor = NodePath("CanvasLayer/OptionSelect/DownloadButton/LineEdit")
+DownloadDataScene = ExtResource("2_h2yge")
+currentMenu = NodePath("CanvasLayer/OptionSelect")
 
-[node name="Label" type="Label" parent="."]
-offset_right = 441.0
-offset_bottom = 151.0
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="Control" type="Control" parent="."]
+[node name="OptionSelect" type="Control" parent="CanvasLayer"]
 layout_mode = 3
-anchors_preset = 0
-offset_right = 1154.0
-offset_bottom = 650.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="ColorRect" type="ColorRect" parent="Control"]
+[node name="DownloadButton" type="Button" parent="CanvasLayer/OptionSelect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.253
+anchor_top = 0.21
+anchor_right = 0.721
+anchor_bottom = 0.418
+offset_left = -0.456024
+offset_top = -0.0800018
+offset_right = -225.592
+offset_bottom = 0.135986
+text = "Download Files"
+
+[node name="LineEdit" type="LineEdit" parent="CanvasLayer/OptionSelect/DownloadButton"]
 layout_mode = 0
-offset_left = 171.0
-offset_top = 83.0
-offset_right = 211.0
-offset_bottom = 123.0
+offset_left = 330.0
+offset_right = 540.0
+offset_bottom = 136.0
+text = "5etools-mirror-3/5etools-src"
+placeholder_text = "Github Rpositor"
 
-[node name="Node2D" type="Node2D" parent="."]
+[node name="Label" type="Label" parent="CanvasLayer/OptionSelect/DownloadButton/LineEdit"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.382
+offset_right = -3.0
+offset_bottom = 0.0479965
+text = "Github Repository:"
+
+[node name="Button2" type="Button" parent="CanvasLayer/OptionSelect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.256
+anchor_top = 0.457
+anchor_right = 0.714
+anchor_bottom = 0.665
+offset_left = 0.0879822
+offset_top = -0.136017
+offset_right = 0.471924
+offset_bottom = 0.0799866
+text = "Use Saved Files"
+
+[connection signal="pressed" from="CanvasLayer/OptionSelect/DownloadButton" to="." method="DownloadButtonPressed"]
+[connection signal="pressed" from="CanvasLayer/OptionSelect/Button2" to="." method="ParseButtonPressed"]

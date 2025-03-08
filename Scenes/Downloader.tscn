@@ -1,0 +1,60 @@
+[gd_scene load_steps=2 format=3 uid="uid://dtkiorbsj1yus"]
+
+[ext_resource type="Script" uid="uid://pwbvr48m4i1u" path="res://DownloadData.cs" id="1_v156f"]
+
+[node name="Control" type="Control" node_paths=PackedStringArray("loadingBar", "outputLabel")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_v156f")
+loadingBar = NodePath("ColorRect/ColorRect/ColorRect")
+outputLabel = NodePath("ColorRect/Label")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.1
+anchor_top = 0.1
+anchor_right = 0.9
+anchor_bottom = 0.9
+offset_left = 0.071991
+offset_top = 0.183998
+offset_right = 0.263916
+offset_bottom = -0.216064
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0.180392, 0, 1)
+
+[node name="Label" type="Label" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.25
+anchor_top = 0.2
+anchor_right = 0.75
+anchor_bottom = 0.3
+offset_left = 0.436447
+offset_top = 0.064003
+offset_right = 0.138855
+offset_bottom = 0.205994
+
+[node name="ColorRect" type="ColorRect" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.25
+anchor_top = 0.5
+anchor_right = 0.75
+anchor_bottom = 0.6
+offset_left = 0.239197
+offset_top = 0.216019
+offset_right = 0.404724
+offset_bottom = -0.187988
+color = Color(0.584314, 0, 0, 1)
+
+[node name="ColorRect" type="ColorRect" parent="ColorRect/ColorRect"]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+color = Color(0, 0.619608, 0.196078, 1)

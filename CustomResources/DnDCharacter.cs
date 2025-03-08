@@ -108,7 +108,7 @@ public partial class DnDCharacter : Resource
     // [Export] public List<Skill> Skills = new List<Skill>();
     // [Export] public List<Item> Inventory = new List<Item>();
     [Export] public Godot.Collections.Array<string> Items;// = Godot.Collections.Array<Spell>();
-    [Export] public Godot.Collections.Array<Spell> Spells;// = Godot.Collections.Array<Spell>();
+    [Export] public Godot.Collections.Array<string> Spells;// = Godot.Collections.Array<Spell>();
     // [Export] public List<string> Features = new List<string>();
 
     // /// <summary>

@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://rvxu80e1mktj"]
+[gd_scene load_steps=3 format=3 uid="uid://rvxu80e1mktj"]
 
-[ext_resource type="Script" path="res://DownloadData.cs" id="1_ig7tw"]
+[ext_resource type="Script" uid="uid://pwbvr48m4i1u" path="res://DownloadData.cs" id="1_ig7tw"]
+[ext_resource type="Script" path="res://DNDclasses.cs" id="2_0xm2m"]
 
 [node name="Node2D" type="Node2D" node_paths=PackedStringArray("loadingBar", "outputLabel")]
 script = ExtResource("1_ig7tw")
@@ -25,3 +26,6 @@ offset_left = 171.0
 offset_top = 83.0
 offset_right = 211.0
 offset_bottom = 123.0
+
+[node name="Node2D" type="Node2D" parent="."]
+script = ExtResource("2_0xm2m")

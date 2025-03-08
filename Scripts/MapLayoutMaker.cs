@@ -6,17 +6,13 @@ using System.Security.Cryptography.X509Certificates;
 
 public partial class MapLayoutMaker : FileDialog
 {
-	// private TextureRect textureRect;
-	//private ImageTexture imageTexture;
 	private Image image;
-	//private Button openButton;
 	[Export] public FileDialog fileDialog;
 	[Export] public Button convertButton;
 
 	public override void _Ready()
 	{
 		convertButton.Pressed += () => OnOpenButtonPressed(); // Correct event binding
-		//fileDialog.FileSelected += OnFileSelected;
 		
 	}
 
@@ -34,7 +30,6 @@ public partial class MapLayoutMaker : FileDialog
 			GD.Print("Failed to load image");
 			return;
 		}
-		GD.Print("Made thru LoadImage");
 	DrawGridOnImage();
 	}
 
@@ -43,7 +38,7 @@ public partial class MapLayoutMaker : FileDialog
 	int gridSize = 50;
 	int width = image.GetWidth();
 	int height = image.GetHeight();
-	Color gridColor = new Color(1, 0, 0, 1); // red, use (0, 0, 0, 1) for black
+	Color gridColor = new Color(0, 0, 0, 1);
 
 	for (int x = 0; x < width; x += gridSize)
 		{

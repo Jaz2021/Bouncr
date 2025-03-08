@@ -6,6 +6,7 @@ public partial class Main : Node
     [Export] private LineEdit repoEditor;
     [Export] private PackedScene DownloadDataScene;
     [Export] private Control currentMenu;
+    [Export] private PackedScene mainMenu;
 
     public override void _Ready()
     {
@@ -47,6 +48,7 @@ public partial class Main : Node
         Global.instance.spells = Spell.GenerateSpells(); 
         GD.Print("Classes initialized!");
 
-
+        var mm = mainMenu.Instantiate<Control>();
+        GetChild(0).AddChild(mm);
     }
 }

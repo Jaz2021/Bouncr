@@ -1,10 +1,11 @@
 using Godot;
 using System;
 
-public partial class Node2d : Node2D
+public partial class GetJsonFile : Node2D
 {
     public override void _Ready()
     {
-        base._Ready();
+        
     }
 }
+as

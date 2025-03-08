@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dqbleu2qq81sc"]
 
-[ext_resource type="Script" uid="uid://bnwtryeop4s5" path="res://UI/UI_Scripts/SwapScenes.cs" id="1_wvoxj"]
+[ext_resource type="Script" uid="uid://bnwtryeop4s5" path="res://UI/UI/UI_Scripts/SwapScenes.cs" id="1_wvoxj"]
 
 [node name="SwitchScene" type="Node"]
 script = ExtResource("1_wvoxj")

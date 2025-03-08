@@ -16,646 +16,642 @@ grow_vertical = 2
 [node name="VBStatBlock" type="VBoxContainer" parent="."]
 layout_mode = 2
 
-[node name="ScrollContainer" type="ScrollContainer" parent="VBStatBlock"]
-layout_mode = 2
-vertical_scroll_mode = 2
-
-[node name="HBoxContainer" type="HBoxContainer" parent="VBStatBlock/ScrollContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="VBStatBlock"]
 layout_mode = 2
 
-[node name="Stats" type="PanelContainer" parent="VBStatBlock/ScrollContainer/HBoxContainer"]
+[node name="Stats" type="PanelContainer" parent="VBStatBlock/HBoxContainer"]
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_mgkn3")
 
-[node name="VBStats" type="VBoxContainer" parent="VBStatBlock/ScrollContainer/HBoxContainer/Stats"]
+[node name="VBStats" type="VBoxContainer" parent="VBStatBlock/HBoxContainer/Stats"]
 layout_mode = 2
 
-[node name="VBStr" type="VBoxContainer" parent="VBStatBlock/ScrollContainer/HBoxContainer/Stats/VBStats"]
+[node name="VBStr" type="VBoxContainer" parent="VBStatBlock/HBoxContainer/Stats/VBStats"]
 layout_mode = 2
 theme_override_constants/separation = 0
 
-[node name="Label" type="Label" parent="VBStatBlock/ScrollContainer/HBoxContainer/Stats/VBStats/VBStr"]
+[node name="Label" type="Label" parent="VBStatBlock/HBoxContainer/Stats/VBStats/VBStr"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 11
 text = "Strength"
 horizontal_alignment = 1
 
-[node name="number" type="LineEdit" parent="VBStatBlock/ScrollContainer/HBoxContainer/Stats/VBStats/VBStr"]
+[node name="number" type="LineEdit" parent="VBStatBlock/HBoxContainer/Stats/VBStats/VBStr"]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 placeholder_text = "STR"
 alignment = 1
 
-[node name="LineEdit" type="LineEdit" parent="VBStatBlock/ScrollContainer/HBoxContainer/Stats/VBStats/VBStr"]
+[node name="LineEdit" type="LineEdit" parent="VBStatBlock/HBoxContainer/Stats/VBStats/VBStr"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 12
 placeholder_text = "Mod"
 alignment = 1
 
-[node name="VBDex" type="VBoxContainer" parent="VBStatBlock/ScrollContainer/HBoxContainer/Stats/VBStats"]
+[node name="VBDex" type="VBoxContainer" parent="VBStatBlock/HBoxContainer/Stats/VBStats"]
 layout_mode = 2
 theme_override_constants/separation = 0
 
-[node name="Label" type="Label" parent="VBStatBlock/ScrollContainer/HBoxContainer/Stats/VBStats/VBDex"]
+[node name="Label" type="Label" parent="VBStatBlock/HBoxContainer/Stats/VBStats/VBDex"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 11
 text = "Dexterity"
 horizontal_alignment = 1
 
-[node name="number" type="LineEdit" parent="VBStatBlock/ScrollContainer/HBoxContainer/Stats/VBStats/VBDex"]
+[node name="number" type="LineEdit" parent="VBStatBlock/HBoxContainer/Stats/VBStats/VBDex"]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 placeholder_text = "DEX"
 alignment = 1
 
-[node name="LineEdit" type="LineEdit" parent="VBStatBlock/ScrollContainer/HBoxContainer/Stats/VBStats/VBDex"]
+[node name="LineEdit" type="LineEdit" parent="VBStatBlock/HBoxContainer/Stats/VBStats/VBDex"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 12
 placeholder_text = "Mod"
 alignment = 1
 
-[node name="VBCon" type="VBoxContainer" parent="VBStatBlock/ScrollContainer/HBoxContainer/Stats/VBStats"]
+[node name="VBCon" type="VBoxContainer" parent="VBStatBlock/HBoxContainer/Stats/VBStats"]
 layout_mode = 2
 theme_override_constants/separation = 0
 
-[node name="Label" type="Label" parent="VBStatBlock/ScrollContainer/HBoxContainer/Stats/VBStats/VBCon"]
+[node name="Label" type="Label" parent="VBStatBlock/HBoxContainer/Stats/VBStats/VBCon"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 11
 text = "Constitution"
 horizontal_alignment = 1
 
-[node name="number" type="LineEdit" parent="VBStatBlock/ScrollContainer/HBoxContainer/Stats/VBStats/VBCon"]
+[node name="number" type="LineEdit" parent="VBStatBlock/HBoxContainer/Stats/VBStats/VBCon"]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 placeholder_text = "CON"
 alignment = 1
 
-[node name="LineEdit" type="LineEdit" parent="VBStatBlock/ScrollContainer/HBoxContainer/Stats/VBStats/VBCon"]
+[node name="LineEdit" type="LineEdit" parent="VBStatBlock/HBoxContainer/Stats/VBStats/VBCon"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 12
 placeholder_text = "Mod"
 alignment = 1
 
-[node name="VBInt" type="VBoxContainer" parent="VBStatBlock/ScrollContainer/HBoxContainer/Stats/VBStats"]
+[node name="VBInt" type="VBoxContainer" parent="VBStatBlock/HBoxContainer/Stats/VBStats"]
 layout_mode = 2
 theme_override_constants/separation = 0
 
-[node name="Label" type="Label" parent="VBStatBlock/ScrollContainer/HBoxContainer/Stats/VBStats/VBInt"]
+[node name="Label" type="Label" parent="VBStatBlock/HBoxContainer/Stats/VBStats/VBInt"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 11
 text = "Intelligence"
 horizontal_alignment = 1
 
-[node name="number" type="LineEdit" parent="VBStatBlock/ScrollContainer/HBoxContainer/Stats/VBStats/VBInt"]
+[node name="number" type="LineEdit" parent="VBStatBlock/HBoxContainer/Stats/VBStats/VBInt"]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 placeholder_text = "INT"
 alignment = 1
 
-[node name="LineEdit" type="LineEdit" parent="VBStatBlock/ScrollContainer/HBoxContainer/Stats/VBStats/VBInt"]
+[node name="LineEdit" type="LineEdit" parent="VBStatBlock/HBoxContainer/Stats/VBStats/VBInt"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 12
 placeholder_text = "Mod"
 alignment = 1
 
-[node name="VBWis" type="VBoxContainer" parent="VBStatBlock/ScrollContainer/HBoxContainer/Stats/VBStats"]
+[node name="VBWis" type="VBoxContainer" parent="VBStatBlock/HBoxContainer/Stats/VBStats"]
 layout_mode = 2
 theme_override_constants/separation = 0
 
-[node name="Label" type="Label" parent="VBStatBlock/ScrollContainer/HBoxContainer/Stats/VBStats/VBWis"]
+[node name="Label" type="Label" parent="VBStatBlock/HBoxContainer/Stats/VBStats/VBWis"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 11
 text = "Wisdom"
 horizontal_alignment = 1
 
-[node name="number" type="LineEdit" parent="VBStatBlock/ScrollContainer/HBoxContainer/Stats/VBStats/VBWis"]
+[node name="number" type="LineEdit" parent="VBStatBlock/HBoxContainer/Stats/VBStats/VBWis"]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 placeholder_text = "WIS"
 alignment = 1
 
-[node name="LineEdit" type="LineEdit" parent="VBStatBlock/ScrollContainer/HBoxContainer/Stats/VBStats/VBWis"]
+[node name="LineEdit" type="LineEdit" parent="VBStatBlock/HBoxContainer/Stats/VBStats/VBWis"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 12
 placeholder_text = "Mod"
 alignment = 1
 
-[node name="VBCha" type="VBoxContainer" parent="VBStatBlock/ScrollContainer/HBoxContainer/Stats/VBStats"]
+[node name="VBCha" type="VBoxContainer" parent="VBStatBlock/HBoxContainer/Stats/VBStats"]
 layout_mode = 2
 theme_override_constants/separation = 0
 
-[node name="Label" type="Label" parent="VBStatBlock/ScrollContainer/HBoxContainer/Stats/VBStats/VBCha"]
+[node name="Label" type="Label" parent="VBStatBlock/HBoxContainer/Stats/VBStats/VBCha"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 11
 text = "Charisma"
 horizontal_alignment = 1
 
-[node name="number" type="LineEdit" parent="VBStatBlock/ScrollContainer/HBoxContainer/Stats/VBStats/VBCha"]
+[node name="number" type="LineEdit" parent="VBStatBlock/HBoxContainer/Stats/VBStats/VBCha"]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 placeholder_text = "CHA"
 alignment = 1
 
-[node name="LineEdit" type="LineEdit" parent="VBStatBlock/ScrollContainer/HBoxContainer/Stats/VBStats/VBCha"]
+[node name="LineEdit" type="LineEdit" parent="VBStatBlock/HBoxContainer/Stats/VBStats/VBCha"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 12
 placeholder_text = "Mod"
 alignment = 1
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="VBStatBlock/ScrollContainer/HBoxContainer"]
+[node name="VBoxContainer2" type="VBoxContainer" parent="VBStatBlock/HBoxContainer"]
 layout_mode = 2
 theme_override_constants/separation = 2
 
-[node name="Inspiration" type="PanelContainer" parent="VBStatBlock/ScrollContainer/HBoxContainer/VBoxContainer2"]
+[node name="Inspiration" type="PanelContainer" parent="VBStatBlock/HBoxContainer/VBoxContainer2"]
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_w7oqx")
 
-[node name="VBInspiration" type="VBoxContainer" parent="VBStatBlock/ScrollContainer/HBoxContainer/VBoxContainer2/Inspiration"]
+[node name="VBInspiration" type="VBoxContainer" parent="VBStatBlock/HBoxContainer/VBoxContainer2/Inspiration"]
 layout_mode = 2
 theme_override_constants/separation = 0
 
-[node name="HBInspiration" type="HBoxContainer" parent="VBStatBlock/ScrollContainer/HBoxContainer/VBoxContainer2/Inspiration/VBInspiration"]
+[node name="HBInspiration" type="HBoxContainer" parent="VBStatBlock/HBoxContainer/VBoxContainer2/Inspiration/VBInspiration"]
 layout_mode = 2
 
-[node name="LineEdit" type="LineEdit" parent="VBStatBlock/ScrollContainer/HBoxContainer/VBoxContainer2/Inspiration/VBInspiration/HBInspiration"]
+[node name="LineEdit" type="LineEdit" parent="VBStatBlock/HBoxContainer/VBoxContainer2/Inspiration/VBInspiration/HBInspiration"]
 layout_mode = 2
 theme_override_constants/minimum_character_width = 2
 theme_override_font_sizes/font_size = 12
 placeholder_text = "0"
 alignment = 1
 
-[node name="Label" type="Label" parent="VBStatBlock/ScrollContainer/HBoxContainer/VBoxContainer2/Inspiration/VBInspiration/HBInspiration"]
+[node name="Label" type="Label" parent="VBStatBlock/HBoxContainer/VBoxContainer2/Inspiration/VBInspiration/HBInspiration"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 12
 text = "Inspiration"
 
-[node name="ProficiencyBonus" type="PanelContainer" parent="VBStatBlock/ScrollContainer/HBoxContainer/VBoxContainer2"]
+[node name="ProficiencyBonus" type="PanelContainer" parent="VBStatBlock/HBoxContainer/VBoxContainer2"]
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_w7oqx")
 
-[node name="VBProficiencyBonus" type="VBoxContainer" parent="VBStatBlock/ScrollContainer/HBoxContainer/VBoxContainer2/ProficiencyBonus"]
+[node name="VBProficiencyBonus" type="VBoxContainer" parent="VBStatBlock/HBoxContainer/VBoxContainer2/ProficiencyBonus"]
 layout_mode = 2
 theme_override_constants/separation = 0
 
-[node name="HBProficiencyBonus" type="HBoxContainer" parent="VBStatBlock/ScrollContainer/HBoxContainer/VBoxContainer2/ProficiencyBonus/VBProficiencyBonus"]
+[node name="HBProficiencyBonus" type="HBoxContainer" parent="VBStatBlock/HBoxContainer/VBoxContainer2/ProficiencyBonus/VBProficiencyBonus"]
 layout_mode = 2
 
-[node name="LineEdit" type="LineEdit" parent="VBStatBlock/ScrollContainer/HBoxContainer/VBoxContainer2/ProficiencyBonus/VBProficiencyBonus/HBProficiencyBonus"]
+[node name="LineEdit" type="LineEdit" parent="VBStatBlock/HBoxContainer/VBoxContainer2/ProficiencyBonus/VBProficiencyBonus/HBProficiencyBonus"]
 layout_mode = 2
 theme_override_constants/minimum_character_width = 2
 theme_override_font_sizes/font_size = 12
 placeholder_text = "0"
 alignment = 1
 
-[node name="Label" type="Label" parent="VBStatBlock/ScrollContainer/HBoxContainer/VBoxContainer2/ProficiencyBonus/VBProficiencyBonus/HBProficiencyBonus"]
+[node name="Label" type="Label" parent="VBStatBlock/HBoxContainer/VBoxContainer2/ProficiencyBonus/VBProficiencyBonus/HBProficiencyBonus"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 12
 text = "Proficiency Bonus"
 
-[node name="SavingThrows" type="PanelContainer" parent="VBStatBlock/ScrollContainer/HBoxContainer/VBoxContainer2"]
+[node name="SavingThrows" type="PanelContainer" parent="VBStatBlock/HBoxContainer/VBoxContainer2"]
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_w7oqx")
 
-[node name="VBSavingThrows" type="VBoxContainer" parent="VBStatBlock/ScrollContainer/HBoxContainer/VBoxContainer2/SavingThrows"]
+[node name="VBSavingThrows" type="VBoxContainer" parent="VBStatBlock/HBoxContainer/VBoxContainer2/SavingThrows"]
 layout_mode = 2
 theme_override_constants/separation = -1
 
-[node name="HBStrength" type="HBoxContainer" parent="VBStatBlock/ScrollContainer/HBoxContainer/VBoxContainer2/SavingThrows/VBSavingThrows"]
+[node name="HBStrength" type="HBoxContainer" parent="VBStatBlock/HBoxContainer/VBoxContainer2/SavingThrows/VBSavingThrows"]
 layout_mode = 2
 
-[node name="CheckBox" type="CheckBox" parent="VBStatBlock/ScrollContainer/HBoxContainer/VBoxContainer2/SavingThrows/VBSavingThrows/HBStrength"]
+[node name="CheckBox" type="CheckBox" parent="VBStatBlock/HBoxContainer/VBoxContainer2/SavingThrows/VBSavingThrows/HBStrength"]
 layout_mode = 2
 
-[node name="LineEdit" type="LineEdit" parent="VBStatBlock/ScrollContainer/HBoxContainer/VBoxContainer2/SavingThrows/VBSavingThrows/HBStrength"]
+[node name="LineEdit" type="LineEdit" parent="VBStatBlock/HBoxContainer/VBoxContainer2/SavingThrows/VBSavingThrows/HBStrength"]
 layout_mode = 2
 theme_override_constants/minimum_character_width = 2
 theme_override_font_sizes/font_size = 10
 placeholder_text = "0"
 alignment = 1
 
-[node name="Label" type="Label" parent="VBStatBlock/ScrollContainer/HBoxContainer/VBoxContainer2/SavingThrows/VBSavingThrows/HBStrength"]
+[node name="Label" type="Label" parent="VBStatBlock/HBoxContainer/VBoxContainer2/SavingThrows/VBSavingThrows/HBStrength"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 12
 text = "Strength"
 
-[node name="HBDexterity" type="HBoxContainer" parent="VBStatBlock/ScrollContainer/HBoxContainer/VBoxContainer2/SavingThrows/VBSavingThrows"]
+[node name="HBDexterity" type="HBoxContainer" parent="VBStatBlock/HBoxContainer/VBoxContainer2/SavingThrows/VBSavingThrows"]
 layout_mode = 2
 
-[node name="CheckBox" type="CheckBox" parent="VBStatBlock/ScrollContainer/HBoxContainer/VBoxContainer2/SavingThrows/VBSavingThrows/HBDexterity"]
+[node name="CheckBox" type="CheckBox" parent="VBStatBlock/HBoxContainer/VBoxContainer2/SavingThrows/VBSavingThrows/HBDexterity"]
 layout_mode = 2
 
-[node name="LineEdit" type="LineEdit" parent="VBStatBlock/ScrollContainer/HBoxContainer/VBoxContainer2/SavingThrows/VBSavingThrows/HBDexterity"]
+[node name="LineEdit" type="LineEdit" parent="VBStatBlock/HBoxContainer/VBoxContainer2/SavingThrows/VBSavingThrows/HBDexterity"]
 layout_mode = 2
 theme_override_constants/minimum_character_width = 2
 theme_override_font_sizes/font_size = 10
 placeholder_text = "0"
 alignment = 1
 
-[node name="Label" type="Label" parent="VBStatBlock/ScrollContainer/HBoxContainer/VBoxContainer2/SavingThrows/VBSavingThrows/HBDexterity"]
+[node name="Label" type="Label" parent="VBStatBlock/HBoxContainer/VBoxContainer2/SavingThrows/VBSavingThrows/HBDexterity"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 12
 text = "Dexterity"
 
-[node name="HBConstitution" type="HBoxContainer" parent="VBStatBlock/ScrollContainer/HBoxContainer/VBoxContainer2/SavingThrows/VBSavingThrows"]
+[node name="HBConstitution" type="HBoxContainer" parent="VBStatBlock/HBoxContainer/VBoxContainer2/SavingThrows/VBSavingThrows"]
 layout_mode = 2
 
-[node name="CheckBox" type="CheckBox" parent="VBStatBlock/ScrollContainer/HBoxContainer/VBoxContainer2/SavingThrows/VBSavingThrows/HBConstitution"]
+[node name="CheckBox" type="CheckBox" parent="VBStatBlock/HBoxContainer/VBoxContainer2/SavingThrows/VBSavingThrows/HBConstitution"]
 layout_mode = 2
 
-[node name="LineEdit" type="LineEdit" parent="VBStatBlock/ScrollContainer/HBoxContainer/VBoxContainer2/SavingThrows/VBSavingThrows/HBConstitution"]
+[node name="LineEdit" type="LineEdit" parent="VBStatBlock/HBoxContainer/VBoxContainer2/SavingThrows/VBSavingThrows/HBConstitution"]
 layout_mode = 2
 theme_override_constants/minimum_character_width = 2
 theme_override_font_sizes/font_size = 10
 placeholder_text = "0"
 alignment = 1
 
-[node name="Label" type="Label" parent="VBStatBlock/ScrollContainer/HBoxContainer/VBoxContainer2/SavingThrows/VBSavingThrows/HBConstitution"]
+[node name="Label" type="Label" parent="VBStatBlock/HBoxContainer/VBoxContainer2/SavingThrows/VBSavingThrows/HBConstitution"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 12
 text = "Constitution"
 
-[node name="HBIntelligence" type="HBoxContainer" parent="VBStatBlock/ScrollContainer/HBoxContainer/VBoxContainer2/SavingThrows/VBSavingThrows"]
+[node name="HBIntelligence" type="HBoxContainer" parent="VBStatBlock/HBoxContainer/VBoxContainer2/SavingThrows/VBSavingThrows"]
 layout_mode = 2
 
-[node name="CheckBox" type="CheckBox" parent="VBStatBlock/ScrollContainer/HBoxContainer/VBoxContainer2/SavingThrows/VBSavingThrows/HBIntelligence"]
+[node name="CheckBox" type="CheckBox" parent="VBStatBlock/HBoxContainer/VBoxContainer2/SavingThrows/VBSavingThrows/HBIntelligence"]
 layout_mode = 2
 
-[node name="LineEdit" type="LineEdit" parent="VBStatBlock/ScrollContainer/HBoxContainer/VBoxContainer2/SavingThrows/VBSavingThrows/HBIntelligence"]
+[node name="LineEdit" type="LineEdit" parent="VBStatBlock/HBoxContainer/VBoxContainer2/SavingThrows/VBSavingThrows/HBIntelligence"]
 layout_mode = 2
 theme_override_constants/minimum_character_width = 2
 theme_override_font_sizes/font_size = 10
 placeholder_text = "0"
 alignment = 1
 
-[node name="Label" type="Label" parent="VBStatBlock/ScrollContainer/HBoxContainer/VBoxContainer2/SavingThrows/VBSavingThrows/HBIntelligence"]
+[node name="Label" type="Label" parent="VBStatBlock/HBoxContainer/VBoxContainer2/SavingThrows/VBSavingThrows/HBIntelligence"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 12
 text = "Intelligence"
 
-[node name="HBWisdom" type="HBoxContainer" parent="VBStatBlock/ScrollContainer/HBoxContainer/VBoxContainer2/SavingThrows/VBSavingThrows"]
+[node name="HBWisdom" type="HBoxContainer" parent="VBStatBlock/HBoxContainer/VBoxContainer2/SavingThrows/VBSavingThrows"]
 layout_mode = 2
 
-[node name="CheckBox" type="CheckBox" parent="VBStatBlock/ScrollContainer/HBoxContainer/VBoxContainer2/SavingThrows/VBSavingThrows/HBWisdom"]
+[node name="CheckBox" type="CheckBox" parent="VBStatBlock/HBoxContainer/VBoxContainer2/SavingThrows/VBSavingThrows/HBWisdom"]
 layout_mode = 2
 
-[node name="LineEdit" type="LineEdit" parent="VBStatBlock/ScrollContainer/HBoxContainer/VBoxContainer2/SavingThrows/VBSavingThrows/HBWisdom"]
+[node name="LineEdit" type="LineEdit" parent="VBStatBlock/HBoxContainer/VBoxContainer2/SavingThrows/VBSavingThrows/HBWisdom"]
 layout_mode = 2
 theme_override_constants/minimum_character_width = 2
 theme_override_font_sizes/font_size = 10
 placeholder_text = "0"
 alignment = 1
 
-[node name="Label" type="Label" parent="VBStatBlock/ScrollContainer/HBoxContainer/VBoxContainer2/SavingThrows/VBSavingThrows/HBWisdom"]
+[node name="Label" type="Label" parent="VBStatBlock/HBoxContainer/VBoxContainer2/SavingThrows/VBSavingThrows/HBWisdom"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 12
 text = "Wisdom"
 
-[node name="HBCharisma" type="HBoxContainer" parent="VBStatBlock/ScrollContainer/HBoxContainer/VBoxContainer2/SavingThrows/VBSavingThrows"]
+[node name="HBCharisma" type="HBoxContainer" parent="VBStatBlock/HBoxContainer/VBoxContainer2/SavingThrows/VBSavingThrows"]
 layout_mode = 2
 
-[node name="CheckBox" type="CheckBox" parent="VBStatBlock/ScrollContainer/HBoxContainer/VBoxContainer2/SavingThrows/VBSavingThrows/HBCharisma"]
+[node name="CheckBox" type="CheckBox" parent="VBStatBlock/HBoxContainer/VBoxContainer2/SavingThrows/VBSavingThrows/HBCharisma"]
 layout_mode = 2
 
-[node name="LineEdit" type="LineEdit" parent="VBStatBlock/ScrollContainer/HBoxContainer/VBoxContainer2/SavingThrows/VBSavingThrows/HBCharisma"]
+[node name="LineEdit" type="LineEdit" parent="VBStatBlock/HBoxContainer/VBoxContainer2/SavingThrows/VBSavingThrows/HBCharisma"]
 layout_mode = 2
 theme_override_constants/minimum_character_width = 2
 theme_override_font_sizes/font_size = 10
 placeholder_text = "0"
 alignment = 1
 
-[node name="Label" type="Label" parent="VBStatBlock/ScrollContainer/HBoxContainer/VBoxContainer2/SavingThrows/VBSavingThrows/HBCharisma"]
+[node name="Label" type="Label" parent="VBStatBlock/HBoxContainer/VBoxContainer2/SavingThrows/VBSavingThrows/HBCharisma"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 12
 text = "Charisma"
 
-[node name="Skills" type="PanelContainer" parent="VBStatBlock/ScrollContainer/HBoxContainer/VBoxContainer2"]
+[node name="Skills" type="PanelContainer" parent="VBStatBlock/HBoxContainer/VBoxContainer2"]
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_w7oqx")
 
-[node name="VBSavingThrows" type="VBoxContainer" parent="VBStatBlock/ScrollContainer/HBoxContainer/VBoxContainer2/Skills"]
+[node name="VBSavingThrows" type="VBoxContainer" parent="VBStatBlock/HBoxContainer/VBoxContainer2/Skills"]
 layout_mode = 2
 theme_override_constants/separation = -3
 
-[node name="HBAcrobatics" type="HBoxContainer" parent="VBStatBlock/ScrollContainer/HBoxContainer/VBoxContainer2/Skills/VBSavingThrows"]
+[node name="HBAcrobatics" type="HBoxContainer" parent="VBStatBlock/HBoxContainer/VBoxContainer2/Skills/VBSavingThrows"]
 layout_mode = 2
 
-[node name="CheckBox" type="CheckBox" parent="VBStatBlock/ScrollContainer/HBoxContainer/VBoxContainer2/Skills/VBSavingThrows/HBAcrobatics"]
+[node name="CheckBox" type="CheckBox" parent="VBStatBlock/HBoxContainer/VBoxContainer2/Skills/VBSavingThrows/HBAcrobatics"]
 layout_mode = 2
 
-[node name="LineEdit" type="LineEdit" parent="VBStatBlock/ScrollContainer/HBoxContainer/VBoxContainer2/Skills/VBSavingThrows/HBAcrobatics"]
+[node name="LineEdit" type="LineEdit" parent="VBStatBlock/HBoxContainer/VBoxContainer2/Skills/VBSavingThrows/HBAcrobatics"]
 layout_mode = 2
 theme_override_constants/minimum_character_width = 2
 theme_override_font_sizes/font_size = 10
 placeholder_text = "0"
 alignment = 1
 
-[node name="Label" type="Label" parent="VBStatBlock/ScrollContainer/HBoxContainer/VBoxContainer2/Skills/VBSavingThrows/HBAcrobatics"]
+[node name="Label" type="Label" parent="VBStatBlock/HBoxContainer/VBoxContainer2/Skills/VBSavingThrows/HBAcrobatics"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 12
 text = "Acrobatics (Dex)"
 
-[node name="HBAnimalHandling" type="HBoxContainer" parent="VBStatBlock/ScrollContainer/HBoxContainer/VBoxContainer2/Skills/VBSavingThrows"]
+[node name="HBAnimalHandling" type="HBoxContainer" parent="VBStatBlock/HBoxContainer/VBoxContainer2/Skills/VBSavingThrows"]
 layout_mode = 2
 
-[node name="CheckBox" type="CheckBox" parent="VBStatBlock/ScrollContainer/HBoxContainer/VBoxContainer2/Skills/VBSavingThrows/HBAnimalHandling"]
+[node name="CheckBox" type="CheckBox" parent="VBStatBlock/HBoxContainer/VBoxContainer2/Skills/VBSavingThrows/HBAnimalHandling"]
 layout_mode = 2
 
-[node name="LineEdit" type="LineEdit" parent="VBStatBlock/ScrollContainer/HBoxContainer/VBoxContainer2/Skills/VBSavingThrows/HBAnimalHandling"]
+[node name="LineEdit" type="LineEdit" parent="VBStatBlock/HBoxContainer/VBoxContainer2/Skills/VBSavingThrows/HBAnimalHandling"]
 layout_mode = 2
 theme_override_constants/minimum_character_width = 2
 theme_override_font_sizes/font_size = 10
 placeholder_text = "0"
 alignment = 1
 
-[node name="Label" type="Label" parent="VBStatBlock/ScrollContainer/HBoxContainer/VBoxContainer2/Skills/VBSavingThrows/HBAnimalHandling"]
+[node name="Label" type="Label" parent="VBStatBlock/HBoxContainer/VBoxContainer2/Skills/VBSavingThrows/HBAnimalHandling"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 12
 text = "Animal Handling (Wis)"
 
-[node name="HBArcana" type="HBoxContainer" parent="VBStatBlock/ScrollContainer/HBoxContainer/VBoxContainer2/Skills/VBSavingThrows"]
+[node name="HBArcana" type="HBoxContainer" parent="VBStatBlock/HBoxContainer/VBoxContainer2/Skills/VBSavingThrows"]
 layout_mode = 2
 
-[node name="CheckBox" type="CheckBox" parent="VBStatBlock/ScrollContainer/HBoxContainer/VBoxContainer2/Skills/VBSavingThrows/HBArcana"]
+[node name="CheckBox" type="CheckBox" parent="VBStatBlock/HBoxContainer/VBoxContainer2/Skills/VBSavingThrows/HBArcana"]
 layout_mode = 2
 
-[node name="LineEdit" type="LineEdit" parent="VBStatBlock/ScrollContainer/HBoxContainer/VBoxContainer2/Skills/VBSavingThrows/HBArcana"]
+[node name="LineEdit" type="LineEdit" parent="VBStatBlock/HBoxContainer/VBoxContainer2/Skills/VBSavingThrows/HBArcana"]
 layout_mode = 2
 theme_override_constants/minimum_character_width = 2
 theme_override_font_sizes/font_size = 10
 placeholder_text = "0"
 alignment = 1
 
-[node name="Label" type="Label" parent="VBStatBlock/ScrollContainer/HBoxContainer/VBoxContainer2/Skills/VBSavingThrows/HBArcana"]
+[node name="Label" type="Label" parent="VBStatBlock/HBoxContainer/VBoxContainer2/Skills/VBSavingThrows/HBArcana"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 12
 text = "Arcana (Int)"
 
-[node name="HBAthletics" type="HBoxContainer" parent="VBStatBlock/ScrollContainer/HBoxContainer/VBoxContainer2/Skills/VBSavingThrows"]
+[node name="HBAthletics" type="HBoxContainer" parent="VBStatBlock/HBoxContainer/VBoxContainer2/Skills/VBSavingThrows"]
 layout_mode = 2
 
-[node name="CheckBox" type="CheckBox" parent="VBStatBlock/ScrollContainer/HBoxContainer/VBoxContainer2/Skills/VBSavingThrows/HBAthletics"]
+[node name="CheckBox" type="CheckBox" parent="VBStatBlock/HBoxContainer/VBoxContainer2/Skills/VBSavingThrows/HBAthletics"]
 layout_mode = 2
 
-[node name="LineEdit" type="LineEdit" parent="VBStatBlock/ScrollContainer/HBoxContainer/VBoxContainer2/Skills/VBSavingThrows/HBAthletics"]
+[node name="LineEdit" type="LineEdit" parent="VBStatBlock/HBoxContainer/VBoxContainer2/Skills/VBSavingThrows/HBAthletics"]
 layout_mode = 2
 theme_override_constants/minimum_character_width = 2
 theme_override_font_sizes/font_size = 10
 placeholder_text = "0"
 alignment = 1
 
-[node name="Label" type="Label" parent="VBStatBlock/ScrollContainer/HBoxContainer/VBoxContainer2/Skills/VBSavingThrows/HBAthletics"]
+[node name="Label" type="Label" parent="VBStatBlock/HBoxContainer/VBoxContainer2/Skills/VBSavingThrows/HBAthletics"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 12
 text = "Athletics (Str)"
 
-[node name="HBDeception" type="HBoxContainer" parent="VBStatBlock/ScrollContainer/HBoxContainer/VBoxContainer2/Skills/VBSavingThrows"]
+[node name="HBDeception" type="HBoxContainer" parent="VBStatBlock/HBoxContainer/VBoxContainer2/Skills/VBSavingThrows"]
 layout_mode = 2
 
-[node name="CheckBox" type="CheckBox" parent="VBStatBlock/ScrollContainer/HBoxContainer/VBoxContainer2/Skills/VBSavingThrows/HBDeception"]
+[node name="CheckBox" type="CheckBox" parent="VBStatBlock/HBoxContainer/VBoxContainer2/Skills/VBSavingThrows/HBDeception"]
 layout_mode = 2
 
-[node name="LineEdit" type="LineEdit" parent="VBStatBlock/ScrollContainer/HBoxContainer/VBoxContainer2/Skills/VBSavingThrows/HBDeception"]
+[node name="LineEdit" type="LineEdit" parent="VBStatBlock/HBoxContainer/VBoxContainer2/Skills/VBSavingThrows/HBDeception"]
 layout_mode = 2
 theme_override_constants/minimum_character_width = 2
 theme_override_font_sizes/font_size = 10
 placeholder_text = "0"
 alignment = 1
 
-[node name="Label" type="Label" parent="VBStatBlock/ScrollContainer/HBoxContainer/VBoxContainer2/Skills/VBSavingThrows/HBDeception"]
+[node name="Label" type="Label" parent="VBStatBlock/HBoxContainer/VBoxContainer2/Skills/VBSavingThrows/HBDeception"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 12
 text = "Deception (Cha)"
 
-[node name="HBHistory" type="HBoxContainer" parent="VBStatBlock/ScrollContainer/HBoxContainer/VBoxContainer2/Skills/VBSavingThrows"]
+[node name="HBHistory" type="HBoxContainer" parent="VBStatBlock/HBoxContainer/VBoxContainer2/Skills/VBSavingThrows"]
 layout_mode = 2
 
-[node name="CheckBox" type="CheckBox" parent="VBStatBlock/ScrollContainer/HBoxContainer/VBoxContainer2/Skills/VBSavingThrows/HBHistory"]
+[node name="CheckBox" type="CheckBox" parent="VBStatBlock/HBoxContainer/VBoxContainer2/Skills/VBSavingThrows/HBHistory"]
 layout_mode = 2
 
-[node name="LineEdit" type="LineEdit" parent="VBStatBlock/ScrollContainer/HBoxContainer/VBoxContainer2/Skills/VBSavingThrows/HBHistory"]
+[node name="LineEdit" type="LineEdit" parent="VBStatBlock/HBoxContainer/VBoxContainer2/Skills/VBSavingThrows/HBHistory"]
 layout_mode = 2
 theme_override_constants/minimum_character_width = 2
 theme_override_font_sizes/font_size = 10
 placeholder_text = "0"
 alignment = 1
 
-[node name="Label" type="Label" parent="VBStatBlock/ScrollContainer/HBoxContainer/VBoxContainer2/Skills/VBSavingThrows/HBHistory"]
+[node name="Label" type="Label" parent="VBStatBlock/HBoxContainer/VBoxContainer2/Skills/VBSavingThrows/HBHistory"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 12
 text = "History (Int)"
 
-[node name="HBInsight" type="HBoxContainer" parent="VBStatBlock/ScrollContainer/HBoxContainer/VBoxContainer2/Skills/VBSavingThrows"]
+[node name="HBInsight" type="HBoxContainer" parent="VBStatBlock/HBoxContainer/VBoxContainer2/Skills/VBSavingThrows"]
 layout_mode = 2
 
-[node name="CheckBox" type="CheckBox" parent="VBStatBlock/ScrollContainer/HBoxContainer/VBoxContainer2/Skills/VBSavingThrows/HBInsight"]
+[node name="CheckBox" type="CheckBox" parent="VBStatBlock/HBoxContainer/VBoxContainer2/Skills/VBSavingThrows/HBInsight"]
 layout_mode = 2
 
-[node name="LineEdit" type="LineEdit" parent="VBStatBlock/ScrollContainer/HBoxContainer/VBoxContainer2/Skills/VBSavingThrows/HBInsight"]
+[node name="LineEdit" type="LineEdit" parent="VBStatBlock/HBoxContainer/VBoxContainer2/Skills/VBSavingThrows/HBInsight"]
 layout_mode = 2
 theme_override_constants/minimum_character_width = 2
 theme_override_font_sizes/font_size = 10
 placeholder_text = "0"
 alignment = 1
 
-[node name="Label" type="Label" parent="VBStatBlock/ScrollContainer/HBoxContainer/VBoxContainer2/Skills/VBSavingThrows/HBInsight"]
+[node name="Label" type="Label" parent="VBStatBlock/HBoxContainer/VBoxContainer2/Skills/VBSavingThrows/HBInsight"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 12
 text = "Insight (Wis)"
 
-[node name="HBIntimidation" type="HBoxContainer" parent="VBStatBlock/ScrollContainer/HBoxContainer/VBoxContainer2/Skills/VBSavingThrows"]
+[node name="HBIntimidation" type="HBoxContainer" parent="VBStatBlock/HBoxContainer/VBoxContainer2/Skills/VBSavingThrows"]
 layout_mode = 2
 
-[node name="CheckBox" type="CheckBox" parent="VBStatBlock/ScrollContainer/HBoxContainer/VBoxContainer2/Skills/VBSavingThrows/HBIntimidation"]
+[node name="CheckBox" type="CheckBox" parent="VBStatBlock/HBoxContainer/VBoxContainer2/Skills/VBSavingThrows/HBIntimidation"]
 layout_mode = 2
 
-[node name="LineEdit" type="LineEdit" parent="VBStatBlock/ScrollContainer/HBoxContainer/VBoxContainer2/Skills/VBSavingThrows/HBIntimidation"]
+[node name="LineEdit" type="LineEdit" parent="VBStatBlock/HBoxContainer/VBoxContainer2/Skills/VBSavingThrows/HBIntimidation"]
 layout_mode = 2
 theme_override_constants/minimum_character_width = 2
 theme_override_font_sizes/font_size = 10
 placeholder_text = "0"
 alignment = 1
 
-[node name="Label" type="Label" parent="VBStatBlock/ScrollContainer/HBoxContainer/VBoxContainer2/Skills/VBSavingThrows/HBIntimidation"]
+[node name="Label" type="Label" parent="VBStatBlock/HBoxContainer/VBoxContainer2/Skills/VBSavingThrows/HBIntimidation"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 12
 text = "Intimidation (Cha)"
 
-[node name="HBInvestigation" type="HBoxContainer" parent="VBStatBlock/ScrollContainer/HBoxContainer/VBoxContainer2/Skills/VBSavingThrows"]
+[node name="HBInvestigation" type="HBoxContainer" parent="VBStatBlock/HBoxContainer/VBoxContainer2/Skills/VBSavingThrows"]
 layout_mode = 2
 
-[node name="CheckBox" type="CheckBox" parent="VBStatBlock/ScrollContainer/HBoxContainer/VBoxContainer2/Skills/VBSavingThrows/HBInvestigation"]
+[node name="CheckBox" type="CheckBox" parent="VBStatBlock/HBoxContainer/VBoxContainer2/Skills/VBSavingThrows/HBInvestigation"]
 layout_mode = 2
 
-[node name="LineEdit" type="LineEdit" parent="VBStatBlock/ScrollContainer/HBoxContainer/VBoxContainer2/Skills/VBSavingThrows/HBInvestigation"]
+[node name="LineEdit" type="LineEdit" parent="VBStatBlock/HBoxContainer/VBoxContainer2/Skills/VBSavingThrows/HBInvestigation"]
 layout_mode = 2
 theme_override_constants/minimum_character_width = 2
 theme_override_font_sizes/font_size = 10
 placeholder_text = "0"
 alignment = 1
 
-[node name="Label" type="Label" parent="VBStatBlock/ScrollContainer/HBoxContainer/VBoxContainer2/Skills/VBSavingThrows/HBInvestigation"]
+[node name="Label" type="Label" parent="VBStatBlock/HBoxContainer/VBoxContainer2/Skills/VBSavingThrows/HBInvestigation"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 12
 text = "Investigation (Int)"
 
-[node name="HBMedicine" type="HBoxContainer" parent="VBStatBlock/ScrollContainer/HBoxContainer/VBoxContainer2/Skills/VBSavingThrows"]
+[node name="HBMedicine" type="HBoxContainer" parent="VBStatBlock/HBoxContainer/VBoxContainer2/Skills/VBSavingThrows"]
 layout_mode = 2
 
-[node name="CheckBox" type="CheckBox" parent="VBStatBlock/ScrollContainer/HBoxContainer/VBoxContainer2/Skills/VBSavingThrows/HBMedicine"]
+[node name="CheckBox" type="CheckBox" parent="VBStatBlock/HBoxContainer/VBoxContainer2/Skills/VBSavingThrows/HBMedicine"]
 layout_mode = 2
 
-[node name="LineEdit" type="LineEdit" parent="VBStatBlock/ScrollContainer/HBoxContainer/VBoxContainer2/Skills/VBSavingThrows/HBMedicine"]
+[node name="LineEdit" type="LineEdit" parent="VBStatBlock/HBoxContainer/VBoxContainer2/Skills/VBSavingThrows/HBMedicine"]
 layout_mode = 2
 theme_override_constants/minimum_character_width = 2
 theme_override_font_sizes/font_size = 10
 placeholder_text = "0"
 alignment = 1
 
-[node name="Label" type="Label" parent="VBStatBlock/ScrollContainer/HBoxContainer/VBoxContainer2/Skills/VBSavingThrows/HBMedicine"]
+[node name="Label" type="Label" parent="VBStatBlock/HBoxContainer/VBoxContainer2/Skills/VBSavingThrows/HBMedicine"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 12
 text = "Medicine (Wis"
 
-[node name="HBNature" type="HBoxContainer" parent="VBStatBlock/ScrollContainer/HBoxContainer/VBoxContainer2/Skills/VBSavingThrows"]
+[node name="HBNature" type="HBoxContainer" parent="VBStatBlock/HBoxContainer/VBoxContainer2/Skills/VBSavingThrows"]
 layout_mode = 2
 
-[node name="CheckBox" type="CheckBox" parent="VBStatBlock/ScrollContainer/HBoxContainer/VBoxContainer2/Skills/VBSavingThrows/HBNature"]
+[node name="CheckBox" type="CheckBox" parent="VBStatBlock/HBoxContainer/VBoxContainer2/Skills/VBSavingThrows/HBNature"]
 layout_mode = 2
 
-[node name="LineEdit" type="LineEdit" parent="VBStatBlock/ScrollContainer/HBoxContainer/VBoxContainer2/Skills/VBSavingThrows/HBNature"]
+[node name="LineEdit" type="LineEdit" parent="VBStatBlock/HBoxContainer/VBoxContainer2/Skills/VBSavingThrows/HBNature"]
 layout_mode = 2
 theme_override_constants/minimum_character_width = 2
 theme_override_font_sizes/font_size = 10
 placeholder_text = "0"
 alignment = 1
 
-[node name="Label" type="Label" parent="VBStatBlock/ScrollContainer/HBoxContainer/VBoxContainer2/Skills/VBSavingThrows/HBNature"]
+[node name="Label" type="Label" parent="VBStatBlock/HBoxContainer/VBoxContainer2/Skills/VBSavingThrows/HBNature"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 12
 text = "Nature (Int)"
 
-[node name="HBPerception" type="HBoxContainer" parent="VBStatBlock/ScrollContainer/HBoxContainer/VBoxContainer2/Skills/VBSavingThrows"]
+[node name="HBPerception" type="HBoxContainer" parent="VBStatBlock/HBoxContainer/VBoxContainer2/Skills/VBSavingThrows"]
 layout_mode = 2
 
-[node name="CheckBox" type="CheckBox" parent="VBStatBlock/ScrollContainer/HBoxContainer/VBoxContainer2/Skills/VBSavingThrows/HBPerception"]
+[node name="CheckBox" type="CheckBox" parent="VBStatBlock/HBoxContainer/VBoxContainer2/Skills/VBSavingThrows/HBPerception"]
 layout_mode = 2
 
-[node name="LineEdit" type="LineEdit" parent="VBStatBlock/ScrollContainer/HBoxContainer/VBoxContainer2/Skills/VBSavingThrows/HBPerception"]
+[node name="LineEdit" type="LineEdit" parent="VBStatBlock/HBoxContainer/VBoxContainer2/Skills/VBSavingThrows/HBPerception"]
 layout_mode = 2
 theme_override_constants/minimum_character_width = 2
 theme_override_font_sizes/font_size = 10
 placeholder_text = "0"
 alignment = 1
 
-[node name="Label" type="Label" parent="VBStatBlock/ScrollContainer/HBoxContainer/VBoxContainer2/Skills/VBSavingThrows/HBPerception"]
+[node name="Label" type="Label" parent="VBStatBlock/HBoxContainer/VBoxContainer2/Skills/VBSavingThrows/HBPerception"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 12
 text = "Perception (Wis)"
 
-[node name="HBPerformance" type="HBoxContainer" parent="VBStatBlock/ScrollContainer/HBoxContainer/VBoxContainer2/Skills/VBSavingThrows"]
+[node name="HBPerformance" type="HBoxContainer" parent="VBStatBlock/HBoxContainer/VBoxContainer2/Skills/VBSavingThrows"]
 layout_mode = 2
 
-[node name="CheckBox" type="CheckBox" parent="VBStatBlock/ScrollContainer/HBoxContainer/VBoxContainer2/Skills/VBSavingThrows/HBPerformance"]
+[node name="CheckBox" type="CheckBox" parent="VBStatBlock/HBoxContainer/VBoxContainer2/Skills/VBSavingThrows/HBPerformance"]
 layout_mode = 2
 
-[node name="LineEdit" type="LineEdit" parent="VBStatBlock/ScrollContainer/HBoxContainer/VBoxContainer2/Skills/VBSavingThrows/HBPerformance"]
+[node name="LineEdit" type="LineEdit" parent="VBStatBlock/HBoxContainer/VBoxContainer2/Skills/VBSavingThrows/HBPerformance"]
 layout_mode = 2
 theme_override_constants/minimum_character_width = 2
 theme_override_font_sizes/font_size = 10
 placeholder_text = "0"
 alignment = 1
 
-[node name="Label" type="Label" parent="VBStatBlock/ScrollContainer/HBoxContainer/VBoxContainer2/Skills/VBSavingThrows/HBPerformance"]
+[node name="Label" type="Label" parent="VBStatBlock/HBoxContainer/VBoxContainer2/Skills/VBSavingThrows/HBPerformance"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 12
 text = "Performance (Cha)"
 
-[node name="HBPersuasion" type="HBoxContainer" parent="VBStatBlock/ScrollContainer/HBoxContainer/VBoxContainer2/Skills/VBSavingThrows"]
+[node name="HBPersuasion" type="HBoxContainer" parent="VBStatBlock/HBoxContainer/VBoxContainer2/Skills/VBSavingThrows"]
 layout_mode = 2
 
-[node name="CheckBox" type="CheckBox" parent="VBStatBlock/ScrollContainer/HBoxContainer/VBoxContainer2/Skills/VBSavingThrows/HBPersuasion"]
+[node name="CheckBox" type="CheckBox" parent="VBStatBlock/HBoxContainer/VBoxContainer2/Skills/VBSavingThrows/HBPersuasion"]
 layout_mode = 2
 
-[node name="LineEdit" type="LineEdit" parent="VBStatBlock/ScrollContainer/HBoxContainer/VBoxContainer2/Skills/VBSavingThrows/HBPersuasion"]
+[node name="LineEdit" type="LineEdit" parent="VBStatBlock/HBoxContainer/VBoxContainer2/Skills/VBSavingThrows/HBPersuasion"]
 layout_mode = 2
 theme_override_constants/minimum_character_width = 2
 theme_override_font_sizes/font_size = 10
 placeholder_text = "0"
 alignment = 1
 
-[node name="Label" type="Label" parent="VBStatBlock/ScrollContainer/HBoxContainer/VBoxContainer2/Skills/VBSavingThrows/HBPersuasion"]
+[node name="Label" type="Label" parent="VBStatBlock/HBoxContainer/VBoxContainer2/Skills/VBSavingThrows/HBPersuasion"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 12
 text = "Persuasion (Cha)"
 
-[node name="HBReligion" type="HBoxContainer" parent="VBStatBlock/ScrollContainer/HBoxContainer/VBoxContainer2/Skills/VBSavingThrows"]
+[node name="HBReligion" type="HBoxContainer" parent="VBStatBlock/HBoxContainer/VBoxContainer2/Skills/VBSavingThrows"]
 layout_mode = 2
 
-[node name="CheckBox" type="CheckBox" parent="VBStatBlock/ScrollContainer/HBoxContainer/VBoxContainer2/Skills/VBSavingThrows/HBReligion"]
+[node name="CheckBox" type="CheckBox" parent="VBStatBlock/HBoxContainer/VBoxContainer2/Skills/VBSavingThrows/HBReligion"]
 layout_mode = 2
 
-[node name="LineEdit" type="LineEdit" parent="VBStatBlock/ScrollContainer/HBoxContainer/VBoxContainer2/Skills/VBSavingThrows/HBReligion"]
+[node name="LineEdit" type="LineEdit" parent="VBStatBlock/HBoxContainer/VBoxContainer2/Skills/VBSavingThrows/HBReligion"]
 layout_mode = 2
 theme_override_constants/minimum_character_width = 2
 theme_override_font_sizes/font_size = 10
 placeholder_text = "0"
 alignment = 1
 
-[node name="Label" type="Label" parent="VBStatBlock/ScrollContainer/HBoxContainer/VBoxContainer2/Skills/VBSavingThrows/HBReligion"]
+[node name="Label" type="Label" parent="VBStatBlock/HBoxContainer/VBoxContainer2/Skills/VBSavingThrows/HBReligion"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 12
 text = "Religion (Int)"
 
-[node name="HBSleightofHand" type="HBoxContainer" parent="VBStatBlock/ScrollContainer/HBoxContainer/VBoxContainer2/Skills/VBSavingThrows"]
+[node name="HBSleightofHand" type="HBoxContainer" parent="VBStatBlock/HBoxContainer/VBoxContainer2/Skills/VBSavingThrows"]
 layout_mode = 2
 
-[node name="CheckBox" type="CheckBox" parent="VBStatBlock/ScrollContainer/HBoxContainer/VBoxContainer2/Skills/VBSavingThrows/HBSleightofHand"]
+[node name="CheckBox" type="CheckBox" parent="VBStatBlock/HBoxContainer/VBoxContainer2/Skills/VBSavingThrows/HBSleightofHand"]
 layout_mode = 2
 
-[node name="LineEdit" type="LineEdit" parent="VBStatBlock/ScrollContainer/HBoxContainer/VBoxContainer2/Skills/VBSavingThrows/HBSleightofHand"]
+[node name="LineEdit" type="LineEdit" parent="VBStatBlock/HBoxContainer/VBoxContainer2/Skills/VBSavingThrows/HBSleightofHand"]
 layout_mode = 2
 theme_override_constants/minimum_character_width = 2
 theme_override_font_sizes/font_size = 10
 placeholder_text = "0"
 alignment = 1
 
-[node name="Label" type="Label" parent="VBStatBlock/ScrollContainer/HBoxContainer/VBoxContainer2/Skills/VBSavingThrows/HBSleightofHand"]
+[node name="Label" type="Label" parent="VBStatBlock/HBoxContainer/VBoxContainer2/Skills/VBSavingThrows/HBSleightofHand"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 12
 text = "Sleight of Hand (Dex)"
 
-[node name="HBStealth" type="HBoxContainer" parent="VBStatBlock/ScrollContainer/HBoxContainer/VBoxContainer2/Skills/VBSavingThrows"]
+[node name="HBStealth" type="HBoxContainer" parent="VBStatBlock/HBoxContainer/VBoxContainer2/Skills/VBSavingThrows"]
 layout_mode = 2
 
-[node name="CheckBox" type="CheckBox" parent="VBStatBlock/ScrollContainer/HBoxContainer/VBoxContainer2/Skills/VBSavingThrows/HBStealth"]
+[node name="CheckBox" type="CheckBox" parent="VBStatBlock/HBoxContainer/VBoxContainer2/Skills/VBSavingThrows/HBStealth"]
 layout_mode = 2
 
-[node name="LineEdit" type="LineEdit" parent="VBStatBlock/ScrollContainer/HBoxContainer/VBoxContainer2/Skills/VBSavingThrows/HBStealth"]
+[node name="LineEdit" type="LineEdit" parent="VBStatBlock/HBoxContainer/VBoxContainer2/Skills/VBSavingThrows/HBStealth"]
 layout_mode = 2
 theme_override_constants/minimum_character_width = 2
 theme_override_font_sizes/font_size = 10
 placeholder_text = "0"
 alignment = 1
 
-[node name="Label" type="Label" parent="VBStatBlock/ScrollContainer/HBoxContainer/VBoxContainer2/Skills/VBSavingThrows/HBStealth"]
+[node name="Label" type="Label" parent="VBStatBlock/HBoxContainer/VBoxContainer2/Skills/VBSavingThrows/HBStealth"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 12
 text = "Stealth (Dex)"
 
-[node name="HBSurvival" type="HBoxContainer" parent="VBStatBlock/ScrollContainer/HBoxContainer/VBoxContainer2/Skills/VBSavingThrows"]
+[node name="HBSurvival" type="HBoxContainer" parent="VBStatBlock/HBoxContainer/VBoxContainer2/Skills/VBSavingThrows"]
 layout_mode = 2
 
-[node name="CheckBox" type="CheckBox" parent="VBStatBlock/ScrollContainer/HBoxContainer/VBoxContainer2/Skills/VBSavingThrows/HBSurvival"]
+[node name="CheckBox" type="CheckBox" parent="VBStatBlock/HBoxContainer/VBoxContainer2/Skills/VBSavingThrows/HBSurvival"]
 layout_mode = 2
 
-[node name="LineEdit" type="LineEdit" parent="VBStatBlock/ScrollContainer/HBoxContainer/VBoxContainer2/Skills/VBSavingThrows/HBSurvival"]
+[node name="LineEdit" type="LineEdit" parent="VBStatBlock/HBoxContainer/VBoxContainer2/Skills/VBSavingThrows/HBSurvival"]
 layout_mode = 2
 theme_override_constants/minimum_character_width = 2
 theme_override_font_sizes/font_size = 10
 placeholder_text = "0"
 alignment = 1
 
-[node name="Label" type="Label" parent="VBStatBlock/ScrollContainer/HBoxContainer/VBoxContainer2/Skills/VBSavingThrows/HBSurvival"]
+[node name="Label" type="Label" parent="VBStatBlock/HBoxContainer/VBoxContainer2/Skills/VBSavingThrows/HBSurvival"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 12
 text = "Survival (Wis)"

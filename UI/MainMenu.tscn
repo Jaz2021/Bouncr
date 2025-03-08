@@ -2,8 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://dqbleu2qq81sc" path="res://UI/HelperNodes/switch_scene.tscn" id="1_8aown"]
 [ext_resource type="Script" uid="uid://dun8ypwrg8fj4" path="res://UI/UI_Scripts/ButtonManager.cs" id="1_uahxu"]
-[ext_resource type="PackedScene" uid="uid://ken6of6mjj0f" path="res://UI/ClassButtons.tscn" id="2_b37jj"]
-[ext_resource type="Script" path="res://Scripts/MapLayoutMaker.cs" id="3_t6syg"]
+[ext_resource type="PackedScene" uid="uid://bocdib1f8yi0k" path="res://UI/ClassButtons.tscn" id="2_b37jj"]
+[ext_resource type="Script" uid="uid://becowoc5ckcet" path="res://Scripts/MapLayoutMaker.cs" id="3_t6syg"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f0jmi"]
 content_margin_left = 50.0

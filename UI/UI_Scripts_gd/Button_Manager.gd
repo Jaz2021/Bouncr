@@ -25,7 +25,6 @@ extends Node
 	sub_class_panel,
 	spell_panel,
 	cantrip_panel,
-	background_panel
 	
 ]
 
@@ -37,7 +36,7 @@ func _ready() -> void:
 	sub_class_button.pressed.connect(_on_sub_class_button_pressed)
 	button_4.pressed.connect(_on_spell_button_pressed)
 	button_5.pressed.connect(_on_cantrip_button_pressed)
-	button_6.pressed.connect(_on_background_button_pressed)
+	#button_6.pressed.connect(_on_background_button_pressed)
 
 
 func _on_cantrip_button_pressed() -> void:

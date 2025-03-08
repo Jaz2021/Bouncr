@@ -30,7 +30,7 @@ public partial class instantiate_cantrip : VBoxContainer
     }
     public void updateSubClasses()
     {
-        GD.Print("Updating spells");
+        GD.Print("Updating cantrips");
         foreach(var child in GetChildren()){
             child.QueueFree();
         }

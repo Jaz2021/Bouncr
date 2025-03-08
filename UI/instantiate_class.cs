@@ -51,6 +51,7 @@ public partial class instantiate_class : VBoxContainer
         }
         instantiate_spell.instance.updateSubClasses();
         instantiate_subclass.instance.updateSubclasses();
+        instantiate_cantrip.instance.updateSubClasses();
     }
 
     private List<string> GetClassKeys()

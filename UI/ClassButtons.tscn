@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-[gd_scene load_steps=18 format=3 uid="uid://ken6of6mjj0f"]
-=======
-[gd_scene load_steps=16 format=3 uid="uid://ken6of6mjj0f"]
->>>>>>> 6460b9c57e8af03881c22f3a4166dff0ba961ded
+[gd_scene load_steps=19 format=3 uid="uid://bocdib1f8yi0k"]
 
 [ext_resource type="Script" uid="uid://dyucs41p6mh56" path="res://UI/RacePanel.cs" id="1_a5k5p"]
 [ext_resource type="Script" uid="uid://cyexhi5ykcw3s" path="res://UI/UI_Scripts_gd/Button_Manager.gd" id="1_ds00d"]
@@ -10,8 +6,8 @@
 [ext_resource type="Script" uid="uid://dhfiiu5lqf0fv" path="res://UI/ClassPanel.cs" id="2_wy7x5"]
 [ext_resource type="Script" uid="uid://sb6krunw8r0b" path="res://UI/instantiate_class.cs" id="3_wy7x5"]
 [ext_resource type="Script" uid="uid://vip7t21m7o7a" path="res://UI/ClassJsonInfo.cs" id="4_mdfeu"]
-[ext_resource type="Script" uid="uid://j4mv7k5a4ucl" path="res://UI/instantiate_subclass.cs" id="5_d8kgh"]
 [ext_resource type="Script" uid="uid://b8rfcuqbfmyag" path="res://UI/SpellPanel.cs" id="5_d55b6"]
+[ext_resource type="Script" uid="uid://j4mv7k5a4ucl" path="res://UI/instantiate_subclass.cs" id="5_dh5d5"]
 [ext_resource type="Script" uid="uid://dnaiq16rw16df" path="res://UI/instantiate_spell.cs" id="6_xxqrw"]
 [ext_resource type="Script" uid="uid://b6aml13ew4jvn" path="res://UI/instantiate_cantrip.cs" id="7_d8kgh"]
 [ext_resource type="Script" uid="uid://ckg5hkvq05104" path="res://UI/CantripPanel.cs" id="7_yg0j1"]
@@ -77,10 +73,6 @@ text = "Spells"
 layout_mode = 2
 text = "Cantrips"
 
-[node name="Button6" type="Button" parent="PanelContainer/HBoxContainer/VBoxContainer"]
-layout_mode = 2
-text = "Background"
-
 [node name="Panel" type="Panel" parent="PanelContainer/HBoxContainer/VBoxContainer"]
 custom_minimum_size = Vector2(0, 157.47)
 layout_mode = 2
@@ -140,15 +132,19 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_qfwp6")
 
 [node name="ScrollContainer" type="ScrollContainer" parent="PanelContainer/HBoxContainer/Sub-Class_Panel"]
 custom_minimum_size = Vector2(180, 350)
-offset_right = 40.0
-offset_bottom = 40.0
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.00817439
+anchor_right = 1.0
+anchor_bottom = 0.961853
+metadata/_edit_use_anchors_ = true
 
 [node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/HBoxContainer/Sub-Class_Panel/ScrollContainer"]
 layout_mode = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/HBoxContainer/Sub-Class_Panel/ScrollContainer/HBoxContainer"]
 layout_mode = 2
-script = ExtResource("5_d8kgh")
+script = ExtResource("5_dh5d5")
 
 [node name="Spell_Panel" type="Panel" parent="PanelContainer/HBoxContainer"]
 visible = false
@@ -194,20 +190,6 @@ layout_mode = 2
 [node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/HBoxContainer/Cantrip_Panel/ScrollContainer/HBoxContainer"]
 layout_mode = 2
 script = ExtResource("7_d8kgh")
-
-[node name="Background_Panel" type="Panel" parent="PanelContainer/HBoxContainer"]
-layout_mode = 2
-
-[node name="ScrollContainer" type="ScrollContainer" parent="PanelContainer/HBoxContainer/Background_Panel"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/HBoxContainer/Background_Panel/ScrollContainer"]
-layout_mode = 2
-
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/HBoxContainer/Background_Panel/ScrollContainer/HBoxContainer"]
-layout_mode = 2
 
 [node name="PanelManager" type="Node" parent="."]
 script = ExtResource("1_ds00d")

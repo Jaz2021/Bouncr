@@ -42,8 +42,13 @@ public partial class DownloadData : Node
 		}
 		directories.Add(url+repo+ender);
 		outputLabel.Text = currentStep;
+<<<<<<< HEAD
 		//findDirectories();
 		Races.generateRaceList();
+=======
+		Spell.GenerateSpells();
+		// findDirectories();
+>>>>>>> ca0640919b9fed2a4addde49e71d9043bd9d34f2
 	}
 
 	private List<string> directories = new List<string>();

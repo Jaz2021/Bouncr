@@ -1,0 +1,915 @@
+[gd_scene load_steps=25 format=3 uid="uid://l8hlxq141gtk"]
+
+[ext_resource type="Script" uid="uid://cpt3vfysnw67j" path="res://UI/CharacterSheet/PopulateStatsSheet.gd" id="1_dni6t"]
+[ext_resource type="Script" uid="uid://lb725n23hspe" path="res://CustomResources/Skill.cs" id="2_22ujr"]
+[ext_resource type="Script" uid="uid://bi2skhq8bfs34" path="res://CustomResources/DnDCharacter.cs" id="3_8xmmh"]
+
+[sub_resource type="Resource" id="Resource_w1xq6"]
+script = ExtResource("2_22ujr")
+Name = "Acrobatics"
+IsProficient = false
+Bonus = 0
+
+[sub_resource type="Resource" id="Resource_1864d"]
+script = ExtResource("2_22ujr")
+Name = "AnimalHandling"
+IsProficient = false
+Bonus = 0
+
+[sub_resource type="Resource" id="Resource_k6i5f"]
+script = ExtResource("2_22ujr")
+Name = "Arcana"
+IsProficient = false
+Bonus = 0
+
+[sub_resource type="Resource" id="Resource_pe4sx"]
+script = ExtResource("2_22ujr")
+Name = "Athletics"
+IsProficient = false
+Bonus = 0
+
+[sub_resource type="Resource" id="Resource_ypn4y"]
+script = ExtResource("2_22ujr")
+Name = "Deception"
+IsProficient = false
+Bonus = 0
+
+[sub_resource type="Resource" id="Resource_v77hy"]
+script = ExtResource("2_22ujr")
+Name = "History"
+IsProficient = false
+Bonus = 0
+
+[sub_resource type="Resource" id="Resource_dm4y2"]
+script = ExtResource("2_22ujr")
+Name = "Insight"
+IsProficient = false
+Bonus = 0
+
+[sub_resource type="Resource" id="Resource_fgolt"]
+script = ExtResource("2_22ujr")
+Name = "Intimidation"
+IsProficient = false
+Bonus = 0
+
+[sub_resource type="Resource" id="Resource_gwulc"]
+script = ExtResource("2_22ujr")
+Name = "Investigation"
+IsProficient = false
+Bonus = 0
+
+[sub_resource type="Resource" id="Resource_06lp2"]
+script = ExtResource("2_22ujr")
+Name = "Medicine"
+IsProficient = false
+Bonus = 0
+
+[sub_resource type="Resource" id="Resource_pqfuc"]
+script = ExtResource("2_22ujr")
+Name = "Nature"
+IsProficient = false
+Bonus = 0
+
+[sub_resource type="Resource" id="Resource_cxcrm"]
+script = ExtResource("2_22ujr")
+Name = "Perception"
+IsProficient = false
+Bonus = 0
+
+[sub_resource type="Resource" id="Resource_oth2a"]
+script = ExtResource("2_22ujr")
+Name = "Performance"
+IsProficient = false
+Bonus = 0
+
+[sub_resource type="Resource" id="Resource_7ko3v"]
+script = ExtResource("2_22ujr")
+Name = "Persuasion"
+IsProficient = false
+Bonus = 0
+
+[sub_resource type="Resource" id="Resource_i5fy6"]
+script = ExtResource("2_22ujr")
+Name = "Religion"
+IsProficient = false
+Bonus = 0
+
+[sub_resource type="Resource" id="Resource_eoutp"]
+script = ExtResource("2_22ujr")
+Name = "SleightOfHand"
+IsProficient = false
+Bonus = 0
+
+[sub_resource type="Resource" id="Resource_7s2pj"]
+script = ExtResource("2_22ujr")
+Name = "Stealth"
+IsProficient = false
+Bonus = 0
+
+[sub_resource type="Resource" id="Resource_q7605"]
+script = ExtResource("2_22ujr")
+Name = "Survival"
+IsProficient = false
+Bonus = 0
+
+[sub_resource type="Resource" id="Resource_vqwb4"]
+script = ExtResource("3_8xmmh")
+CharacterName = "First Last"
+Level = 1
+Class = "Fighter"
+Background = "Noble"
+PlayerName = "John Doe"
+Race = "Human"
+Alignment = 4
+ExperiencePoints = 0
+Strength = 10
+Dexterity = 15
+Constitution = 6
+Intelligence = 19
+Wisdom = 14
+Charisma = 5
+ProficiencyBonus = 2
+Inspiration = false
+StrengthSaveProficient = true
+DexteritySaveProficient = false
+ConstitutionSaveProficient = false
+IntelligenceSaveProficient = true
+WisdomSaveProficient = false
+CharismaSaveProficient = false
+Acrobatics = SubResource("Resource_w1xq6")
+SleightOfHand = SubResource("Resource_eoutp")
+Stealth = SubResource("Resource_7s2pj")
+AnimalHandling = SubResource("Resource_1864d")
+Insight = SubResource("Resource_dm4y2")
+Medicine = SubResource("Resource_06lp2")
+Perception = SubResource("Resource_cxcrm")
+Survival = SubResource("Resource_q7605")
+Arcana = SubResource("Resource_k6i5f")
+History = SubResource("Resource_v77hy")
+Investigation = SubResource("Resource_gwulc")
+Nature = SubResource("Resource_pqfuc")
+Religion = SubResource("Resource_i5fy6")
+Athletics = SubResource("Resource_pe4sx")
+Deception = SubResource("Resource_ypn4y")
+Intimidation = SubResource("Resource_fgolt")
+Performance = SubResource("Resource_oth2a")
+Persuasion = SubResource("Resource_7ko3v")
+ArmorClass = 10
+Speed = 30
+HitPointMaximum = 10
+CurrentHitPoints = 10
+TemporaryHitPoints = 10
+HitDiceTotal = 0
+HitDice = 2
+DeathSaveSuccess = 0
+DeathSaveFailier = 0
+Items = null
+Spells = null
+metadata/_custom_type_script = "uid://bi2skhq8bfs34"
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mgkn3"]
+content_margin_left = 4.0
+content_margin_right = 4.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w7oqx"]
+
+[node name="CenterContainer" type="CenterContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_dni6t")
+character = SubResource("Resource_vqwb4")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="VBStatBlock" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/VBStatBlock"]
+layout_mode = 2
+
+[node name="Stats" type="PanelContainer" parent="HBoxContainer/VBStatBlock/HBoxContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_mgkn3")
+
+[node name="VBStats" type="VBoxContainer" parent="HBoxContainer/VBStatBlock/HBoxContainer/Stats"]
+layout_mode = 2
+
+[node name="VBStr" type="VBoxContainer" parent="HBoxContainer/VBStatBlock/HBoxContainer/Stats/VBStats"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Label" type="Label" parent="HBoxContainer/VBStatBlock/HBoxContainer/Stats/VBStats/VBStr"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 11
+text = "Strength"
+horizontal_alignment = 1
+
+[node name="StrStat" type="LineEdit" parent="HBoxContainer/VBStatBlock/HBoxContainer/Stats/VBStats/VBStr"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+placeholder_text = "STR"
+alignment = 1
+
+[node name="StrMod" type="LineEdit" parent="HBoxContainer/VBStatBlock/HBoxContainer/Stats/VBStats/VBStr"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+placeholder_text = "Mod"
+alignment = 1
+
+[node name="VBDex" type="VBoxContainer" parent="HBoxContainer/VBStatBlock/HBoxContainer/Stats/VBStats"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Label" type="Label" parent="HBoxContainer/VBStatBlock/HBoxContainer/Stats/VBStats/VBDex"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 11
+text = "Dexterity"
+horizontal_alignment = 1
+
+[node name="DexStat" type="LineEdit" parent="HBoxContainer/VBStatBlock/HBoxContainer/Stats/VBStats/VBDex"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+placeholder_text = "DEX"
+alignment = 1
+
+[node name="DexMod" type="LineEdit" parent="HBoxContainer/VBStatBlock/HBoxContainer/Stats/VBStats/VBDex"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+placeholder_text = "Mod"
+alignment = 1
+
+[node name="VBCon" type="VBoxContainer" parent="HBoxContainer/VBStatBlock/HBoxContainer/Stats/VBStats"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Label" type="Label" parent="HBoxContainer/VBStatBlock/HBoxContainer/Stats/VBStats/VBCon"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 11
+text = "Constitution"
+horizontal_alignment = 1
+
+[node name="ConStat" type="LineEdit" parent="HBoxContainer/VBStatBlock/HBoxContainer/Stats/VBStats/VBCon"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+placeholder_text = "CON"
+alignment = 1
+
+[node name="ConMod" type="LineEdit" parent="HBoxContainer/VBStatBlock/HBoxContainer/Stats/VBStats/VBCon"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+placeholder_text = "Mod"
+alignment = 1
+
+[node name="VBInt" type="VBoxContainer" parent="HBoxContainer/VBStatBlock/HBoxContainer/Stats/VBStats"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Label" type="Label" parent="HBoxContainer/VBStatBlock/HBoxContainer/Stats/VBStats/VBInt"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 11
+text = "Intelligence"
+horizontal_alignment = 1
+
+[node name="IntStat" type="LineEdit" parent="HBoxContainer/VBStatBlock/HBoxContainer/Stats/VBStats/VBInt"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+placeholder_text = "INT"
+alignment = 1
+
+[node name="IntMod" type="LineEdit" parent="HBoxContainer/VBStatBlock/HBoxContainer/Stats/VBStats/VBInt"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+placeholder_text = "Mod"
+alignment = 1
+
+[node name="VBWis" type="VBoxContainer" parent="HBoxContainer/VBStatBlock/HBoxContainer/Stats/VBStats"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Label" type="Label" parent="HBoxContainer/VBStatBlock/HBoxContainer/Stats/VBStats/VBWis"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 11
+text = "Wisdom"
+horizontal_alignment = 1
+
+[node name="WisStat" type="LineEdit" parent="HBoxContainer/VBStatBlock/HBoxContainer/Stats/VBStats/VBWis"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+placeholder_text = "WIS"
+alignment = 1
+
+[node name="WisMod" type="LineEdit" parent="HBoxContainer/VBStatBlock/HBoxContainer/Stats/VBStats/VBWis"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+placeholder_text = "Mod"
+alignment = 1
+
+[node name="VBCha" type="VBoxContainer" parent="HBoxContainer/VBStatBlock/HBoxContainer/Stats/VBStats"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Label" type="Label" parent="HBoxContainer/VBStatBlock/HBoxContainer/Stats/VBStats/VBCha"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 11
+text = "Charisma"
+horizontal_alignment = 1
+
+[node name="ChaStat" type="LineEdit" parent="HBoxContainer/VBStatBlock/HBoxContainer/Stats/VBStats/VBCha"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+placeholder_text = "CHA"
+alignment = 1
+
+[node name="ChaMod" type="LineEdit" parent="HBoxContainer/VBStatBlock/HBoxContainer/Stats/VBStats/VBCha"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+placeholder_text = "Mod"
+alignment = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="HBoxContainer/VBStatBlock/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="Inspiration" type="PanelContainer" parent="HBoxContainer/VBStatBlock/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_w7oqx")
+
+[node name="VBInspiration" type="VBoxContainer" parent="HBoxContainer/VBStatBlock/HBoxContainer/VBoxContainer2/Inspiration"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="HBInspiration" type="HBoxContainer" parent="HBoxContainer/VBStatBlock/HBoxContainer/VBoxContainer2/Inspiration/VBInspiration"]
+layout_mode = 2
+
+[node name="InspirationVal" type="LineEdit" parent="HBoxContainer/VBStatBlock/HBoxContainer/VBoxContainer2/Inspiration/VBInspiration/HBInspiration"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/minimum_character_width = 5
+theme_override_font_sizes/font_size = 12
+placeholder_text = "false"
+alignment = 1
+
+[node name="Label" type="Label" parent="HBoxContainer/VBStatBlock/HBoxContainer/VBoxContainer2/Inspiration/VBInspiration/HBInspiration"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "Inspiration"
+
+[node name="ProficiencyBonus" type="PanelContainer" parent="HBoxContainer/VBStatBlock/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_w7oqx")
+
+[node name="VBProficiencyBonus" type="VBoxContainer" parent="HBoxContainer/VBStatBlock/HBoxContainer/VBoxContainer2/ProficiencyBonus"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="HBProficiencyBonus" type="HBoxContainer" parent="HBoxContainer/VBStatBlock/HBoxContainer/VBoxContainer2/ProficiencyBonus/VBProficiencyBonus"]
+layout_mode = 2
+
+[node name="ProficiencyVal" type="LineEdit" parent="HBoxContainer/VBStatBlock/HBoxContainer/VBoxContainer2/ProficiencyBonus/VBProficiencyBonus/HBProficiencyBonus"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/minimum_character_width = 2
+theme_override_font_sizes/font_size = 12
+placeholder_text = "0"
+alignment = 1
+
+[node name="Label" type="Label" parent="HBoxContainer/VBStatBlock/HBoxContainer/VBoxContainer2/ProficiencyBonus/VBProficiencyBonus/HBProficiencyBonus"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "Proficiency Bonus"
+
+[node name="SavingThrows" type="PanelContainer" parent="HBoxContainer/VBStatBlock/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_w7oqx")
+
+[node name="VBSavingThrows" type="VBoxContainer" parent="HBoxContainer/VBStatBlock/HBoxContainer/VBoxContainer2/SavingThrows"]
+layout_mode = 2
+theme_override_constants/separation = -1
+
+[node name="HBStrength" type="HBoxContainer" parent="HBoxContainer/VBStatBlock/HBoxContainer/VBoxContainer2/SavingThrows/VBSavingThrows"]
+layout_mode = 2
+
+[node name="STStrengthBool" type="CheckBox" parent="HBoxContainer/VBStatBlock/HBoxContainer/VBoxContainer2/SavingThrows/VBSavingThrows/HBStrength"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="STStrengthMod" type="LineEdit" parent="HBoxContainer/VBStatBlock/HBoxContainer/VBoxContainer2/SavingThrows/VBSavingThrows/HBStrength"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/minimum_character_width = 2
+theme_override_font_sizes/font_size = 10
+placeholder_text = "0"
+alignment = 1
+
+[node name="Label" type="Label" parent="HBoxContainer/VBStatBlock/HBoxContainer/VBoxContainer2/SavingThrows/VBSavingThrows/HBStrength"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "Strength"
+
+[node name="HBDexterity" type="HBoxContainer" parent="HBoxContainer/VBStatBlock/HBoxContainer/VBoxContainer2/SavingThrows/VBSavingThrows"]
+layout_mode = 2
+
+[node name="STDexterityBool" type="CheckBox" parent="HBoxContainer/VBStatBlock/HBoxContainer/VBoxContainer2/SavingThrows/VBSavingThrows/HBDexterity"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="STDexterityMod" type="LineEdit" parent="HBoxContainer/VBStatBlock/HBoxContainer/VBoxContainer2/SavingThrows/VBSavingThrows/HBDexterity"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/minimum_character_width = 2
+theme_override_font_sizes/font_size = 10
+placeholder_text = "0"
+alignment = 1
+
+[node name="Label" type="Label" parent="HBoxContainer/VBStatBlock/HBoxContainer/VBoxContainer2/SavingThrows/VBSavingThrows/HBDexterity"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "Dexterity"
+
+[node name="HBConstitution" type="HBoxContainer" parent="HBoxContainer/VBStatBlock/HBoxContainer/VBoxContainer2/SavingThrows/VBSavingThrows"]
+layout_mode = 2
+
+[node name="STConstitutionBool" type="CheckBox" parent="HBoxContainer/VBStatBlock/HBoxContainer/VBoxContainer2/SavingThrows/VBSavingThrows/HBConstitution"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="STConstitutionMod" type="LineEdit" parent="HBoxContainer/VBStatBlock/HBoxContainer/VBoxContainer2/SavingThrows/VBSavingThrows/HBConstitution"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/minimum_character_width = 2
+theme_override_font_sizes/font_size = 10
+placeholder_text = "0"
+alignment = 1
+
+[node name="Label" type="Label" parent="HBoxContainer/VBStatBlock/HBoxContainer/VBoxContainer2/SavingThrows/VBSavingThrows/HBConstitution"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "Constitution"
+
+[node name="HBIntelligence" type="HBoxContainer" parent="HBoxContainer/VBStatBlock/HBoxContainer/VBoxContainer2/SavingThrows/VBSavingThrows"]
+layout_mode = 2
+
+[node name="STIntelligenceBool" type="CheckBox" parent="HBoxContainer/VBStatBlock/HBoxContainer/VBoxContainer2/SavingThrows/VBSavingThrows/HBIntelligence"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="STIntelligenceMod" type="LineEdit" parent="HBoxContainer/VBStatBlock/HBoxContainer/VBoxContainer2/SavingThrows/VBSavingThrows/HBIntelligence"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/minimum_character_width = 2
+theme_override_font_sizes/font_size = 10
+placeholder_text = "0"
+alignment = 1
+
+[node name="Label" type="Label" parent="HBoxContainer/VBStatBlock/HBoxContainer/VBoxContainer2/SavingThrows/VBSavingThrows/HBIntelligence"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "Intelligence"
+
+[node name="HBWisdom" type="HBoxContainer" parent="HBoxContainer/VBStatBlock/HBoxContainer/VBoxContainer2/SavingThrows/VBSavingThrows"]
+layout_mode = 2
+
+[node name="STWisdomBool" type="CheckBox" parent="HBoxContainer/VBStatBlock/HBoxContainer/VBoxContainer2/SavingThrows/VBSavingThrows/HBWisdom"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="STWisdomMod" type="LineEdit" parent="HBoxContainer/VBStatBlock/HBoxContainer/VBoxContainer2/SavingThrows/VBSavingThrows/HBWisdom"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/minimum_character_width = 2
+theme_override_font_sizes/font_size = 10
+placeholder_text = "0"
+alignment = 1
+
+[node name="Label" type="Label" parent="HBoxContainer/VBStatBlock/HBoxContainer/VBoxContainer2/SavingThrows/VBSavingThrows/HBWisdom"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "Wisdom"
+
+[node name="HBCharisma" type="HBoxContainer" parent="HBoxContainer/VBStatBlock/HBoxContainer/VBoxContainer2/SavingThrows/VBSavingThrows"]
+layout_mode = 2
+
+[node name="STCharismaBool" type="CheckBox" parent="HBoxContainer/VBStatBlock/HBoxContainer/VBoxContainer2/SavingThrows/VBSavingThrows/HBCharisma"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="STCharismaMod" type="LineEdit" parent="HBoxContainer/VBStatBlock/HBoxContainer/VBoxContainer2/SavingThrows/VBSavingThrows/HBCharisma"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/minimum_character_width = 2
+theme_override_font_sizes/font_size = 10
+placeholder_text = "0"
+alignment = 1
+
+[node name="Label" type="Label" parent="HBoxContainer/VBStatBlock/HBoxContainer/VBoxContainer2/SavingThrows/VBSavingThrows/HBCharisma"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "Charisma"
+
+[node name="Skills" type="PanelContainer" parent="HBoxContainer/VBStatBlock/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_w7oqx")
+
+[node name="VBSkills" type="VBoxContainer" parent="HBoxContainer/VBStatBlock/HBoxContainer/VBoxContainer2/Skills"]
+layout_mode = 2
+theme_override_constants/separation = -3
+
+[node name="HBAcrobatics" type="HBoxContainer" parent="HBoxContainer/VBStatBlock/HBoxContainer/VBoxContainer2/Skills/VBSkills"]
+layout_mode = 2
+
+[node name="SkillAcrobaticsBool" type="CheckBox" parent="HBoxContainer/VBStatBlock/HBoxContainer/VBoxContainer2/Skills/VBSkills/HBAcrobatics"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="SkillAcrobaticsMod" type="LineEdit" parent="HBoxContainer/VBStatBlock/HBoxContainer/VBoxContainer2/Skills/VBSkills/HBAcrobatics"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/minimum_character_width = 2
+theme_override_font_sizes/font_size = 10
+placeholder_text = "0"
+alignment = 1
+
+[node name="Label" type="Label" parent="HBoxContainer/VBStatBlock/HBoxContainer/VBoxContainer2/Skills/VBSkills/HBAcrobatics"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "Acrobatics (Dex)"
+
+[node name="HBAnimalHandling" type="HBoxContainer" parent="HBoxContainer/VBStatBlock/HBoxContainer/VBoxContainer2/Skills/VBSkills"]
+layout_mode = 2
+
+[node name="SkillAnimalHandlingBool" type="CheckBox" parent="HBoxContainer/VBStatBlock/HBoxContainer/VBoxContainer2/Skills/VBSkills/HBAnimalHandling"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="SkillAnimalHandlingMod" type="LineEdit" parent="HBoxContainer/VBStatBlock/HBoxContainer/VBoxContainer2/Skills/VBSkills/HBAnimalHandling"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/minimum_character_width = 2
+theme_override_font_sizes/font_size = 10
+placeholder_text = "0"
+alignment = 1
+
+[node name="Label" type="Label" parent="HBoxContainer/VBStatBlock/HBoxContainer/VBoxContainer2/Skills/VBSkills/HBAnimalHandling"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "Animal Handling (Wis)"
+
+[node name="HBArcana" type="HBoxContainer" parent="HBoxContainer/VBStatBlock/HBoxContainer/VBoxContainer2/Skills/VBSkills"]
+layout_mode = 2
+
+[node name="SkillArcanaBool" type="CheckBox" parent="HBoxContainer/VBStatBlock/HBoxContainer/VBoxContainer2/Skills/VBSkills/HBArcana"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="SkillArcanaMod" type="LineEdit" parent="HBoxContainer/VBStatBlock/HBoxContainer/VBoxContainer2/Skills/VBSkills/HBArcana"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/minimum_character_width = 2
+theme_override_font_sizes/font_size = 10
+placeholder_text = "0"
+alignment = 1
+
+[node name="Label" type="Label" parent="HBoxContainer/VBStatBlock/HBoxContainer/VBoxContainer2/Skills/VBSkills/HBArcana"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "Arcana (Int)"
+
+[node name="HBAthletics" type="HBoxContainer" parent="HBoxContainer/VBStatBlock/HBoxContainer/VBoxContainer2/Skills/VBSkills"]
+layout_mode = 2
+
+[node name="SkillAthleticsBool" type="CheckBox" parent="HBoxContainer/VBStatBlock/HBoxContainer/VBoxContainer2/Skills/VBSkills/HBAthletics"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="SkillAthleticsMod" type="LineEdit" parent="HBoxContainer/VBStatBlock/HBoxContainer/VBoxContainer2/Skills/VBSkills/HBAthletics"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/minimum_character_width = 2
+theme_override_font_sizes/font_size = 10
+placeholder_text = "0"
+alignment = 1
+
+[node name="Label" type="Label" parent="HBoxContainer/VBStatBlock/HBoxContainer/VBoxContainer2/Skills/VBSkills/HBAthletics"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "Athletics (Str)"
+
+[node name="HBDeception" type="HBoxContainer" parent="HBoxContainer/VBStatBlock/HBoxContainer/VBoxContainer2/Skills/VBSkills"]
+layout_mode = 2
+
+[node name="SkillDeceptionBool" type="CheckBox" parent="HBoxContainer/VBStatBlock/HBoxContainer/VBoxContainer2/Skills/VBSkills/HBDeception"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="SkillDeceptionMod" type="LineEdit" parent="HBoxContainer/VBStatBlock/HBoxContainer/VBoxContainer2/Skills/VBSkills/HBDeception"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/minimum_character_width = 2
+theme_override_font_sizes/font_size = 10
+placeholder_text = "0"
+alignment = 1
+
+[node name="Label" type="Label" parent="HBoxContainer/VBStatBlock/HBoxContainer/VBoxContainer2/Skills/VBSkills/HBDeception"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "Deception (Cha)"
+
+[node name="HBHistory" type="HBoxContainer" parent="HBoxContainer/VBStatBlock/HBoxContainer/VBoxContainer2/Skills/VBSkills"]
+layout_mode = 2
+
+[node name="SkillHistoryBool" type="CheckBox" parent="HBoxContainer/VBStatBlock/HBoxContainer/VBoxContainer2/Skills/VBSkills/HBHistory"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="SkillHistoryMod" type="LineEdit" parent="HBoxContainer/VBStatBlock/HBoxContainer/VBoxContainer2/Skills/VBSkills/HBHistory"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/minimum_character_width = 2
+theme_override_font_sizes/font_size = 10
+placeholder_text = "0"
+alignment = 1
+
+[node name="Label" type="Label" parent="HBoxContainer/VBStatBlock/HBoxContainer/VBoxContainer2/Skills/VBSkills/HBHistory"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "History (Int)"
+
+[node name="HBInsight" type="HBoxContainer" parent="HBoxContainer/VBStatBlock/HBoxContainer/VBoxContainer2/Skills/VBSkills"]
+layout_mode = 2
+
+[node name="SkillInsightBool" type="CheckBox" parent="HBoxContainer/VBStatBlock/HBoxContainer/VBoxContainer2/Skills/VBSkills/HBInsight"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="SkillInsightMod" type="LineEdit" parent="HBoxContainer/VBStatBlock/HBoxContainer/VBoxContainer2/Skills/VBSkills/HBInsight"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/minimum_character_width = 2
+theme_override_font_sizes/font_size = 10
+placeholder_text = "0"
+alignment = 1
+
+[node name="Label" type="Label" parent="HBoxContainer/VBStatBlock/HBoxContainer/VBoxContainer2/Skills/VBSkills/HBInsight"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "Insight (Wis)"
+
+[node name="HBIntimidation" type="HBoxContainer" parent="HBoxContainer/VBStatBlock/HBoxContainer/VBoxContainer2/Skills/VBSkills"]
+layout_mode = 2
+
+[node name="SkillIntimidationBool" type="CheckBox" parent="HBoxContainer/VBStatBlock/HBoxContainer/VBoxContainer2/Skills/VBSkills/HBIntimidation"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="SkillIntimidationMod" type="LineEdit" parent="HBoxContainer/VBStatBlock/HBoxContainer/VBoxContainer2/Skills/VBSkills/HBIntimidation"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/minimum_character_width = 2
+theme_override_font_sizes/font_size = 10
+placeholder_text = "0"
+alignment = 1
+
+[node name="Label" type="Label" parent="HBoxContainer/VBStatBlock/HBoxContainer/VBoxContainer2/Skills/VBSkills/HBIntimidation"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "Intimidation (Cha)"
+
+[node name="HBInvestigation" type="HBoxContainer" parent="HBoxContainer/VBStatBlock/HBoxContainer/VBoxContainer2/Skills/VBSkills"]
+layout_mode = 2
+
+[node name="SkillInvestigationBool" type="CheckBox" parent="HBoxContainer/VBStatBlock/HBoxContainer/VBoxContainer2/Skills/VBSkills/HBInvestigation"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="SkillInvestigationMod" type="LineEdit" parent="HBoxContainer/VBStatBlock/HBoxContainer/VBoxContainer2/Skills/VBSkills/HBInvestigation"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/minimum_character_width = 2
+theme_override_font_sizes/font_size = 10
+placeholder_text = "0"
+alignment = 1
+
+[node name="Label" type="Label" parent="HBoxContainer/VBStatBlock/HBoxContainer/VBoxContainer2/Skills/VBSkills/HBInvestigation"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "Investigation (Int)"
+
+[node name="HBMedicine" type="HBoxContainer" parent="HBoxContainer/VBStatBlock/HBoxContainer/VBoxContainer2/Skills/VBSkills"]
+layout_mode = 2
+
+[node name="SkillMedicineBool" type="CheckBox" parent="HBoxContainer/VBStatBlock/HBoxContainer/VBoxContainer2/Skills/VBSkills/HBMedicine"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="SkillMedicineMod" type="LineEdit" parent="HBoxContainer/VBStatBlock/HBoxContainer/VBoxContainer2/Skills/VBSkills/HBMedicine"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/minimum_character_width = 2
+theme_override_font_sizes/font_size = 10
+placeholder_text = "0"
+alignment = 1
+
+[node name="Label" type="Label" parent="HBoxContainer/VBStatBlock/HBoxContainer/VBoxContainer2/Skills/VBSkills/HBMedicine"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "Medicine (Wis"
+
+[node name="HBNature" type="HBoxContainer" parent="HBoxContainer/VBStatBlock/HBoxContainer/VBoxContainer2/Skills/VBSkills"]
+layout_mode = 2
+
+[node name="SkillNatureBool" type="CheckBox" parent="HBoxContainer/VBStatBlock/HBoxContainer/VBoxContainer2/Skills/VBSkills/HBNature"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="SkillNatureMod" type="LineEdit" parent="HBoxContainer/VBStatBlock/HBoxContainer/VBoxContainer2/Skills/VBSkills/HBNature"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/minimum_character_width = 2
+theme_override_font_sizes/font_size = 10
+placeholder_text = "0"
+alignment = 1
+
+[node name="Label" type="Label" parent="HBoxContainer/VBStatBlock/HBoxContainer/VBoxContainer2/Skills/VBSkills/HBNature"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "Nature (Int)"
+
+[node name="HBPerception" type="HBoxContainer" parent="HBoxContainer/VBStatBlock/HBoxContainer/VBoxContainer2/Skills/VBSkills"]
+layout_mode = 2
+
+[node name="SkillPerceptionBool" type="CheckBox" parent="HBoxContainer/VBStatBlock/HBoxContainer/VBoxContainer2/Skills/VBSkills/HBPerception"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="SkillPerceptionMod" type="LineEdit" parent="HBoxContainer/VBStatBlock/HBoxContainer/VBoxContainer2/Skills/VBSkills/HBPerception"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/minimum_character_width = 2
+theme_override_font_sizes/font_size = 10
+placeholder_text = "0"
+alignment = 1
+
+[node name="Label" type="Label" parent="HBoxContainer/VBStatBlock/HBoxContainer/VBoxContainer2/Skills/VBSkills/HBPerception"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "Perception (Wis)"
+
+[node name="HBPerformance" type="HBoxContainer" parent="HBoxContainer/VBStatBlock/HBoxContainer/VBoxContainer2/Skills/VBSkills"]
+layout_mode = 2
+
+[node name="SkillPerformanceBool" type="CheckBox" parent="HBoxContainer/VBStatBlock/HBoxContainer/VBoxContainer2/Skills/VBSkills/HBPerformance"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="SkillPerformanceMod" type="LineEdit" parent="HBoxContainer/VBStatBlock/HBoxContainer/VBoxContainer2/Skills/VBSkills/HBPerformance"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/minimum_character_width = 2
+theme_override_font_sizes/font_size = 10
+placeholder_text = "0"
+alignment = 1
+
+[node name="Label" type="Label" parent="HBoxContainer/VBStatBlock/HBoxContainer/VBoxContainer2/Skills/VBSkills/HBPerformance"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "Performance (Cha)"
+
+[node name="HBPersuasion" type="HBoxContainer" parent="HBoxContainer/VBStatBlock/HBoxContainer/VBoxContainer2/Skills/VBSkills"]
+layout_mode = 2
+
+[node name="SkillPersuasionBool" type="CheckBox" parent="HBoxContainer/VBStatBlock/HBoxContainer/VBoxContainer2/Skills/VBSkills/HBPersuasion"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="SkillPersuasionMod" type="LineEdit" parent="HBoxContainer/VBStatBlock/HBoxContainer/VBoxContainer2/Skills/VBSkills/HBPersuasion"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/minimum_character_width = 2
+theme_override_font_sizes/font_size = 10
+placeholder_text = "0"
+alignment = 1
+
+[node name="Label" type="Label" parent="HBoxContainer/VBStatBlock/HBoxContainer/VBoxContainer2/Skills/VBSkills/HBPersuasion"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "Persuasion (Cha)"
+
+[node name="HBReligion" type="HBoxContainer" parent="HBoxContainer/VBStatBlock/HBoxContainer/VBoxContainer2/Skills/VBSkills"]
+layout_mode = 2
+
+[node name="SkillReligionBool" type="CheckBox" parent="HBoxContainer/VBStatBlock/HBoxContainer/VBoxContainer2/Skills/VBSkills/HBReligion"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="SkillReligionMod" type="LineEdit" parent="HBoxContainer/VBStatBlock/HBoxContainer/VBoxContainer2/Skills/VBSkills/HBReligion"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/minimum_character_width = 2
+theme_override_font_sizes/font_size = 10
+placeholder_text = "0"
+alignment = 1
+
+[node name="Label" type="Label" parent="HBoxContainer/VBStatBlock/HBoxContainer/VBoxContainer2/Skills/VBSkills/HBReligion"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "Religion (Int)"
+
+[node name="HBSleightOfHand" type="HBoxContainer" parent="HBoxContainer/VBStatBlock/HBoxContainer/VBoxContainer2/Skills/VBSkills"]
+layout_mode = 2
+
+[node name="SkillSleightOfHandBool" type="CheckBox" parent="HBoxContainer/VBStatBlock/HBoxContainer/VBoxContainer2/Skills/VBSkills/HBSleightOfHand"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="SkillSleightOfHandMod" type="LineEdit" parent="HBoxContainer/VBStatBlock/HBoxContainer/VBoxContainer2/Skills/VBSkills/HBSleightOfHand"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/minimum_character_width = 2
+theme_override_font_sizes/font_size = 10
+placeholder_text = "0"
+alignment = 1
+
+[node name="Label" type="Label" parent="HBoxContainer/VBStatBlock/HBoxContainer/VBoxContainer2/Skills/VBSkills/HBSleightOfHand"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "Sleight of Hand (Dex)"
+
+[node name="HBStealth" type="HBoxContainer" parent="HBoxContainer/VBStatBlock/HBoxContainer/VBoxContainer2/Skills/VBSkills"]
+layout_mode = 2
+
+[node name="SkillStealthBool" type="CheckBox" parent="HBoxContainer/VBStatBlock/HBoxContainer/VBoxContainer2/Skills/VBSkills/HBStealth"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="SkillStealthMod" type="LineEdit" parent="HBoxContainer/VBStatBlock/HBoxContainer/VBoxContainer2/Skills/VBSkills/HBStealth"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/minimum_character_width = 2
+theme_override_font_sizes/font_size = 10
+placeholder_text = "0"
+alignment = 1
+
+[node name="Label" type="Label" parent="HBoxContainer/VBStatBlock/HBoxContainer/VBoxContainer2/Skills/VBSkills/HBStealth"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "Stealth (Dex)"
+
+[node name="HBSurvival" type="HBoxContainer" parent="HBoxContainer/VBStatBlock/HBoxContainer/VBoxContainer2/Skills/VBSkills"]
+layout_mode = 2
+
+[node name="SkillSurvivalBool" type="CheckBox" parent="HBoxContainer/VBStatBlock/HBoxContainer/VBoxContainer2/Skills/VBSkills/HBSurvival"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="SkillSurvivalMod" type="LineEdit" parent="HBoxContainer/VBStatBlock/HBoxContainer/VBoxContainer2/Skills/VBSkills/HBSurvival"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/minimum_character_width = 2
+theme_override_font_sizes/font_size = 10
+placeholder_text = "0"
+alignment = 1
+
+[node name="Label" type="Label" parent="HBoxContainer/VBStatBlock/HBoxContainer/VBoxContainer2/Skills/VBSkills/HBSurvival"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "Survival (Wis)"
+
+[node name="Inspiration" type="PanelContainer" parent="HBoxContainer/VBStatBlock"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_w7oqx")
+
+[node name="VBInspiration" type="VBoxContainer" parent="HBoxContainer/VBStatBlock/Inspiration"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="HBInspiration" type="HBoxContainer" parent="HBoxContainer/VBStatBlock/Inspiration/VBInspiration"]
+layout_mode = 2
+
+[node name="StatPassiveWisdom" type="LineEdit" parent="HBoxContainer/VBStatBlock/Inspiration/VBInspiration/HBInspiration"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/minimum_character_width = 2
+theme_override_font_sizes/font_size = 12
+placeholder_text = "0"
+alignment = 1
+
+[node name="Label" type="Label" parent="HBoxContainer/VBStatBlock/Inspiration/VBInspiration/HBInspiration"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "Passive wisdom (Perception)"

@@ -7,8 +7,10 @@ using System.Reflection.Metadata;
 // using Godot.Collections;
 
 public partial class DNDclasses : Node {
-    public DNDclasses(string name, string source, int numHitDie, int hitDieType, List<string> skillProficiencies, string spellcastingAbility, string preparedSpells, List<int> cantripProgression, List<string> armorProficiencies, List<string> toolProficiencies, List<string> weaponProficiencies, List<string> skillChoices, int numSkillChoices){
-        
+    public DNDclasses(string name, string source, int numHitDie, int hitDieType, List<string> skillProficiencies, string spellcastingAbility, string preparedSpells, List<int> cantripProgression, List<string> armorProficiencies, List<string> toolProficiencies, List<string> weaponProficiencies, List<string> skillChoices, int numSkillChoices, List<List<int>> spellProgression){
+        if(spellProgression != null){
+            GD.Print("Has spell progression");
+        }
     }
     private static void ReadDndClass(ref List<DNDclasses> classes, string filepath){
         var baseJson = JsonUtils.ParseJsonFile("user://data/class/" + filepath);
@@ -97,7 +99,50 @@ public partial class DNDclasses : Node {
 
                 }
             }
-            classes.Add(new(name, source, numHitDie, hitdieType, skillProficiencies, spellcastingAbility, preparedSpells, cantripProgression, armorProficiencies, toolProficiencies, weaponProficiencies, skillChoices, numSkillChoices));
+            List<List<int>> spellProgression = null;
+            if(classDataInstance.ContainsKey("classTableGroups")){
+                var tableGroups = JsonSerializer.Deserialize<List<Dictionary<string, object>>>(classDataInstance["classTableGroups"].ToString());
+                foreach(var table in tableGroups){
+                    if(table.ContainsKey("title")){
+                        if(table["title"].ToString() == "Spell Slots per Spell Level"){
+                            spellProgression = JsonSerializer.Deserialize<List<List<int>>>(table["rowsSpellProgression"].ToString());
+
+                        }
+                    }
+                }
+            }
+            Dictionary<int, List<string>> classFeaturesByLevel = null;
+            if(classDataInstance.ContainsKey("classFeatures")){
+                classFeaturesByLevel = new();
+                var classFeatures = JsonSerializer.Deserialize<List<object>>(classDataInstance["classFeatures"].ToString());
+                foreach(var feature in classFeatures){
+                    var stringFeature = feature.ToString();
+                    string f = "";
+                    if(stringFeature.Contains('{')){
+                        var featureDict = JsonSerializer.Deserialize<Dictionary<string, object>>(stringFeature);
+                        f = featureDict["classFeature"].ToString();
+                    } else {
+                        f = stringFeature;
+                    }
+                    // GD.Print(f);
+                    var splitFeature = f.Split('|');
+                    int level =0;
+                    try {
+                        level = splitFeature[^1].ToInt();
+                    } catch {
+                        // Why is barbarian like this
+                        level = splitFeature[^2].ToInt();
+                    }
+                    // var level = splitFeature[^1].ToInt();
+                    // GD.Print(level);
+                    var feat = splitFeature[0];
+                    if(!classFeaturesByLevel.ContainsKey(level)){
+                        classFeaturesByLevel.Add(level, new());
+                    }
+                    classFeaturesByLevel[level].Add(feat);
+                }
+            }
+            classes.Add(new(name, source, numHitDie, hitdieType, skillProficiencies, spellcastingAbility, preparedSpells, cantripProgression, armorProficiencies, toolProficiencies, weaponProficiencies, skillChoices, numSkillChoices, spellProgression));
         }
     }
     public static List<DNDclasses> GenerateClasses(){

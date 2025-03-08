@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://ken6of6mjj0f"]
+[gd_scene load_steps=11 format=3 uid="uid://ken6of6mjj0f"]
 
-[ext_resource type="Script" uid="uid://w46r1xqlomv8" path="res://UI/race_panel_radio.gd" id="1_20d1c"]
+[ext_resource type="Script" uid="uid://dyucs41p6mh56" path="res://UI/RacePanel.cs" id="1_a5k5p"]
 [ext_resource type="Script" uid="uid://cyexhi5ykcw3s" path="res://UI/UI_Scripts_gd/Button_Manager.gd" id="1_ds00d"]
-[ext_resource type="Script" uid="uid://b4oauovrwykbe" path="res://UI/instantiate_class.gd" id="2_qfwp6"]
-[ext_resource type="Script" uid="uid://b7qp0qv1qwtyh" path="res://UI/class_radio.gd" id="2_wy7x5"]
+[ext_resource type="Script" uid="uid://pctyt1ohflub" path="res://UI/instantiate_race.cs" id="2_48rjk"]
+[ext_resource type="Script" uid="uid://dhfiiu5lqf0fv" path="res://UI/ClassPanel.cs" id="2_wy7x5"]
+[ext_resource type="Script" uid="uid://sb6krunw8r0b" path="res://UI/instantiate_class.cs" id="3_wy7x5"]
 [ext_resource type="Script" uid="uid://vip7t21m7o7a" path="res://UI/ClassJsonInfo.cs" id="4_mdfeu"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ds00d"]
@@ -45,11 +46,12 @@ text = "Race"
 
 [node name="Class" type="Button" parent="PanelContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
-text = "Sub-Race"
+text = "Class"
 
 [node name="Sub-Class" type="Button" parent="PanelContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
-text = "Class"
+text = "Sub-Class
+"
 
 [node name="Button4" type="Button" parent="PanelContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
@@ -68,37 +70,30 @@ custom_minimum_size = Vector2(0, 157.47)
 layout_mode = 2
 
 [node name="Main" type="Panel" parent="PanelContainer/HBoxContainer"]
+visible = false
 custom_minimum_size = Vector2(180, 0)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_ds00d")
 
 [node name="Race_Panel" type="Panel" parent="PanelContainer/HBoxContainer"]
-visible = false
 custom_minimum_size = Vector2(180, 0)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_kjwba")
-script = ExtResource("1_20d1c")
+script = ExtResource("1_a5k5p")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/HBoxContainer/Race_Panel"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="ScrollContainer" type="ScrollContainer" parent="PanelContainer/HBoxContainer/Race_Panel"]
+custom_minimum_size = Vector2(180, 350)
+layout_mode = 2
+anchor_right = 1.0
+anchor_bottom = 0.953678
+metadata/_edit_use_anchors_ = true
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/HBoxContainer/Race_Panel/HBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/HBoxContainer/Race_Panel/ScrollContainer"]
 layout_mode = 2
 
-[node name="CheckBox" type="CheckBox" parent="PanelContainer/HBoxContainer/Race_Panel/HBoxContainer/VBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/HBoxContainer/Race_Panel/ScrollContainer/HBoxContainer"]
 layout_mode = 2
-text = "Tiefling"
-
-[node name="CheckBox2" type="CheckBox" parent="PanelContainer/HBoxContainer/Race_Panel/HBoxContainer/VBoxContainer"]
-layout_mode = 2
-text = "Orc
-"
-
-[node name="CheckBox3" type="CheckBox" parent="PanelContainer/HBoxContainer/Race_Panel/HBoxContainer/VBoxContainer"]
-layout_mode = 2
-text = "Human"
+script = ExtResource("2_48rjk")
 
 [node name="Class_Panel" type="Panel" parent="PanelContainer/HBoxContainer"]
 visible = false
@@ -107,20 +102,27 @@ layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_20d1c")
 script = ExtResource("2_wy7x5")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/HBoxContainer/Class_Panel"]
+[node name="ScrollContainer" type="ScrollContainer" parent="PanelContainer/HBoxContainer/Class_Panel"]
+custom_minimum_size = Vector2(180, 350)
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/HBoxContainer/Class_Panel/HBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/HBoxContainer/Class_Panel/ScrollContainer"]
 layout_mode = 2
-script = ExtResource("2_qfwp6")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/HBoxContainer/Class_Panel/ScrollContainer/HBoxContainer"]
+layout_mode = 2
+script = ExtResource("3_wy7x5")
 
 [node name="Sub-Class_Panel" type="Panel" parent="PanelContainer/HBoxContainer"]
 visible = false
 custom_minimum_size = Vector2(180, 0)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_qfwp6")
+
+[node name="Panel" type="Panel" parent="PanelContainer/HBoxContainer"]
+layout_mode = 2
 
 [node name="PanelManager" type="Node" parent="."]
 script = ExtResource("1_ds00d")
@@ -129,6 +131,3 @@ script = ExtResource("1_ds00d")
 script = ExtResource("4_mdfeu")
 
 [connection signal="pressed" from="PanelContainer/HBoxContainer/VBoxContainer/Class" to="PanelManager" method="_on_button_2_pressed"]
-[connection signal="toggled" from="PanelContainer/HBoxContainer/Race_Panel/HBoxContainer/VBoxContainer/CheckBox" to="PanelContainer/HBoxContainer/Race_Panel" method="_on_radio_toggled" binds= ["CheckBox", "option 1"]]
-[connection signal="toggled" from="PanelContainer/HBoxContainer/Race_Panel/HBoxContainer/VBoxContainer/CheckBox2" to="PanelContainer/HBoxContainer/Race_Panel" method="_on_radio_toggled" binds= ["CheckBox2", "option 2"]]
-[connection signal="toggled" from="PanelContainer/HBoxContainer/Race_Panel/HBoxContainer/VBoxContainer/CheckBox3" to="PanelContainer/HBoxContainer/Race_Panel" method="_on_radio_toggled" binds= ["CheckBox3", "option 3"]]

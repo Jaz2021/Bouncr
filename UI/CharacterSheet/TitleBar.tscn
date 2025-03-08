@@ -1,0 +1,352 @@
+[gd_scene load_steps=26 format=3 uid="uid://dul3xvl8l10qi"]
+
+[ext_resource type="Script" uid="uid://bkjgh316l7h84" path="res://UI/CharacterSheet/CharacterTitlePopulate.gd" id="1_luex1"]
+[ext_resource type="Script" uid="uid://lb725n23hspe" path="res://CustomResources/Skill.cs" id="2_g4qjo"]
+[ext_resource type="Script" uid="uid://bi2skhq8bfs34" path="res://CustomResources/DnDCharacter.cs" id="3_llwyi"]
+
+[sub_resource type="Resource" id="Resource_pau5k"]
+script = ExtResource("2_g4qjo")
+Name = "Acrobatics"
+IsProficient = false
+Bonus = 0
+
+[sub_resource type="Resource" id="Resource_ynjy4"]
+script = ExtResource("2_g4qjo")
+Name = "AnimalHandling"
+IsProficient = false
+Bonus = 0
+
+[sub_resource type="Resource" id="Resource_43hf0"]
+script = ExtResource("2_g4qjo")
+Name = "Arcana"
+IsProficient = false
+Bonus = 0
+
+[sub_resource type="Resource" id="Resource_ocmt1"]
+script = ExtResource("2_g4qjo")
+Name = "Athletics"
+IsProficient = false
+Bonus = 0
+
+[sub_resource type="Resource" id="Resource_nfi2i"]
+script = ExtResource("2_g4qjo")
+Name = "Deception"
+IsProficient = false
+Bonus = 0
+
+[sub_resource type="Resource" id="Resource_aidtv"]
+script = ExtResource("2_g4qjo")
+Name = "History"
+IsProficient = false
+Bonus = 0
+
+[sub_resource type="Resource" id="Resource_oval7"]
+script = ExtResource("2_g4qjo")
+Name = "Insight"
+IsProficient = false
+Bonus = 0
+
+[sub_resource type="Resource" id="Resource_cioyl"]
+script = ExtResource("2_g4qjo")
+Name = "Intimidation"
+IsProficient = false
+Bonus = 0
+
+[sub_resource type="Resource" id="Resource_8ltag"]
+script = ExtResource("2_g4qjo")
+Name = "Investigation"
+IsProficient = false
+Bonus = 0
+
+[sub_resource type="Resource" id="Resource_jd6n6"]
+script = ExtResource("2_g4qjo")
+Name = "Medicine"
+IsProficient = false
+Bonus = 0
+
+[sub_resource type="Resource" id="Resource_pwc0k"]
+script = ExtResource("2_g4qjo")
+Name = "Nature"
+IsProficient = false
+Bonus = 0
+
+[sub_resource type="Resource" id="Resource_fhbhs"]
+script = ExtResource("2_g4qjo")
+Name = "Perception"
+IsProficient = false
+Bonus = 0
+
+[sub_resource type="Resource" id="Resource_0je40"]
+script = ExtResource("2_g4qjo")
+Name = "Performance"
+IsProficient = false
+Bonus = 0
+
+[sub_resource type="Resource" id="Resource_y3ivt"]
+script = ExtResource("2_g4qjo")
+Name = "Persuasion"
+IsProficient = false
+Bonus = 0
+
+[sub_resource type="Resource" id="Resource_8s6bj"]
+script = ExtResource("2_g4qjo")
+Name = "Religion"
+IsProficient = false
+Bonus = 0
+
+[sub_resource type="Resource" id="Resource_1oww3"]
+script = ExtResource("2_g4qjo")
+Name = "SleightOfHand"
+IsProficient = false
+Bonus = 0
+
+[sub_resource type="Resource" id="Resource_mt4bk"]
+script = ExtResource("2_g4qjo")
+Name = "Stealth"
+IsProficient = false
+Bonus = 0
+
+[sub_resource type="Resource" id="Resource_rdp1w"]
+script = ExtResource("2_g4qjo")
+Name = "Survival"
+IsProficient = false
+Bonus = 0
+
+[sub_resource type="Resource" id="Resource_kc543"]
+script = ExtResource("3_llwyi")
+CharacterName = "First Last"
+Level = 1
+Class = "Fighter"
+Background = "Noble"
+PlayerName = "John Doe"
+Race = "Human"
+Alignment = 4
+ExperiencePoints = 0
+Strength = 10
+Dexterity = 10
+Constitution = 10
+Intelligence = 10
+Wisdom = 10
+Charisma = 10
+ProficiencyBonus = 2
+Inspiration = false
+StrengthSaveProficient = false
+DexteritySaveProficient = false
+ConstitutionSaveProficient = false
+IntelligenceSaveProficient = false
+WisdomSaveProficient = false
+CharismaSaveProficient = false
+Acrobatics = SubResource("Resource_pau5k")
+SleightOfHand = SubResource("Resource_1oww3")
+Stealth = SubResource("Resource_mt4bk")
+AnimalHandling = SubResource("Resource_ynjy4")
+Insight = SubResource("Resource_oval7")
+Medicine = SubResource("Resource_jd6n6")
+Perception = SubResource("Resource_fhbhs")
+Survival = SubResource("Resource_rdp1w")
+Arcana = SubResource("Resource_43hf0")
+History = SubResource("Resource_aidtv")
+Investigation = SubResource("Resource_8ltag")
+Nature = SubResource("Resource_pwc0k")
+Religion = SubResource("Resource_8s6bj")
+Athletics = SubResource("Resource_ocmt1")
+Deception = SubResource("Resource_nfi2i")
+Intimidation = SubResource("Resource_cioyl")
+Performance = SubResource("Resource_0je40")
+Persuasion = SubResource("Resource_y3ivt")
+ArmorClass = 10
+Speed = 30
+HitPointMaximum = 10
+CurrentHitPoints = 10
+TemporaryHitPoints = 10
+HitDiceTotal = 0
+HitDice = 2
+DeathSaveSuccess = 0
+DeathSaveFailier = 0
+Items = null
+Spells = null
+metadata/_custom_type_script = "uid://bi2skhq8bfs34"
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o1iua"]
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bdf4v"]
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_luex1"]
+
+[node name="CenterContainer" type="CenterContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_luex1")
+character = SubResource("Resource_kc543")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_o1iua")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="CharacterName" type="PanelContainer" parent="PanelContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_bdf4v")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/HBoxContainer/CharacterName"]
+layout_mode = 2
+
+[node name="CharacterNameVal" type="LineEdit" parent="PanelContainer/HBoxContainer/CharacterName/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+theme_override_constants/minimum_character_width = 15
+theme_override_font_sizes/font_size = 25
+placeholder_text = "Character Name"
+alignment = 1
+
+[node name="Label" type="Label" parent="PanelContainer/HBoxContainer/CharacterName/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "Character Name"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="ClassLevel" type="PanelContainer" parent="PanelContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_luex1")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/HBoxContainer/VBoxContainer/ClassLevel"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="ClassAndLevelVal" type="LineEdit" parent="PanelContainer/HBoxContainer/VBoxContainer/ClassLevel/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/minimum_character_width = 10
+theme_override_font_sizes/font_size = 0
+placeholder_text = "Class and Level"
+
+[node name="Label" type="Label" parent="PanelContainer/HBoxContainer/VBoxContainer/ClassLevel/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "Class & Level"
+
+[node name="Race" type="PanelContainer" parent="PanelContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_luex1")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/HBoxContainer/VBoxContainer/Race"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="RaceVal" type="LineEdit" parent="PanelContainer/HBoxContainer/VBoxContainer/Race/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/minimum_character_width = 10
+theme_override_font_sizes/font_size = 0
+placeholder_text = "Race"
+
+[node name="Label" type="Label" parent="PanelContainer/HBoxContainer/VBoxContainer/Race/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "Race"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="PanelContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Background" type="PanelContainer" parent="PanelContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_luex1")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/HBoxContainer/VBoxContainer2/Background"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="BackgroundVal" type="LineEdit" parent="PanelContainer/HBoxContainer/VBoxContainer2/Background/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/minimum_character_width = 10
+theme_override_font_sizes/font_size = 0
+placeholder_text = "Background"
+
+[node name="Label" type="Label" parent="PanelContainer/HBoxContainer/VBoxContainer2/Background/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "Background"
+
+[node name="Alignment" type="PanelContainer" parent="PanelContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_luex1")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/HBoxContainer/VBoxContainer2/Alignment"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="AlignmentVal" type="LineEdit" parent="PanelContainer/HBoxContainer/VBoxContainer2/Alignment/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/minimum_character_width = 10
+theme_override_font_sizes/font_size = 0
+placeholder_text = "Alignment"
+
+[node name="Label" type="Label" parent="PanelContainer/HBoxContainer/VBoxContainer2/Alignment/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "Alignment"
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="PanelContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="PlayerName" type="PanelContainer" parent="PanelContainer/HBoxContainer/VBoxContainer3"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_luex1")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/HBoxContainer/VBoxContainer3/PlayerName"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="PlayerNameVal" type="LineEdit" parent="PanelContainer/HBoxContainer/VBoxContainer3/PlayerName/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/minimum_character_width = 10
+theme_override_font_sizes/font_size = 0
+placeholder_text = "Player Name"
+
+[node name="Label" type="Label" parent="PanelContainer/HBoxContainer/VBoxContainer3/PlayerName/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "Player Name"
+
+[node name="ExperiencePoints" type="PanelContainer" parent="PanelContainer/HBoxContainer/VBoxContainer3"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_luex1")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/HBoxContainer/VBoxContainer3/ExperiencePoints"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="ExperiencePointsVal" type="LineEdit" parent="PanelContainer/HBoxContainer/VBoxContainer3/ExperiencePoints/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/minimum_character_width = 10
+theme_override_font_sizes/font_size = 0
+placeholder_text = "Experience Points"
+
+[node name="Label" type="Label" parent="PanelContainer/HBoxContainer/VBoxContainer3/ExperiencePoints/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "Experience Points"

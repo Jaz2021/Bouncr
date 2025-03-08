@@ -1,0 +1,520 @@
+[gd_scene load_steps=30 format=3 uid="uid://nw0gf0cojirm"]
+
+[ext_resource type="Script" uid="uid://bk8sk4b32w5uw" path="res://UI/CharacterSheet/AttackPopulate.gd" id="1_yw1oh"]
+[ext_resource type="Script" uid="uid://lb725n23hspe" path="res://CustomResources/Skill.cs" id="2_dbxcf"]
+[ext_resource type="Script" uid="uid://bi2skhq8bfs34" path="res://CustomResources/DnDCharacter.cs" id="3_0rqss"]
+
+[sub_resource type="Resource" id="Resource_d5jap"]
+script = ExtResource("2_dbxcf")
+Name = "Acrobatics"
+IsProficient = false
+Bonus = 0
+
+[sub_resource type="Resource" id="Resource_qcanb"]
+script = ExtResource("2_dbxcf")
+Name = "AnimalHandling"
+IsProficient = false
+Bonus = 0
+
+[sub_resource type="Resource" id="Resource_at84a"]
+script = ExtResource("2_dbxcf")
+Name = "Arcana"
+IsProficient = false
+Bonus = 0
+
+[sub_resource type="Resource" id="Resource_w0smf"]
+script = ExtResource("2_dbxcf")
+Name = "Athletics"
+IsProficient = false
+Bonus = 0
+
+[sub_resource type="Resource" id="Resource_jt4jg"]
+script = ExtResource("2_dbxcf")
+Name = "Deception"
+IsProficient = false
+Bonus = 0
+
+[sub_resource type="Resource" id="Resource_ld1qh"]
+script = ExtResource("2_dbxcf")
+Name = "History"
+IsProficient = false
+Bonus = 0
+
+[sub_resource type="Resource" id="Resource_j7yg2"]
+script = ExtResource("2_dbxcf")
+Name = "Insight"
+IsProficient = false
+Bonus = 0
+
+[sub_resource type="Resource" id="Resource_7av4i"]
+script = ExtResource("2_dbxcf")
+Name = "Intimidation"
+IsProficient = false
+Bonus = 0
+
+[sub_resource type="Resource" id="Resource_x1yjd"]
+script = ExtResource("2_dbxcf")
+Name = "Investigation"
+IsProficient = false
+Bonus = 0
+
+[sub_resource type="Resource" id="Resource_v8akq"]
+script = ExtResource("2_dbxcf")
+Name = "Medicine"
+IsProficient = false
+Bonus = 0
+
+[sub_resource type="Resource" id="Resource_mck1d"]
+script = ExtResource("2_dbxcf")
+Name = "Nature"
+IsProficient = false
+Bonus = 0
+
+[sub_resource type="Resource" id="Resource_0xayv"]
+script = ExtResource("2_dbxcf")
+Name = "Perception"
+IsProficient = false
+Bonus = 0
+
+[sub_resource type="Resource" id="Resource_155l2"]
+script = ExtResource("2_dbxcf")
+Name = "Performance"
+IsProficient = false
+Bonus = 0
+
+[sub_resource type="Resource" id="Resource_hkjjj"]
+script = ExtResource("2_dbxcf")
+Name = "Persuasion"
+IsProficient = false
+Bonus = 0
+
+[sub_resource type="Resource" id="Resource_afr4c"]
+script = ExtResource("2_dbxcf")
+Name = "Religion"
+IsProficient = false
+Bonus = 0
+
+[sub_resource type="Resource" id="Resource_al68u"]
+script = ExtResource("2_dbxcf")
+Name = "SleightOfHand"
+IsProficient = false
+Bonus = 0
+
+[sub_resource type="Resource" id="Resource_m6kqp"]
+script = ExtResource("2_dbxcf")
+Name = "Stealth"
+IsProficient = false
+Bonus = 0
+
+[sub_resource type="Resource" id="Resource_v752y"]
+script = ExtResource("2_dbxcf")
+Name = "Survival"
+IsProficient = false
+Bonus = 0
+
+[sub_resource type="Resource" id="Resource_dbxcf"]
+script = ExtResource("3_0rqss")
+CharacterName = "First Last"
+Level = 1
+Class = "Fighter"
+Background = "Noble"
+PlayerName = "John Doe"
+Race = "Human"
+Alignment = 4
+ExperiencePoints = 0
+Strength = 10
+Dexterity = 10
+Constitution = 10
+Intelligence = 10
+Wisdom = 10
+Charisma = 10
+ProficiencyBonus = 2
+Inspiration = false
+StrengthSaveProficient = false
+DexteritySaveProficient = false
+ConstitutionSaveProficient = false
+IntelligenceSaveProficient = false
+WisdomSaveProficient = false
+CharismaSaveProficient = false
+Acrobatics = SubResource("Resource_d5jap")
+SleightOfHand = SubResource("Resource_al68u")
+Stealth = SubResource("Resource_m6kqp")
+AnimalHandling = SubResource("Resource_qcanb")
+Insight = SubResource("Resource_j7yg2")
+Medicine = SubResource("Resource_v8akq")
+Perception = SubResource("Resource_0xayv")
+Survival = SubResource("Resource_v752y")
+Arcana = SubResource("Resource_at84a")
+History = SubResource("Resource_ld1qh")
+Investigation = SubResource("Resource_x1yjd")
+Nature = SubResource("Resource_mck1d")
+Religion = SubResource("Resource_afr4c")
+Athletics = SubResource("Resource_w0smf")
+Deception = SubResource("Resource_jt4jg")
+Intimidation = SubResource("Resource_7av4i")
+Performance = SubResource("Resource_155l2")
+Persuasion = SubResource("Resource_hkjjj")
+ArmorClass = 10
+Speed = 30
+HitPointMaximum = 10
+CurrentHitPoints = 10
+TemporaryHitPoints = 10
+HitDiceTotal = 1
+HitDice = 2
+DeathSaveSuccess = 2
+DeathSaveFailier = 2
+Items = null
+Spells = null
+metadata/_custom_type_script = "uid://bi2skhq8bfs34"
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uv1xy"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_53am2"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7w0sc"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mtbwn"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4vdnd"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w6gro"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oc4k0"]
+expand_margin_bottom = 5.0
+
+[node name="PanelContainer" type="CenterContainer"]
+size_flags_horizontal = 0
+size_flags_vertical = 0
+script = ExtResource("1_yw1oh")
+dnd_character = SubResource("Resource_dbxcf")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 3
+
+[node name="ACIniativeSpeed" type="PanelContainer" parent="VBoxContainer"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_uv1xy")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/ACIniativeSpeed"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/ACIniativeSpeed/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 25
+
+[node name="ArmorClass" type="PanelContainer" parent="VBoxContainer/ACIniativeSpeed/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_53am2")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/ACIniativeSpeed/VBoxContainer/HBoxContainer/ArmorClass"]
+layout_mode = 2
+
+[node name="ArmorClassVal" type="LineEdit" parent="VBoxContainer/ACIniativeSpeed/VBoxContainer/HBoxContainer/ArmorClass/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/minimum_character_width = 2
+theme_override_font_sizes/font_size = 30
+placeholder_text = "0"
+alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer/ACIniativeSpeed/VBoxContainer/HBoxContainer/ArmorClass/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "ArmorClass"
+horizontal_alignment = 1
+
+[node name="Initiative" type="PanelContainer" parent="VBoxContainer/ACIniativeSpeed/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_7w0sc")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/ACIniativeSpeed/VBoxContainer/HBoxContainer/Initiative"]
+layout_mode = 2
+
+[node name="InitiativeVal" type="LineEdit" parent="VBoxContainer/ACIniativeSpeed/VBoxContainer/HBoxContainer/Initiative/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/minimum_character_width = 2
+theme_override_font_sizes/font_size = 30
+placeholder_text = "0"
+alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer/ACIniativeSpeed/VBoxContainer/HBoxContainer/Initiative/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "Initiative"
+horizontal_alignment = 1
+
+[node name="Speed" type="PanelContainer" parent="VBoxContainer/ACIniativeSpeed/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_mtbwn")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/ACIniativeSpeed/VBoxContainer/HBoxContainer/Speed"]
+layout_mode = 2
+
+[node name="SpeedVal" type="LineEdit" parent="VBoxContainer/ACIniativeSpeed/VBoxContainer/HBoxContainer/Speed/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/minimum_character_width = 2
+theme_override_font_sizes/font_size = 30
+placeholder_text = "0"
+alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer/ACIniativeSpeed/VBoxContainer/HBoxContainer/Speed/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "Speed"
+horizontal_alignment = 1
+
+[node name="HitPoints" type="PanelContainer" parent="VBoxContainer"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_4vdnd")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HitPoints"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/HitPoints/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/HitPoints/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "Hit Point Maximum:"
+
+[node name="HitPointMaximumVal" type="LineEdit" parent="VBoxContainer/HitPoints/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/minimum_character_width = 11
+
+[node name="CurrentHitPointsVal" type="LineEdit" parent="VBoxContainer/HitPoints/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/HitPoints/VBoxContainer"]
+layout_mode = 2
+text = "Current Hit Points"
+horizontal_alignment = 1
+
+[node name="TempHitPoints" type="PanelContainer" parent="VBoxContainer"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_4vdnd")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/TempHitPoints"]
+layout_mode = 2
+
+[node name="TempHitPointsVal" type="LineEdit" parent="VBoxContainer/TempHitPoints/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/TempHitPoints/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+text = "Temporary Hit Points"
+horizontal_alignment = 1
+
+[node name="HitDiceDeathSave" type="PanelContainer" parent="VBoxContainer"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_4vdnd")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/HitDiceDeathSave"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 16
+
+[node name="HitDice" type="PanelContainer" parent="VBoxContainer/HitDiceDeathSave/HBoxContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_w6gro")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HitDiceDeathSave/HBoxContainer/HitDice"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/HitDiceDeathSave/HBoxContainer/HitDice/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="Label" type="Label" parent="VBoxContainer/HitDiceDeathSave/HBoxContainer/HitDice/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "Total:"
+horizontal_alignment = 1
+
+[node name="TotalHitVal" type="LineEdit" parent="VBoxContainer/HitDiceDeathSave/HBoxContainer/HitDice/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="HitDiceVal" type="LineEdit" parent="VBoxContainer/HitDiceDeathSave/HBoxContainer/HitDice/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/HitDiceDeathSave/HBoxContainer/HitDice/VBoxContainer"]
+layout_mode = 2
+text = "Hit Dice"
+horizontal_alignment = 1
+
+[node name="DeathSaves" type="PanelContainer" parent="VBoxContainer/HitDiceDeathSave/HBoxContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_w6gro")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HitDiceDeathSave/HBoxContainer/DeathSaves"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/HitDiceDeathSave/HBoxContainer/DeathSaves/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Label" type="Label" parent="VBoxContainer/HitDiceDeathSave/HBoxContainer/DeathSaves/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "Successes:"
+horizontal_alignment = 1
+
+[node name="DeathSave1Val" type="CheckBox" parent="VBoxContainer/HitDiceDeathSave/HBoxContainer/DeathSaves/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="DeathSave2Val" type="CheckBox" parent="VBoxContainer/HitDiceDeathSave/HBoxContainer/DeathSaves/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="DeathSave3Val" type="CheckBox" parent="VBoxContainer/HitDiceDeathSave/HBoxContainer/DeathSaves/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer/HitDiceDeathSave/HBoxContainer/DeathSaves/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+
+[node name="Label" type="Label" parent="VBoxContainer/HitDiceDeathSave/HBoxContainer/DeathSaves/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "Failures:"
+horizontal_alignment = 1
+
+[node name="DeathFail1Val" type="CheckBox" parent="VBoxContainer/HitDiceDeathSave/HBoxContainer/DeathSaves/VBoxContainer/HBoxContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="DeathFail2Val" type="CheckBox" parent="VBoxContainer/HitDiceDeathSave/HBoxContainer/DeathSaves/VBoxContainer/HBoxContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="DeathFail3Val" type="CheckBox" parent="VBoxContainer/HitDiceDeathSave/HBoxContainer/DeathSaves/VBoxContainer/HBoxContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/HitDiceDeathSave/HBoxContainer/DeathSaves/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 1
+text = "Death Saves"
+horizontal_alignment = 1
+
+[node name="AttacksAndSpellcasting" type="PanelContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_oc4k0")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/AttacksAndSpellcasting"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/AttacksAndSpellcasting/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="VBName" type="VBoxContainer" parent="VBoxContainer/AttacksAndSpellcasting/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/AttacksAndSpellcasting/VBoxContainer/HBoxContainer/VBName"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_font_sizes/font_size = 12
+text = "Name"
+horizontal_alignment = 1
+
+[node name="WeaponName1" type="LineEdit" parent="VBoxContainer/AttacksAndSpellcasting/VBoxContainer/HBoxContainer/VBName"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/minimum_character_width = 10
+theme_override_font_sizes/font_size = 12
+
+[node name="WeaponName2" type="LineEdit" parent="VBoxContainer/AttacksAndSpellcasting/VBoxContainer/HBoxContainer/VBName"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/minimum_character_width = 7
+theme_override_font_sizes/font_size = 12
+
+[node name="WeaponName3" type="LineEdit" parent="VBoxContainer/AttacksAndSpellcasting/VBoxContainer/HBoxContainer/VBName"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/minimum_character_width = 7
+theme_override_font_sizes/font_size = 12
+
+[node name="VBATKBonus" type="VBoxContainer" parent="VBoxContainer/AttacksAndSpellcasting/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/AttacksAndSpellcasting/VBoxContainer/HBoxContainer/VBATKBonus"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 12
+text = "ATK Bonus"
+
+[node name="WeaponAtkBonus1" type="LineEdit" parent="VBoxContainer/AttacksAndSpellcasting/VBoxContainer/HBoxContainer/VBATKBonus"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/minimum_character_width = 0
+theme_override_font_sizes/font_size = 12
+
+[node name="WeaponAtkBonus2" type="LineEdit" parent="VBoxContainer/AttacksAndSpellcasting/VBoxContainer/HBoxContainer/VBATKBonus"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/minimum_character_width = 0
+theme_override_font_sizes/font_size = 12
+
+[node name="WeaponAtkBonus3" type="LineEdit" parent="VBoxContainer/AttacksAndSpellcasting/VBoxContainer/HBoxContainer/VBATKBonus"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/minimum_character_width = 0
+theme_override_font_sizes/font_size = 12
+
+[node name="VBDamageType" type="VBoxContainer" parent="VBoxContainer/AttacksAndSpellcasting/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/AttacksAndSpellcasting/VBoxContainer/HBoxContainer/VBDamageType"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 12
+text = "Damage/Type"
+
+[node name="WeaponDamageType1" type="LineEdit" parent="VBoxContainer/AttacksAndSpellcasting/VBoxContainer/HBoxContainer/VBDamageType"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/minimum_character_width = 8
+theme_override_font_sizes/font_size = 12
+
+[node name="WeaponDamageType2" type="LineEdit" parent="VBoxContainer/AttacksAndSpellcasting/VBoxContainer/HBoxContainer/VBDamageType"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/minimum_character_width = 6
+theme_override_font_sizes/font_size = 12
+
+[node name="WeaponDamageType3" type="LineEdit" parent="VBoxContainer/AttacksAndSpellcasting/VBoxContainer/HBoxContainer/VBDamageType"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/minimum_character_width = 6
+theme_override_font_sizes/font_size = 12
+
+[node name="WeaponInfoVal" type="TextEdit" parent="VBoxContainer/AttacksAndSpellcasting/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 136)
+layout_mode = 2

@@ -92,7 +92,7 @@ public partial class DnDCharacter : Resource
     [Export] public int CurrentHitPoints = 10;
     [Export] public int TemporaryHitPoints = 10;
 
-    [Export] public int HitDiceTotal = 0;
+    [Export] public int HitDiceTotal = 1;
     [Export] public Dice HitDice = Dice.d6;
 
     [Export] public int DeathSaveSuccess = 0;

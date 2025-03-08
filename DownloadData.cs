@@ -147,7 +147,7 @@ public partial class DownloadData : Node
 			if (match.Success)
 			{
 				directory += match.Groups[1].Value.TrimEnd('/'); // Extracted directory path
-				DirAccess.MakeDirRecursiveAbsolute("user://" + directory); // Ensure directory exists
+				DirAccess.MakeDirRecursiveAbsolute(directory); // Ensure directory exists
 			}
 
 			// Extract file name correctly

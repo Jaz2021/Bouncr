@@ -22,8 +22,22 @@ public partial class DNDclasses : Node {
     public int numSkillChoices;
     public List<List<int>> spellProgression;
     public Dictionary<int, List<string>> classFeaturesByLevel;
-    public DNDclasses(string name, string source, int numHitDie, int hitDieType, List<string> skillProficiencies, string spellcastingAbility, string preparedSpells, List<int> cantripProgression, List<string> armorProficiencies, List<string> toolProficiencies, List<string> weaponProficiencies, List<string> skillChoices, int numSkillChoices, List<List<int>> spellProgression, Dictionary<int, List<string>> classFeaturesByLevel){
+    public List<Subclasses> subclasses;
+    public DNDclasses(string name, string source, int numHitDie, int hitDieType, List<string> skillProficiencies, string spellcastingAbility, string preparedSpells, List<int> cantripProgression, List<string> armorProficiencies, List<string> toolProficiencies, List<string> weaponProficiencies, List<string> skillChoices, int numSkillChoices, List<List<int>> spellProgression, Dictionary<int, List<string>> classFeaturesByLevel, List<Subclasses> subclasses){
         this.name = name;
+        this.source = source;
+        this.hitDieType = hitDieType;
+        this.numHitDie = numHitDie;
+        this.skillProficiencies = skillProficiencies;
+        this.skillChoices = skillChoices;
+        this.spellcastingAbility = spellcastingAbility;
+        this.preparedSpells = preparedSpells;
+        this.cantripProgression = cantripProgression;
+        this.armorProficiencies = armorProficiencies;
+        this.toolProficiencies = toolProficiencies;
+        this.weaponProficiencies = weaponProficiencies;this.numSkillChoices = numSkillChoices;
+        this.spellProgression = spellProgression;this.classFeaturesByLevel = classFeaturesByLevel;
+        this.subclasses = subclasses;
 
     }
     private static void ReadDndClass(ref List<DNDclasses> classes, string filepath){
@@ -156,7 +170,8 @@ public partial class DNDclasses : Node {
                     classFeaturesByLevel[level].Add(feat);
                 }
             }
-            classes.Add(new(name, source, numHitDie, hitdieType, skillProficiencies, spellcastingAbility, preparedSpells, cantripProgression, armorProficiencies, toolProficiencies, weaponProficiencies, skillChoices, numSkillChoices, spellProgression, classFeaturesByLevel));
+            var subclasses = Subclasses.generateSubclassList(baseJson);
+            classes.Add(new(name, source, numHitDie, hitdieType, skillProficiencies, spellcastingAbility, preparedSpells, cantripProgression, armorProficiencies, toolProficiencies, weaponProficiencies, skillChoices, numSkillChoices, spellProgression, classFeaturesByLevel, subclasses));
         }
     }
     public static List<DNDclasses> GenerateClasses(){

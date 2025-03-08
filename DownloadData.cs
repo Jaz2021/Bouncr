@@ -23,8 +23,8 @@ public partial class DownloadData : Node
 	// string directory = r.Match(m).Groups[1].Value; //Combine to get the directory out of a json file name
 	HttpRequest htmlReq;
 
-	[Export] private NodePath loadingBarPath;
-	private ColorRect loadingBar;
+	
+	[Export] private ColorRect loadingBar;
 	[Export]
 	private Label outputLabel;
 	private const int Requesters = 25;
@@ -41,7 +41,7 @@ public partial class DownloadData : Node
 			req.RequestCompleted += req.jsonComplete;
 		}
 		directories.Add(url+repo+ender);
-		// outputLabel.Text = currentStep;
+		outputLabel.Text = currentStep;
 		findDirectories();
 	}
 
@@ -134,15 +134,40 @@ public partial class DownloadData : Node
 		// GD.Print("Finished collecting jsons");
 		loadingBar.AnchorRight = 0.9f;
 		outputLabel.Text = "Saving json data to disk";
-		foreach(var file in jsonDict){
-			Regex reg = new Regex("https://.*?(/data/.*)");
-			string FileName = reg.Match(file.Key).Groups[1].ToString();
-			GD.Print(FileName);
+		DirAccess.MakeDirRecursiveAbsolute("user://data/");
+		
+		foreach (var file in jsonDict)
+		{
+			string fileUrl = file.Key;  // Example: "https://example.com/data/some_folder/file.json"
+			
+			Regex reg = new Regex(@"https://.*?/data/([^?]+/)[^/]+\.json$");
+			Match match = reg.Match(fileUrl);
 
-			var fa = FileAccess.Open("user://" + FileName, FileAccess.ModeFlags.Write);
+			string directory = "user://data/"; // Default directory
+			if (match.Success)
+			{
+				directory += match.Groups[1].Value.TrimEnd('/'); // Extracted directory path
+				DirAccess.MakeDirRecursiveAbsolute("user://" + directory); // Ensure directory exists
+			}
+
+			// Extract file name correctly
+			string fileName = fileUrl.Substring(fileUrl.LastIndexOf("/data/") + 6); // Remove everything before "/data/"
+			string fullPath = "user://data/" + fileName;
+
+			GD.Print("Saving file: " + fullPath);
+
+			var fa = FileAccess.Open(fullPath, FileAccess.ModeFlags.Write);
+			if (fa == null)
+			{
+				GD.PrintErr("Failed to open file: " + fullPath);
+				continue;
+			}
+
 			fa.StoreString(file.Value);
 			fa.Close();
 		}
+
+
 		loadingBar.AnchorRight = 1f;
 		outputLabel.Text = "Done!";
 		 await ToSignal(GetTree().CreateTimer(5), "timeout");

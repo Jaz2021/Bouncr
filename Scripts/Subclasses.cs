@@ -43,7 +43,12 @@ public partial class Subclasses : Node
                     var splitFeature = scFeature.Split('|');
 
                     int level = 0;
-                    level = splitFeature[^1].ToInt();
+                    try {
+                        level = splitFeature[^1].ToInt();
+
+                    } catch {
+                        level = splitFeature[^2].ToInt();
+                    }
 
                     var feat = splitFeature[0];
 

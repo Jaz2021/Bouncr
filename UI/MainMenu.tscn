@@ -59,10 +59,10 @@ TargetScene = ExtResource("2_b37jj")
 
 [node name="ConvertButton" type="Button" parent="PanelC/VboxC"]
 layout_mode = 2
-text = "Convert to Map
+text = "Download as Map
 "
 
-[node name="FileDialog" type="FileDialog" parent="PanelC/VboxC/ConvertButton" node_paths=PackedStringArray("fileDialog", "convertButton")]
+[node name="FileDialog" type="FileDialog" parent="PanelC/VboxC/ConvertButton" node_paths=PackedStringArray("fileDialog", "convertButton", "imageDisplay", "successLabel")]
 title = "Open a File"
 ok_button_text = "Open"
 file_mode = 0
@@ -72,6 +72,37 @@ show_hidden_files = true
 script = ExtResource("3_t6syg")
 fileDialog = NodePath(".")
 convertButton = NodePath("..")
+imageDisplay = NodePath("../ScrollContainer/ImageDisplay")
+successLabel = NodePath("../DownloadSuccess")
+
+[node name="DownloadSuccess" type="Label" parent="PanelC/VboxC/ConvertButton"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -1.76
+anchor_top = -11.032
+anchor_right = 2.627
+anchor_bottom = -9.935
+offset_left = 3.05176e-05
+offset_top = -0.00796509
+offset_right = -0.0500183
+offset_bottom = -0.0149536
+horizontal_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="PanelC/VboxC/ConvertButton"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -3.34
+anchor_top = -11.226
+anchor_right = 4.347
+anchor_bottom = 9.742
+offset_left = 3.05176e-05
+offset_top = 0.00601196
+offset_right = -0.0500488
+offset_bottom = -0.00201416
+
+[node name="ImageDisplay" type="TextureRect" parent="PanelC/VboxC/ConvertButton/ScrollContainer"]
+layout_mode = 2
+stretch_mode = 3
 
 [node name="QuitButton" type="Button" parent="PanelC/VboxC"]
 layout_mode = 2

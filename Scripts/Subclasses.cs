@@ -6,9 +6,9 @@ using System.Linq;
 
 public partial class Subclasses : Node
 {
-    private string name;
-    private string classSource;
-    private Dictionary<int, List<string>> subclassFeaturesbyLevel;
+    public string name;
+    public string classSource;
+    public Dictionary<int, List<string>> subclassFeaturesbyLevel;
 
     public Subclasses(string name, string classSource, Dictionary<int, List<string>> subclassFeaturesbyLevel)
     {

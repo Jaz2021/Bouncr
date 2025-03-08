@@ -42,7 +42,8 @@ public partial class DownloadData : Node
 		}
 		directories.Add(url+repo+ender);
 		outputLabel.Text = currentStep;
-		findDirectories();
+		//findDirectories();
+		Races.generateRaceList();
 	}
 
 	private List<string> directories = new List<string>();

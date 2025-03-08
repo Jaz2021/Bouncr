@@ -4,19 +4,22 @@ extends Node
 @onready var race_button: Button = $"../PanelContainer/HBoxContainer/VBoxContainer/Race"
 @onready var class_button: Button = $"../PanelContainer/HBoxContainer/VBoxContainer/Class"
 @onready var sub_class_button: Button = $"../PanelContainer/HBoxContainer/VBoxContainer/Sub-Class"
+@onready var button_4: Button = $"../PanelContainer/HBoxContainer/VBoxContainer/Button4"
 
 # References to the panels
 @onready var race_panel: Panel = $"../PanelContainer/HBoxContainer/Race_Panel"
 @onready var class_panel: Panel = $"../PanelContainer/HBoxContainer/Class_Panel"
 @onready var sub_class_panel: Panel = $"../PanelContainer/HBoxContainer/Sub-Class_Panel"
 @onready var main: Panel = $"../PanelContainer/HBoxContainer/Main"
+@onready var spell_panel: Panel = $"../PanelContainer/HBoxContainer/Spell_Panel"
 
 # Panels in the container (can be expanded or modified as needed)
 @onready var all_panels: Array = [
 	race_panel,
 	class_panel,
 	main,
-	sub_class_panel
+	sub_class_panel,
+	spell_panel
 ]
 
 # Called when the node is ready
@@ -25,7 +28,11 @@ func _ready() -> void:
 	race_button.pressed.connect(_on_race_button_pressed)
 	class_button.pressed.connect(_on_class_button_pressed)
 	sub_class_button.pressed.connect(_on_sub_class_button_pressed)
+	button_4.pressed.connect(_on_spell_button_pressed)
 
+
+func _on_spell_button_pressed() -> void:
+	_show_panel(spell_panel)
 # Function to handle the Race button press
 func _on_race_button_pressed() -> void:
 	_show_panel(race_panel)

@@ -10,17 +10,18 @@ public partial class instantiate_spell : VBoxContainer
         // List<string> classKeys = GetClassKeys();
         if(Global.instance == null){
             Global.instance = new();
-            Global.instance.classes = DNDclasses.GenerateClasses();
-            Global.instance.races = Races.generateRaceList();
+            // Global.instance.classes = DNDclasses.GenerateClasses();
+            // Global.instance.races = Races.generateRaceList();
             Global.instance.spells = Spell.GenerateSpells();
         }
         List<Spell> classKeys =  Global.instance.spells ;
 ;
         
-        
         foreach (Spell key in classKeys)
         {
-            GD.Print(key.name);  // Print each class name
+                    GD.Print(global_data.instance.classes);
+
+            // GD.Print(key.name);  // Print each class name
             CheckBox checkbox = new CheckBox
             {
                 Name = key.name,  // Unique name

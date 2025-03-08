@@ -7,7 +7,7 @@ using System.Reflection.Metadata;
 // using Godot.Collections;
 
 public partial class DNDclasses : Node {
-    public DNDclasses(string name, string source, int numHitDie, int hitDieType, List<string> skillProficiencies, string spellcastingAbility, string preparedSpells, List<int> cantripProgression, List<string> armorProficiencies, List<string> toolProficiencies, List<string> weaponProficiencies, List<string> skillChoices, int numSkillChoices, List<List<int>> spellProgression){
+    public DNDclasses(string name, string source, int numHitDie, int hitDieType, List<string> skillProficiencies, string spellcastingAbility, string preparedSpells, List<int> cantripProgression, List<string> armorProficiencies, List<string> toolProficiencies, List<string> weaponProficiencies, List<string> skillChoices, int numSkillChoices, List<List<int>> spellProgression, Dictionary<int, List<string>> classFeaturesByLevel){
         if(spellProgression != null){
             GD.Print("Has spell progression");
         }
@@ -142,7 +142,7 @@ public partial class DNDclasses : Node {
                     classFeaturesByLevel[level].Add(feat);
                 }
             }
-            classes.Add(new(name, source, numHitDie, hitdieType, skillProficiencies, spellcastingAbility, preparedSpells, cantripProgression, armorProficiencies, toolProficiencies, weaponProficiencies, skillChoices, numSkillChoices, spellProgression));
+            classes.Add(new(name, source, numHitDie, hitdieType, skillProficiencies, spellcastingAbility, preparedSpells, cantripProgression, armorProficiencies, toolProficiencies, weaponProficiencies, skillChoices, numSkillChoices, spellProgression, classFeaturesByLevel));
         }
     }
     public static List<DNDclasses> GenerateClasses(){

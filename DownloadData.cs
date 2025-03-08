@@ -4,8 +4,9 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Collections.Generic;
 using System.IO.Enumeration;
+// using System.IO;
 
-public partial class DownloadData : Node
+public partial class DownloadData : Control
 {
 
     [Export]
@@ -28,9 +29,19 @@ public partial class DownloadData : Node
     [Export]
     private Label outputLabel;
     private const int Requesters = 25;
+
+	private Action parseData;
     StoreFileLocation[] jsonReqs = new StoreFileLocation[Requesters]; // Running 10 downloaders in parallel, the amount can be configured
     public override void _Ready()
     {
+		
+		
+		
+    }
+	public async void Download(string repo, Action parsedata){
+		GD.Print("Testing");
+		await ToSignal(GetTree().CreateTimer(1), "timeout");
+		parseData = parsedata;
         htmlReq = new HttpRequest();
         AddChild(htmlReq);
         htmlReq.RequestCompleted += htmlComplete;
@@ -43,12 +54,11 @@ public partial class DownloadData : Node
         }
         directories.Add(url + repo + ender);
         outputLabel.Text = currentStep;
-        // findDirectories();
+        findDirectories();
         // DNDclasses.GenerateClasses();
-        Spell.GenerateSpells();
-        DNDclasses.GenerateClasses();
-    }
-
+        // Spell.GenerateSpells();/
+		
+	}
     private List<string> directories = new List<string>();
     private List<string> jsons = new List<string>();
     private int currentIndex = 0;
@@ -196,10 +206,12 @@ public partial class DownloadData : Node
         loadingBar.AnchorRight = 1f;
 
         outputLabel.Text = "Done!";
+		parseData();
         // Example usage of JsonUtils
-        new Character();
-        await ToSignal(GetTree().CreateTimer(100), "timeout");
-        GetTree().Root.RemoveChild(this);
+		
+        // new Character();
+        // await ToSignal(GetTree().CreateTimer(100), "timeout");
+        // GetTree().Root.RemoveChild(this);
 
     }
 }

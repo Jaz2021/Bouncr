@@ -5,34 +5,63 @@ using System.Text.Json;
 
 public partial class instantiate_spell : VBoxContainer
 {
+    public static instantiate_spell instance;
     public override void _Ready()
     {
         // List<string> classKeys = GetClassKeys();
-        if(Global.instance == null){
+        if (Global.instance == null)
+        {
             Global.instance = new();
             // Global.instance.classes = DNDclasses.GenerateClasses();
             // Global.instance.races = Races.generateRaceList();
             Global.instance.spells = Spell.GenerateSpells();
         }
-        List<Spell> classKeys =  Global.instance.spells ;
-;
-        
-        foreach (Spell key in classKeys)
+        if (instance == null){
+            instance = this; 
+        } else {
+            QueueFree();
+        }
+        List<Spell> classKeys = Global.instance.spells;
+
+        var user_class = global_data.instance.classes;
+        updateSubClasses();
+
+
+    }
+    public void updateSubClasses()
+    {
+        GD.Print("Updating spells");
+        foreach(var child in GetChildren()){
+            child.QueueFree();
+        }
+        foreach (Spell key in Global.instance.spells)
         {
-                    GD.Print(global_data.instance.classes);
+            GD.Print(key.availableClasses.Count);
+            // GD.Print(key.availableClasses);
+            if(key.availableClasses == null){
+                continue;
+            }
+            if(key.availableClasses.Contains(global_data.instance.SelectedClass)){
+                if(key.level == 0){
+                    continue;
+                }
+                // GD.Print(key.name);  // Print each class name
+                    CheckBox checkbox = new CheckBox
+                    {
+                        Name = key.name,  // Unique name
+                        Text = key.name  // Display text
+                    };
 
-            // GD.Print(key.name);  // Print each class name
-            CheckBox checkbox = new CheckBox
-            {
-                Name = key.name,  // Unique name
-                Text = key.name  // Display text
-            };
+                    // Connect the "pressed" signal
+                    checkbox.Toggled += (pressed) => OnCheckboxToggled(checkbox, pressed);
 
-            // Connect the "pressed" signal
-            checkbox.Toggled += (pressed) => OnCheckboxToggled(checkbox, pressed);
+                    // Add to the VBoxContainer
+                    AddChild(checkbox);
+            } else {
+                // GD.Print(global_data.instance.classes);
+            }
 
-            // Add to the VBoxContainer
-            AddChild(checkbox);
+
         }
     }
 

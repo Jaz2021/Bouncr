@@ -37,6 +37,7 @@ public partial class instantiate_class : VBoxContainer
 
     private void OnCheckboxToggled(CheckBox selectedCheckbox, bool pressed)
     {
+        GD.Print("Pressed class button");
         if (pressed)
         {
             global_data.instance.SelectedClass = selectedCheckbox.Name;
@@ -48,6 +49,7 @@ public partial class instantiate_class : VBoxContainer
                 }
             }
         }
+        instantiate_spell.instance.updateSubClasses();
     }
 
     private List<string> GetClassKeys()

@@ -169,8 +169,13 @@ public partial class DownloadData : Node
 
 
 		loadingBar.AnchorRight = 1f;
+
 		outputLabel.Text = "Done!";
-		 await ToSignal(GetTree().CreateTimer(5), "timeout");
+		var test = JsonUtils.ParseJsonFile("user://data/class/index.json");
+		foreach (var data in test) {
+			GD.Print(data.Key);
+		}
+		await ToSignal(GetTree().CreateTimer(100), "timeout");
 		GetTree().Root.RemoveChild(this);
 
 	}

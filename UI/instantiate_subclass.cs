@@ -47,7 +47,7 @@ public partial class instantiate_subclass : VBoxContainer
         GD.Print("Pressed class button");
         if (pressed)
         {
-            global_data.instance.SelectedClass = selectedCheckbox.Name;
+            // global_data.instance.SelectedClass = selectedCheckbox.Name;
             foreach (Node child in GetChildren())
             {
                 if (child is CheckBox checkbox && checkbox != selectedCheckbox)
@@ -56,7 +56,7 @@ public partial class instantiate_subclass : VBoxContainer
                 }
             }
         }
-        instantiate_spell.instance.updateSubClasses();
+        // instantiate_spell.instance.updateSubClasses();
     }
 
     private List<string> GetClassKeys()

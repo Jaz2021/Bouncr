@@ -6,7 +6,7 @@
 [ext_resource type="Script" uid="uid://dhfiiu5lqf0fv" path="res://UI/ClassPanel.cs" id="2_wy7x5"]
 [ext_resource type="Script" uid="uid://sb6krunw8r0b" path="res://UI/instantiate_class.cs" id="3_wy7x5"]
 [ext_resource type="Script" uid="uid://vip7t21m7o7a" path="res://UI/ClassJsonInfo.cs" id="4_mdfeu"]
-[ext_resource type="Script" path="res://UI/instantiate_subclass.cs" id="5_d8kgh"]
+[ext_resource type="Script" uid="uid://j4mv7k5a4ucl" path="res://UI/instantiate_subclass.cs" id="5_d8kgh"]
 [ext_resource type="Script" uid="uid://b8rfcuqbfmyag" path="res://UI/SpellPanel.cs" id="5_d55b6"]
 [ext_resource type="Script" uid="uid://dnaiq16rw16df" path="res://UI/instantiate_spell.cs" id="6_xxqrw"]
 [ext_resource type="Script" uid="uid://ddvobgjdixht6" path="res://UI/global_data.cs" id="9_xxqrw"]

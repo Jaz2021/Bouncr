@@ -83,4 +83,5 @@ CreateScene = ExtResource("2_b37jj")
 LoadScene = ExtResource("2_b37jj")
 
 [connection signal="pressed" from="PanelC/VboxC/LoadButton" to="PanelC/ButtonManager" method="_on_load_button_pressed"]
+[connection signal="file_selected" from="PanelC/VboxC/ConvertButton/FileDialog" to="PanelC/VboxC/ConvertButton/FileDialog" method="LoadImage"]
 [connection signal="pressed" from="PanelC/VboxC/QuitButton" to="PanelC/ButtonManager" method="_on_quit_button_pressed"]

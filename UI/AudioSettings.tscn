@@ -1,0 +1,75 @@
+[gd_scene load_steps=7 format=3 uid="uid://c1ywf2d0p0hi1"]
+
+[ext_resource type="PackedScene" uid="uid://dqbleu2qq81sc" path="res://UI/HelperNodes/switch_scene.tscn" id="1_qagbj"]
+[ext_resource type="PackedScene" uid="uid://bocdib1f8yi0k" path="res://UI/ClassButtons.tscn" id="2_nhy0w"]
+[ext_resource type="Script" uid="uid://c5m8beka40ve5" path="res://Scripts/AudioUpload.cs" id="3_a485p"]
+[ext_resource type="Script" uid="uid://dun8ypwrg8fj4" path="res://UI/UI_Scripts/ButtonManager.cs" id="4_0cskf"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u6pa4"]
+content_margin_left = 50.0
+content_margin_top = 10.0
+content_margin_right = 50.0
+content_margin_bottom = 50.0
+bg_color = Color(0.549162, 0.601691, 0.707034, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="AudioStreamOggVorbis" id="AudioStreamOggVorbis_qagbj"]
+
+[node name="AudioSettings" type="CenterContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelC" type="PanelContainer" parent="."]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_u6pa4")
+
+[node name="VboxC" type="VBoxContainer" parent="PanelC"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Label" type="Label" parent="PanelC/VboxC"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "Audio Settings"
+horizontal_alignment = 1
+
+[node name="CreateButton" type="Button" parent="PanelC/VboxC"]
+layout_mode = 2
+text = "Upload BGM"
+
+[node name="SwitchScene" parent="PanelC/VboxC/CreateButton" node_paths=PackedStringArray("SceneSwitchButton") instance=ExtResource("1_qagbj")]
+SceneSwitchButton = NodePath("..")
+
+[node name="FileDialog" type="FileDialog" parent="PanelC/VboxC/CreateButton/SwitchScene" node_paths=PackedStringArray("fileDialog", "convertButton", "audioPlayer")]
+script = ExtResource("3_a485p")
+fileDialog = NodePath(".")
+convertButton = NodePath("../..")
+audioPlayer = NodePath("../AudioStreamPlayer")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="PanelC/VboxC/CreateButton/SwitchScene"]
+stream = SubResource("AudioStreamOggVorbis_qagbj")
+autoplay = true
+
+[node name="backButton" type="Button" parent="PanelC/VboxC"]
+layout_mode = 2
+text = "Back"
+
+[node name="SwitchScene" parent="PanelC/VboxC/backButton" node_paths=PackedStringArray("SceneSwitchButton") instance=ExtResource("1_qagbj")]
+SceneSwitchButton = NodePath("..")
+TargetScene = "res://UI/Settings.tscn"
+
+[node name="ButtonManager" type="Node" parent="PanelC"]
+script = ExtResource("4_0cskf")
+CreateScene = ExtResource("2_nhy0w")
+LoadScene = ExtResource("2_nhy0w")
+
+[connection signal="pressed" from="PanelC/VboxC/backButton" to="PanelC/ButtonManager" method="_on_load_button_pressed"]

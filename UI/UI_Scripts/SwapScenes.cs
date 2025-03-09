@@ -9,7 +9,7 @@ public partial class SwapScenes : Node
 
 	// Assign the target scene (PackedScene) to switch to.
 	[Export]
-	public PackedScene TargetScene { get; set; }
+	public string TargetScene { get; set; }
 
 	public override void _Ready()
 	{
@@ -22,7 +22,7 @@ public partial class SwapScenes : Node
 		SceneSwitchButton.Pressed += () => ChangeScene(TargetScene);
 	}
 
-	private void ChangeScene(PackedScene newScene)
+	private void ChangeScene(string newScene)
 	{
 		if (newScene == null)
 		{
@@ -30,6 +30,6 @@ public partial class SwapScenes : Node
 			return;
 		}
 		// Switch to the new scene safely.
-		GetTree().ChangeSceneToPacked(newScene);
+		GetTree().ChangeSceneToFile(newScene);
 	}
 }

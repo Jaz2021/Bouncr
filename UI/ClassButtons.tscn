@@ -1,8 +1,10 @@
-[gd_scene load_steps=19 format=3 uid="uid://bocdib1f8yi0k"]
+[gd_scene load_steps=21 format=3 uid="uid://bocdib1f8yi0k"]
 
 [ext_resource type="Script" uid="uid://dyucs41p6mh56" path="res://UI/RacePanel.cs" id="1_a5k5p"]
 [ext_resource type="Script" uid="uid://cyexhi5ykcw3s" path="res://UI/UI_Scripts_gd/Button_Manager.gd" id="1_ds00d"]
+[ext_resource type="Script" uid="uid://cx0b0r0h2oq7a" path="res://UI/ClassButtons.cs" id="1_tjwkg"]
 [ext_resource type="Script" uid="uid://pctyt1ohflub" path="res://UI/instantiate_race.cs" id="2_48rjk"]
+[ext_resource type="PackedScene" uid="uid://gml2m2q104w2" path="res://UI/CharacterSheet/CharacterSheet.tscn" id="2_dhsww"]
 [ext_resource type="Script" uid="uid://dhfiiu5lqf0fv" path="res://UI/ClassPanel.cs" id="2_wy7x5"]
 [ext_resource type="Script" uid="uid://sb6krunw8r0b" path="res://UI/instantiate_class.cs" id="3_wy7x5"]
 [ext_resource type="Script" uid="uid://vip7t21m7o7a" path="res://UI/ClassJsonInfo.cs" id="4_mdfeu"]
@@ -30,7 +32,7 @@ bg_color = Color(0.272552, 0.678571, 0.615088, 1)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yg0j1"]
 bg_color = Color(0.814341, 0.531988, 1.92523e-07, 1)
 
-[node name="CenterContainer" type="CenterContainer" groups=["panels"]]
+[node name="CenterContainer" type="CenterContainer" node_paths=PackedStringArray("parent") groups=["panels"]]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -40,6 +42,9 @@ offset_right = 2.0
 offset_bottom = 4.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_tjwkg")
+CharacterSheet = ExtResource("2_dhsww")
+parent = NodePath(".")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 custom_minimum_size = Vector2(400, 400)
@@ -78,6 +83,10 @@ text = "Cantrips"
 [node name="Panel" type="Panel" parent="PanelContainer/HBoxContainer/VBoxContainer"]
 custom_minimum_size = Vector2(0, 225)
 layout_mode = 2
+
+[node name="Button" type="Button" parent="PanelContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Create"
 
 [node name="Main" type="Panel" parent="PanelContainer/HBoxContainer"]
 visible = false
@@ -203,3 +212,4 @@ script = ExtResource("4_mdfeu")
 script = ExtResource("9_xxqrw")
 
 [connection signal="pressed" from="PanelContainer/HBoxContainer/VBoxContainer/Class" to="PanelManager" method="_on_button_2_pressed"]
+[connection signal="pressed" from="PanelContainer/HBoxContainer/VBoxContainer/Button" to="." method="CreateClass"]

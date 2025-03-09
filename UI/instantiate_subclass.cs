@@ -56,6 +56,14 @@ public partial class instantiate_subclass : VBoxContainer
                 }
             }
         }
+        if(global_data.instance.c != null){
+            foreach(var sub in global_data.instance.c.subclasses){
+                if(sub.name == selectedCheckbox.Name){
+                    global_data.instance.subclass = sub;
+                    break;
+                }
+            }
+        }
         // instantiate_spell.instance.updateSubClasses();
     }
 

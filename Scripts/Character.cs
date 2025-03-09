@@ -5,15 +5,27 @@ using System.Text.Json;
 // using Godot.Collections;
 
 public partial class Character : Node {
-    public Character(){
-        // A quick example of parsing some json
-        var bard = JsonUtils.ParseJsonFile("user://data/class/class-bard.json");
-        // GD.Print(bard["class"].ToString());
-        var bardData = JsonSerializer.Deserialize<List<Dictionary<string, object>>>(bard["class"].ToString());
-
-        // var bardDataInner = JsonSerializer.Deserialize<Dictionary<String, object>
-        GD.Print(bardData[0].ToString());
-        string name = bardData[0]["name"].ToString();
-        GD.Print(name);
+    public DNDclasses c;
+    public Races race;
+    public Subclasses subclass;
+    public List<Spell> spells;
+    public int Int = 8;
+    public int Dex = 8;
+    public int Con = 8;
+    public int Wis = 8;
+    public int Cha = 8;
+    public int Str = 8;
+    public Character(DNDclasses c, Races race, Subclasses subclass, List<Spell> spells){
+        Int += race.raceInt;
+        Dex += race.raceDex;
+        Con += race.raceCon;
+        Cha += race.raceCha;
+        Wis += race.raceWis;
+        Str += race.raceStr;
+        this.c = c;
+        this.race = race;
+        this.subclass = subclass;
+        this.spells = spells;
     }
+
 }

@@ -48,6 +48,11 @@ public partial class instantiate_class : VBoxContainer
                     checkbox.ButtonPressed = false; // Uncheck others
                 }
             }
+            foreach(var c in Global.instance.classes){
+                if(c.name == selectedCheckbox.Name){
+                    global_data.instance.c = c;
+                }
+            }
         }
         instantiate_spell.instance.updateSubClasses();
         instantiate_subclass.instance.updateSubclasses();

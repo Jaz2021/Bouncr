@@ -5,4 +5,5 @@ public class Global {
     public List<Spell> spells;
     public List<DNDclasses> classes;
     public List<Races> races;
+    public DnDCharacter character;
 }

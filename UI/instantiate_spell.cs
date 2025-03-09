@@ -69,11 +69,15 @@ public partial class instantiate_spell : VBoxContainer
     {
         if (pressed)
         {
-            foreach (Node child in GetChildren())
-            {
-                if (child is CheckBox checkbox && checkbox != selectedCheckbox)
-                {
-                    checkbox.ButtonPressed = false; // Uncheck others
+            foreach(var spell in Global.instance.spells){
+                if (spell.name == selectedCheckbox.Name){
+                    global_data.instance.selectedSpells.Add(spell);
+                }
+            }
+        } else {
+            foreach(var spell in Global.instance.spells){
+                if (spell.name == selectedCheckbox.Name){
+                    global_data.instance.selectedSpells.Remove(spell);
                 }
             }
         }

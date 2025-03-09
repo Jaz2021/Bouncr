@@ -60,7 +60,7 @@ TargetScene = "res://UI/ClassButtons.tscn"
 
 [node name="ConvertButton" type="Button" parent="PanelC/VboxC"]
 layout_mode = 2
-text = "Convert to Map
+text = "Download as Map
 "
 
 [node name="FileDialog" type="FileDialog" parent="PanelC/VboxC/ConvertButton" node_paths=PackedStringArray("fileDialog", "convertButton")]

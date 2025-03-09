@@ -1,121 +1,121 @@
 [gd_scene load_steps=85 format=3 uid="uid://gml2m2q104w2"]
 
-[ext_resource type="Script" uid="uid://ceotvea14ygvq" path="res://UI/CharacterSheet/CharacterSheetPopulate.gd" id="1_3oj2v"]
+[ext_resource type="Script" uid="uid://dmjy3tefg7aaj" path="res://UI/CharacterSheet/PopulateSharp.cs" id="1_7lr6k"]
 [ext_resource type="Script" uid="uid://cpt3vfysnw67j" path="res://UI/CharacterSheet/PopulateStatsSheet.gd" id="2_3wy43"]
 [ext_resource type="Script" uid="uid://lb725n23hspe" path="res://CustomResources/Skill.cs" id="3_7lr6k"]
 [ext_resource type="Script" uid="uid://bmeaxnjdcu8nf" path="res://Scrolldynamic.gd" id="4_7lr6k"]
 [ext_resource type="Script" uid="uid://bi2skhq8bfs34" path="res://CustomResources/DnDCharacter.cs" id="4_vdb87"]
 [ext_resource type="Script" uid="uid://bk8sk4b32w5uw" path="res://UI/CharacterSheet/AttackPopulate.gd" id="5_awg61"]
 
-[sub_resource type="Resource" id="Resource_3wy43"]
+[sub_resource type="Resource" id="Resource_7lr6k"]
 script = ExtResource("3_7lr6k")
 Name = "Acrobatics"
 IsProficient = false
 Bonus = 0
 
-[sub_resource type="Resource" id="Resource_7lr6k"]
+[sub_resource type="Resource" id="Resource_vdb87"]
 script = ExtResource("3_7lr6k")
 Name = "AnimalHandling"
 IsProficient = false
 Bonus = 0
 
-[sub_resource type="Resource" id="Resource_vdb87"]
-script = ExtResource("3_7lr6k")
-Name = "Arcana"
-IsProficient = true
-Bonus = 0
-
 [sub_resource type="Resource" id="Resource_awg61"]
 script = ExtResource("3_7lr6k")
-Name = "Athletics"
+Name = "Arcana"
 IsProficient = false
 Bonus = 0
 
 [sub_resource type="Resource" id="Resource_x0td2"]
 script = ExtResource("3_7lr6k")
-Name = "Deception"
+Name = "Athletics"
 IsProficient = false
 Bonus = 0
 
 [sub_resource type="Resource" id="Resource_i3akn"]
 script = ExtResource("3_7lr6k")
-Name = "History"
+Name = "Deception"
 IsProficient = false
 Bonus = 0
 
 [sub_resource type="Resource" id="Resource_qy6fx"]
 script = ExtResource("3_7lr6k")
-Name = "Insight"
+Name = "History"
 IsProficient = false
 Bonus = 0
 
 [sub_resource type="Resource" id="Resource_4j6u7"]
 script = ExtResource("3_7lr6k")
-Name = "Intimidation"
-IsProficient = true
+Name = "Insight"
+IsProficient = false
 Bonus = 0
 
 [sub_resource type="Resource" id="Resource_xjoh0"]
 script = ExtResource("3_7lr6k")
-Name = "Investigation"
+Name = "Intimidation"
 IsProficient = false
 Bonus = 0
 
 [sub_resource type="Resource" id="Resource_c3hlw"]
 script = ExtResource("3_7lr6k")
-Name = "Medicine"
+Name = "Investigation"
 IsProficient = false
 Bonus = 0
 
 [sub_resource type="Resource" id="Resource_h4ayf"]
 script = ExtResource("3_7lr6k")
-Name = "Nature"
+Name = "Medicine"
 IsProficient = false
 Bonus = 0
 
 [sub_resource type="Resource" id="Resource_0w3a8"]
 script = ExtResource("3_7lr6k")
-Name = "Perception"
+Name = "Nature"
 IsProficient = false
 Bonus = 0
 
 [sub_resource type="Resource" id="Resource_jpy7o"]
 script = ExtResource("3_7lr6k")
-Name = "Performance"
+Name = "Perception"
 IsProficient = false
 Bonus = 0
 
 [sub_resource type="Resource" id="Resource_gevd5"]
 script = ExtResource("3_7lr6k")
-Name = "Persuasion"
+Name = "Performance"
 IsProficient = false
 Bonus = 0
 
 [sub_resource type="Resource" id="Resource_ytql0"]
 script = ExtResource("3_7lr6k")
-Name = "Religion"
+Name = "Persuasion"
 IsProficient = false
 Bonus = 0
 
 [sub_resource type="Resource" id="Resource_7xw3v"]
 script = ExtResource("3_7lr6k")
-Name = "SleightOfHand"
+Name = "Religion"
 IsProficient = false
 Bonus = 0
 
 [sub_resource type="Resource" id="Resource_2kpeu"]
 script = ExtResource("3_7lr6k")
-Name = "Stealth"
-IsProficient = true
+Name = "SleightOfHand"
+IsProficient = false
 Bonus = 0
 
 [sub_resource type="Resource" id="Resource_ccno6"]
+script = ExtResource("3_7lr6k")
+Name = "Stealth"
+IsProficient = false
+Bonus = 0
+
+[sub_resource type="Resource" id="Resource_li4cn"]
 script = ExtResource("3_7lr6k")
 Name = "Survival"
 IsProficient = false
 Bonus = 0
 
-[sub_resource type="Resource" id="Resource_li4cn"]
+[sub_resource type="Resource" id="Resource_01iut"]
 script = ExtResource("4_vdb87")
 CharacterName = "First Last"
 Level = 1
@@ -126,47 +126,47 @@ PlayerName = "John Doe"
 Race = "Human"
 Alignment = 4
 ExperiencePoints = 0
-Strength = 15
-Dexterity = 12
-Constitution = 5
+Strength = 8
+Dexterity = 8
+Constitution = 8
 Intelligence = 8
-Wisdom = 16
-Charisma = 20
+Wisdom = 8
+Charisma = 8
 ProficiencyBonus = 2
-Inspiration = true
+Inspiration = false
 StrengthSaveProficient = false
 DexteritySaveProficient = false
 ConstitutionSaveProficient = false
-IntelligenceSaveProficient = true
+IntelligenceSaveProficient = false
 WisdomSaveProficient = false
-CharismaSaveProficient = true
-Acrobatics = SubResource("Resource_3wy43")
-SleightOfHand = SubResource("Resource_7xw3v")
-Stealth = SubResource("Resource_2kpeu")
-AnimalHandling = SubResource("Resource_7lr6k")
-Insight = SubResource("Resource_qy6fx")
-Medicine = SubResource("Resource_c3hlw")
-Perception = SubResource("Resource_0w3a8")
-Survival = SubResource("Resource_ccno6")
-Arcana = SubResource("Resource_vdb87")
-History = SubResource("Resource_i3akn")
-Investigation = SubResource("Resource_xjoh0")
-Nature = SubResource("Resource_h4ayf")
-Religion = SubResource("Resource_ytql0")
-Athletics = SubResource("Resource_awg61")
-Deception = SubResource("Resource_x0td2")
-Intimidation = SubResource("Resource_4j6u7")
-Performance = SubResource("Resource_jpy7o")
-Persuasion = SubResource("Resource_gevd5")
+CharismaSaveProficient = false
+Acrobatics = SubResource("Resource_7lr6k")
+SleightOfHand = SubResource("Resource_2kpeu")
+Stealth = SubResource("Resource_ccno6")
+AnimalHandling = SubResource("Resource_vdb87")
+Insight = SubResource("Resource_4j6u7")
+Medicine = SubResource("Resource_h4ayf")
+Perception = SubResource("Resource_jpy7o")
+Survival = SubResource("Resource_li4cn")
+Arcana = SubResource("Resource_awg61")
+History = SubResource("Resource_qy6fx")
+Investigation = SubResource("Resource_c3hlw")
+Nature = SubResource("Resource_0w3a8")
+Religion = SubResource("Resource_7xw3v")
+Athletics = SubResource("Resource_x0td2")
+Deception = SubResource("Resource_i3akn")
+Intimidation = SubResource("Resource_xjoh0")
+Performance = SubResource("Resource_gevd5")
+Persuasion = SubResource("Resource_ytql0")
 ArmorClass = 10
 Speed = 30
 HitPointMaximum = 10
 CurrentHitPoints = 10
 TemporaryHitPoints = 10
-HitDiceTotal = 2
-HitDice = 12
-DeathSaveSuccess = 1
-DeathSaveFailier = 2
+HitDiceTotal = 1
+HitDice = 6
+DeathSaveSuccess = 0
+DeathSaveFailier = 0
 Items = null
 Spells = null
 metadata/_custom_type_script = "uid://bi2skhq8bfs34"
@@ -564,8 +564,8 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-script = ExtResource("1_3oj2v")
-character = SubResource("Resource_li4cn")
+script = ExtResource("1_7lr6k")
+character = SubResource("Resource_01iut")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 layout_mode = 1

@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://11xsx41keokh"]
+[gd_scene load_steps=6 format=3 uid="uid://bnd6ljyie8yuq"]
 
 [ext_resource type="PackedScene" uid="uid://dul3xvl8l10qi" path="res://UI/CharacterSheet/TitleBar.tscn" id="1_ljj4x"]
 [ext_resource type="PackedScene" uid="uid://l8hlxq141gtk" path="res://UI/CharacterSheet/character_statblock.tscn" id="2_bkrdm"]

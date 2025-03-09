@@ -3,8 +3,8 @@
 [ext_resource type="PackedScene" uid="uid://dqbleu2qq81sc" path="res://UI/HelperNodes/switch_scene.tscn" id="1_8aown"]
 [ext_resource type="Script" uid="uid://dun8ypwrg8fj4" path="res://UI/UI_Scripts/ButtonManager.cs" id="1_uahxu"]
 [ext_resource type="PackedScene" uid="uid://bocdib1f8yi0k" path="res://UI/ClassButtons.tscn" id="2_b37jj"]
+[ext_resource type="Script" uid="uid://iwecd1uulaxd" path="res://UI/UI_Scripts/SwapScenes.cs" id="2_y6s48"]
 [ext_resource type="Script" uid="uid://becowoc5ckcet" path="res://Scripts/MapLayoutMaker.cs" id="3_t6syg"]
-[ext_resource type="Script" uid="uid://bnwtryeop4s5" path="res://UI/UI_Scripts/SwapScenes.cs" id="4_otjfi"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t4ff4"]
 content_margin_left = 50.0
@@ -21,6 +21,10 @@ corner_radius_bottom_left = 20
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 19.0
+offset_top = -13.0
+offset_right = 19.0
+offset_bottom = -13.0
 grow_horizontal = 2
 grow_vertical = 2
 metadata/_edit_use_anchors_ = true
@@ -47,6 +51,7 @@ layout_mode = 2
 text = "Create"
 
 [node name="SwitchScene" parent="PanelC/VboxC/CreateButton" node_paths=PackedStringArray("SceneSwitchButton") instance=ExtResource("1_8aown")]
+script = ExtResource("2_y6s48")
 SceneSwitchButton = NodePath("..")
 TargetScene = "res://UI/ClassButtons.tscn"
 
@@ -55,8 +60,8 @@ layout_mode = 2
 text = "Load"
 
 [node name="SwitchScene" parent="PanelC/VboxC/LoadButton" node_paths=PackedStringArray("SceneSwitchButton") instance=ExtResource("1_8aown")]
+script = ExtResource("2_y6s48")
 SceneSwitchButton = NodePath("..")
-TargetScene = "res://UI/ClassButtons.tscn"
 
 [node name="ConvertButton" type="Button" parent="PanelC/VboxC"]
 layout_mode = 2
@@ -80,7 +85,7 @@ layout_mode = 2
 text = "Settings"
 
 [node name="SwitchScene" type="Node" parent="PanelC/VboxC/Button" node_paths=PackedStringArray("SceneSwitchButton")]
-script = ExtResource("4_otjfi")
+script = ExtResource("2_y6s48")
 SceneSwitchButton = NodePath("..")
 TargetScene = "res://UI/Settings.tscn"
 

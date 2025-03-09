@@ -46,8 +46,7 @@ horizontal_alignment = 1
 layout_mode = 2
 text = "Upload BGM"
 
-[node name="SwitchScene" parent="PanelC/VboxC/CreateButton" node_paths=PackedStringArray("SceneSwitchButton") instance=ExtResource("1_qagbj")]
-SceneSwitchButton = NodePath("..")
+[node name="SwitchScene" parent="PanelC/VboxC/CreateButton" instance=ExtResource("1_qagbj")]
 
 [node name="FileDialog" type="FileDialog" parent="PanelC/VboxC/CreateButton/SwitchScene" node_paths=PackedStringArray("fileDialog", "convertButton", "audioPlayer")]
 script = ExtResource("3_a485p")
@@ -63,9 +62,7 @@ autoplay = true
 layout_mode = 2
 text = "Back"
 
-[node name="SwitchScene" parent="PanelC/VboxC/backButton" node_paths=PackedStringArray("SceneSwitchButton") instance=ExtResource("1_qagbj")]
-SceneSwitchButton = NodePath("..")
-TargetScene = "res://UI/Settings.tscn"
+[node name="SwitchScene" parent="PanelC/VboxC/backButton" instance=ExtResource("1_qagbj")]
 
 [node name="ButtonManager" type="Node" parent="PanelC"]
 script = ExtResource("4_0cskf")

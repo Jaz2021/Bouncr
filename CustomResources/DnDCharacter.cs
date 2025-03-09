@@ -185,6 +185,7 @@ public partial class DnDCharacter : Resource
         }
         
     }
+    public DnDCharacter() {}
 }
 
 // [Tool]

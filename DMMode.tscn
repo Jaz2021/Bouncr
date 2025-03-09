@@ -1,0 +1,128 @@
+[gd_scene load_steps=0 format=3 uid="uid://cdtu11fjkk7kx"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MapScreen" type="ColorRect" parent="CanvasLayer/Control"]
+layout_mode = 0
+offset_top = 35.0
+offset_right = 700.0
+offset_bottom = 429.0
+color = Color(0.796078, 0, 0, 1)
+
+[node name="PlayerListBox" type="ColorRect" parent="CanvasLayer/Control"]
+layout_mode = 0
+offset_left = 700.0
+offset_top = 35.0
+offset_right = 1151.0
+offset_bottom = 160.0
+
+[node name="Notes" type="Button" parent="CanvasLayer/Control"]
+layout_mode = 0
+offset_left = 705.0
+offset_top = 275.0
+offset_right = 809.0
+offset_bottom = 315.0
+text = "Notes"
+
+[node name="Roll Dice" type="Button" parent="CanvasLayer/Control"]
+layout_mode = 0
+offset_left = 817.0
+offset_top = 275.0
+offset_right = 921.0
+offset_bottom = 315.0
+text = "Roll Dice"
+
+[node name="NPC Creator" type="Button" parent="CanvasLayer/Control"]
+layout_mode = 0
+offset_left = 929.0
+offset_top = 275.0
+offset_right = 1033.0
+offset_bottom = 315.0
+text = "NPC Creator"
+
+[node name="Turn Order" type="Button" parent="CanvasLayer/Control"]
+layout_mode = 0
+offset_left = 1041.0
+offset_top = 275.0
+offset_right = 1145.0
+offset_bottom = 315.0
+text = "Turn Order"
+
+[node name="Create Map" type="Button" parent="CanvasLayer/Control"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 440.0
+offset_right = 113.0
+offset_bottom = 471.0
+text = "Create Map"
+
+[node name="Edit Map" type="Button" parent="CanvasLayer/Control"]
+layout_mode = 0
+offset_left = 127.0
+offset_top = 440.0
+offset_right = 225.0
+offset_bottom = 471.0
+text = "Edit Map"
+
+[node name="Switch Map" type="Button" parent="CanvasLayer/Control"]
+layout_mode = 0
+offset_left = 239.0
+offset_top = 440.0
+offset_right = 337.0
+offset_bottom = 471.0
+text = "Switch Map"
+
+[node name="Edit Actors" type="Button" parent="CanvasLayer/Control"]
+layout_mode = 0
+offset_left = 351.0
+offset_top = 440.0
+offset_right = 449.0
+offset_bottom = 471.0
+text = "Edit Actors
+"
+
+[node name="Edit Actors2" type="Button" parent="CanvasLayer/Control"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 600.0
+offset_right = 113.0
+offset_bottom = 631.0
+text = "Console Log
+"
+
+[node name="MenuBar" type="MenuBar" parent="CanvasLayer/Control"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="File" type="PopupMenu" parent="CanvasLayer/Control/MenuBar"]
+
+[node name="Edit" type="PopupMenu" parent="CanvasLayer/Control/MenuBar"]
+auto_translate_mode = 1
+
+[node name="Window" type="PopupMenu" parent="CanvasLayer/Control/MenuBar"]
+auto_translate_mode = 1
+
+[node name="Tools" type="PopupMenu" parent="CanvasLayer/Control/MenuBar"]
+auto_translate_mode = 1
+
+[node name="Help" type="PopupMenu" parent="CanvasLayer/Control/MenuBar"]
+auto_translate_mode = 1

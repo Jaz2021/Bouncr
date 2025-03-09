@@ -29,19 +29,20 @@ public partial class AudioUpload : FileDialog
         fileDialog.PopupCentered();
     }
 
+   
     public void LoadMusic(string path)
     {
         AudioStream audioStream = (AudioStream)ResourceLoader.Load(path);
-
-        if (audioStream == null)
+        AudioStreamPlayer something = GetTree().Root.GetNode<AudioStreamPlayer>("bgm/AudioStreamPlayer");
+        something.Play();
+        if (something == null)
         {
             GD.PrintErr("Failed to load audio file: " + path);
             return;
         }
 
         // Play the audio
-        audioPlayer.Stream = audioStream;
-        audioPlayer.Play();
-        GD.Print("Playing: " + path);
-    }
-}
+        something.Stream = audioStream;
+        something.Play();
+       
+}}

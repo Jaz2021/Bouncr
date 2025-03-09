@@ -1,0 +1,9 @@
+
+[gd_scene load_steps=2 format=2]
+
+[node name="MainScene" type="Node2D"]
+[node name="Button" type="Button" parent="."]
+text = "Stop Music"
+pressed = ExtResource("1")
+
+[ext_resource type="Script" path="res://scripts/MainScene.gd" id=1]

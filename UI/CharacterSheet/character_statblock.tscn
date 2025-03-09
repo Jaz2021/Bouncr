@@ -889,27 +889,3 @@ alignment = 1
 layout_mode = 2
 theme_override_font_sizes/font_size = 12
 text = "Survival (Wis)"
-
-[node name="Inspiration" type="PanelContainer" parent="HBoxContainer/VBStatBlock"]
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_w7oqx")
-
-[node name="VBInspiration" type="VBoxContainer" parent="HBoxContainer/VBStatBlock/Inspiration"]
-layout_mode = 2
-theme_override_constants/separation = 0
-
-[node name="HBInspiration" type="HBoxContainer" parent="HBoxContainer/VBStatBlock/Inspiration/VBInspiration"]
-layout_mode = 2
-
-[node name="StatPassiveWisdom" type="LineEdit" parent="HBoxContainer/VBStatBlock/Inspiration/VBInspiration/HBInspiration"]
-unique_name_in_owner = true
-layout_mode = 2
-theme_override_constants/minimum_character_width = 2
-theme_override_font_sizes/font_size = 12
-placeholder_text = "0"
-alignment = 1
-
-[node name="Label" type="Label" parent="HBoxContainer/VBStatBlock/Inspiration/VBInspiration/HBInspiration"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 12
-text = "Passive wisdom (Perception)"

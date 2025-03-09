@@ -68,7 +68,7 @@ extends Node
 @onready var skill_survival_bool: CheckBox = %SkillSurvivalBool
 @onready var skill_survival_mod: LineEdit = %SkillSurvivalMod
 
-@onready var stat_passive_wisdom: LineEdit = %StatPassiveWisdom
+#@onready var stat_passive_wisdom: LineEdit = %StatPassiveWisdom
 
 func _ready() -> void:
 	# Populate Ability Scores and Computed Modifiers
@@ -175,4 +175,4 @@ func _ready() -> void:
 	skill_survival_mod.text = str(character.GetSkillBonus(character.Survival))
 	
 	#Passive Wisdom
-	stat_passive_wisdom.text = str(10 + int(st_wisdom_mod.text))
+	#stat_passive_wisdom.text = str(10 + int(st_wisdom_mod.text))

@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://c1ywf2d0p0hi1"]
+[gd_scene load_steps=5 format=3 uid="uid://c1ywf2d0p0hi1"]
 
 [ext_resource type="PackedScene" uid="uid://dqbleu2qq81sc" path="res://UI/HelperNodes/switch_scene.tscn" id="1_qagbj"]
 [ext_resource type="Script" uid="uid://c5m8beka40ve5" path="res://Scripts/AudioUpload.cs" id="3_a485p"]
+[ext_resource type="Script" uid="uid://iwecd1uulaxd" path="res://UI/UI_Scripts/SwapScenes.cs" id="3_ntlib"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u6pa4"]
 content_margin_left = 50.0
@@ -15,6 +16,11 @@ corner_radius_bottom_right = 20
 corner_radius_bottom_left = 20
 
 [node name="AudioSettings" type="CenterContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="PanelC" type="PanelContainer" parent="."]
 custom_minimum_size = Vector2(120, 0)
@@ -49,5 +55,6 @@ layout_mode = 2
 text = "Back"
 
 [node name="SwitchScene" parent="PanelC/VboxC/backButton" node_paths=PackedStringArray("SceneSwitchButton") instance=ExtResource("1_qagbj")]
+script = ExtResource("3_ntlib")
 SceneSwitchButton = NodePath("..")
 TargetScene = "res://UI/Settings.tscn"

@@ -1,8 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://cl8dfv1rrbxbm"]
+[gd_scene load_steps=4 format=3 uid="uid://cl8dfv1rrbxbm"]
 
 [ext_resource type="PackedScene" uid="uid://dqbleu2qq81sc" path="res://UI/HelperNodes/switch_scene.tscn" id="1_i550k"]
-[ext_resource type="PackedScene" uid="uid://bocdib1f8yi0k" path="res://UI/ClassButtons.tscn" id="2_1ario"]
-[ext_resource type="Script" uid="uid://dun8ypwrg8fj4" path="res://UI/UI_Scripts/ButtonManager.cs" id="3_ay7hg"]
+[ext_resource type="Script" uid="uid://iwecd1uulaxd" path="res://UI/UI_Scripts/SwapScenes.cs" id="2_ojqoa"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oflx8"]
 content_margin_left = 50.0
@@ -44,6 +43,7 @@ layout_mode = 2
 text = "Audio Settings"
 
 [node name="SwitchScene" parent="PanelC/VboxC/SettingsAudioButton" node_paths=PackedStringArray("SceneSwitchButton") instance=ExtResource("1_i550k")]
+script = ExtResource("2_ojqoa")
 SceneSwitchButton = NodePath("..")
 TargetScene = "res://UI/AudioSettings.tscn"
 
@@ -52,10 +52,6 @@ layout_mode = 2
 text = "Back"
 
 [node name="SwitchScene" parent="PanelC/VboxC/BackButton" node_paths=PackedStringArray("SceneSwitchButton") instance=ExtResource("1_i550k")]
+script = ExtResource("2_ojqoa")
 SceneSwitchButton = NodePath("..")
 TargetScene = "res://UI/MainMenu.tscn"
-
-[node name="ButtonManager" type="Node" parent="PanelC"]
-script = ExtResource("3_ay7hg")
-CreateScene = ExtResource("2_1ario")
-LoadScene = ExtResource("2_1ario")
